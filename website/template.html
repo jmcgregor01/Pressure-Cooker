@@ -30,7 +30,7 @@
   </div>
 </div>
 <!-------top navigation-------------->
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse"  id = "scrollingHeader">
     <div class="navbar-header">
       <a class="navbar-brand" href="index.html">HOME</a>
     </div>
@@ -70,5 +70,19 @@
   </ul>
   </nav>
 </div>
+
+<script>
+window.onscroll = function() {myFunction()};
+var header = document.getElementById("scrollingHeader");
+var stickyheader = header.offsetTop;
+function myFunction() {
+  if (window.pageYOffset > stickyheader) {
+    header.classList.add("stickyheader");
+  } else {
+    header.classList.remove("stickyheader");
+  }
+}
+</script>
+
 </body>
 </html>

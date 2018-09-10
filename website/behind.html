@@ -6,7 +6,7 @@
       type="image/jpg" 
       href="resources/icon.jpg">
 
-  <title>HOME PAGE</title>
+  <title>BEHIND THE SCENES</title>
   <!--correct character set-->
   <meta charset="utf-8">
   <!--for proper rendering and touch zooming-->
@@ -30,7 +30,7 @@
   </div>
 </div>
 <!-------top navigation-------------->
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse" id = "scrollingHeader">
     <div class="navbar-header">
       <a class="navbar-brand" href="index.html">HOME</a>
     </div>
@@ -106,5 +106,24 @@ Praesent eu augue ultricies, congue erat semper, pharetra diam. Sed interdum tor
   </ul>
   </nav>
 </div>
+
+
+
+<script>
+window.onscroll = function() {myFunction()};
+var header = document.getElementById("scrollingHeader");
+var stickyheader = header.offsetTop;
+function myFunction() {
+  if (window.pageYOffset > stickyheader) {
+    header.classList.add("stickyheader");
+  } else {
+    header.classList.remove("stickyheader");
+  }
+}
+</script>
+
+
+
+
 </body>
 </html>
