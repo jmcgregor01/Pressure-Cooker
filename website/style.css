@@ -1,0 +1,17 @@
+.caption {
+	text-align: center;
+}
+
+.drop-down {
+	z-index: 10000000;
+}
+
+body {
+	position: absolute;
+	z-index:0;
+}
+
+nav {
+	position: relative;
+	z-index: 10000;
+}
