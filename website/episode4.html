@@ -1,25 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <!--language english-->
 <head>
-<link rel="icon" 
-      type="image/jpg" 
-      href="resources/icon.jpg">
-
-  <title>HOME PAGE</title>
+  <title>Episodes</title>
   <!--correct character set-->
   <meta charset="utf-8">
   <!--for proper rendering and touch zooming-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--MaxCDN:CDN support-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!---->
 </head>
 <!----------------------------body-------------------->
-<body style="background-image:linear-gradient(to right,white,grey);color:black;">
+<body style="background-image:linear-gradient(to right,white,grey);color:black; margin-bottom: 100px;">
 <div class="container-fluid">
 <div class="media">
   <div class="media-left">
@@ -30,7 +25,7 @@
   </div>
 </div>
 <!-------top navigation-------------->
-  <nav class="navbar navbar-inverse"  id = "scrollingHeader">
+  <nav class="navbar navbar-inverse">
     <div class="navbar-header">
       <a class="navbar-brand" href="index.html">HOME</a>
     </div>
@@ -61,8 +56,38 @@
     </div>
     </form>
   </nav> 
-<h1>Behind the Scences</h1>
+
   </div><!----col-md-4 ends-------->
+  <div>
+	<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+	  <div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YoxHEBeF6s0" allowfullscreen></iframe>
+		</div>
+	  <h3>Episode 4</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit magna dui, vel tempus mi suscipit at. Vestibulum pulvinar nulla sapien, sit amet varius lacus pulvinar a. In quam nisl, euismod dapibus turpis eu, viverra tristique quam. Nullam suscipit, ante a volutpat elementum, risus turpis porta urna, non faucibus dolor orci varius neque. In faucibus turpis nisi. Morbi fermentum quam dolor, vel posuere urna hendrerit sollicitudin. Cras quam felis, auctor et massa et, euismod facilisis lacus.</p>
+	</div>
+	<div class="col-sm-3" style="background-color:black; padding-top: 20px;">
+        <a href="episode3.html">
+            <img class="img-fluid" src="resources/food-dinner-lunch-70497.jpg" alt="Episode2" style="width:100%; padding-top: 20px">
+            <h3>Episode 3</h3>
+            <p>This is the third episode of Pressure Cooker</p>
+        </a>
+        <br>
+        <a href="episode2.html">
+           <img class="img-fluid" src="resources/food-dinner-lunch-70497.jpg" alt="Episode3" style="width:100%">
+           <h3>Episode 2</h3>
+           <p>This is the second episode of Pressure Cooker</p>
+        </a>
+        <br>
+        <a href="episode1.html">
+            <img class="img-fluid" src="resources/food-dinner-lunch-70497.jpg" alt="Episode4" style="width:100%">
+            <h3>Episode 1</h3>
+            <p>This is the first episode of Pressure Cooker</p>
+        </a>
+    </div>
+
   <!-----------------bottom navigation-------------------------------->
   <nav class="navbar navbar-inverse navbar-fixed-bottom">
   <ul class="nav navbar-nav">
@@ -70,19 +95,5 @@
   </ul>
   </nav>
 </div>
-
-<script>
-window.onscroll = function() {myFunction()};
-var header = document.getElementById("scrollingHeader");
-var stickyheader = header.offsetTop;
-function myFunction() {
-  if (window.pageYOffset > stickyheader) {
-    header.classList.add("stickyheader");
-  } else {
-    header.classList.remove("stickyheader");
-  }
-}
-</script>
-
 </body>
 </html>
