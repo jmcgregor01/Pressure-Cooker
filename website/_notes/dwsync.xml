@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="style.css" server="C:/xampp/htdocs/Pressure-Cooker/website" local="131811930962446504" remote="131811930960000000" Dst="1" />
+<<<<<<< HEAD
 <file name="style.css" server="C:/xampp/htdocs/Pressure-Cooker/website/" local="131817902509626306" remote="131817902500000000" Dst="1" />
 <file name="index.html" server="C:/xampp/htdocs/Pressure-Cooker/website/" local="131817902519623996" remote="131817902510000000" Dst="1" />
+=======
+<file name="index.php" server="C:/xampp/htdocs/Pressure-Cooker/website" local="131811925960981056" remote="131811925960000000" Dst="1" />
+<file name="style.css" server="C:/xampp/htdocs/Pressure-Cooker/website/" local="131811931964967981" remote="131811931960000000" Dst="1" />
+<file name="index.php" server="C:/xampp/htdocs/Pressure-Cooker/website/" local="131813589216968000" remote="131813589210000000" Dst="1" />
+>>>>>>> origin/asimWork
 </dwsync>
