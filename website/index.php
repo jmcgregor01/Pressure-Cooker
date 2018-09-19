@@ -286,20 +286,5 @@
   </nav>
 </div>
 
-<!--
-<script>
-window.onscroll = function() {myFunction()};
-var header = document.getElementById("scrollingHeader");
-var stickyheader = header.offsetTop;
-function myFunction() {
-  if (window.pageYOffset > stickyheader) {
-    header.classList.add("stickyheader");
-  } else {
-    header.classList.remove("stickyheader");
-  }
-}
-</script>
--->
-
 </body>
 </html>
