@@ -61,7 +61,7 @@
 						</li>
 					</ul>
 
-					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="/action_page.php">
+					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="search.php" method="get">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Search" name="search">
 						</div>
