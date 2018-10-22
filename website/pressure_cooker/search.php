@@ -87,7 +87,7 @@
 					$img_of_judge = $get_each_row['img'];
 					$msg_of_judge = $get_each_row['msg'];
 					$date_judge = $get_each_row['date']; */
-				if((empty($_GET['search'])))
+				if((empty($_GET['search']))) //Searching added by Jacob McGregor NOTE: Added this comment because github was being uncooperative
 				{
 					die("You must enter a search query");
 				}			
