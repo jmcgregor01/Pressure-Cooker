@@ -59,7 +59,7 @@
 						</li>
 					</ul>
 
-					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="/action_page.php">
+					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="search.php" method="get">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Search" name="search">
 						</div>
@@ -74,7 +74,7 @@
 		<!--Behind Scenes-->
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 
-			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px; object-fit: none;">BEHIND THE SCENSE</h1><br>
+			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px; object-fit: none;">BEHIND THE SCENES</h1><br>
 
 			<div class="row" style="padding: 50px;">
 				
@@ -82,7 +82,7 @@
 				
 				
 			<?php
-			$behindscense_query = "SELECT * FROM behindscense
+			$behindscense_query = "SELECT * FROM behindscenes
 								ORDER BY id DESC
 								LIMIT 0,12";
 			$connect_behindscense_query = mysqli_query($conn, $behindscense_query);
@@ -141,7 +141,7 @@
 		</div>
 		
 		<div class="col-md-4 footerStyleRight">
-			<a href="behindScense.php"><span style="margin: 20px">Behind The Scense</span></a><br>
+			<a href="behindScenes.php"><span style="margin: 20px">Behind The Scense</span></a><br>
 
 			<a href="about.php"><span style="margin: 50px">About Us</span></a><br>
 

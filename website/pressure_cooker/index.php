@@ -534,7 +534,7 @@
 		</div>
 		
 		<div class="col-md-4 footerStyleRight">
-			<a href="behindScense.php"><span style="margin: 20px">Behind The Scense</span></a><br>
+			<a href="behindScenes.php"><span style="margin: 20px">Behind The Scenes</span></a><br>
 
 			<a href="about.php"><span style="margin: 50px">About Us</span></a><br>
 

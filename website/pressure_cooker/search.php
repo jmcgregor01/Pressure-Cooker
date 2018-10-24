@@ -43,7 +43,7 @@
 					<ul class="nav navbar-nav" style="margin-left: 80px;">
 						<li><a href="index.php"><span style="font-weight: bold; font-size: 15px;">HOME</span></a>
 						</li>
-						<li class="active disabled"><a href="#"><span style="font-weight: bold; font-size: 15px;">JUDGES</span></a>
+						<li><a href="judgesLink.php"><span style="font-weight: bold; font-size: 15px;">JUDGES</span></a>
 						</li>
 						<li><a href="teamsLink.php"><span style="font-weight: bold; font-size: 15px;">TEAMS</span></a>
 						</li>
@@ -75,19 +75,36 @@
 					
 				
 			<?php
-			/* $judge_query = "SELECT * FROM judges
-									ORDER BY date DESC
-										LIMIT 0,9";
-			$connect_judge_query = mysqli_query($conn, $judge_query);
-			$count_rows = mysqli_num_rows($connect_judge_query);
-			if($count_rows > 0){
-				while($get_each_row = mysqli_fetch_array($connect_judge_query)){
-					$id_of_judge = $get_each_row['id'];
-					$name_of_judge = $get_each_row['name'];
-					$img_of_judge = $get_each_row['img'];
-					$msg_of_judge = $get_each_row['msg'];
-					$date_judge = $get_each_row['date']; */
-				if((empty($_GET['search']))) //Added on the 22/10/2018
+				function substrmsg($text, $maxchar = 100, $end='...') {
+					if($text == null)
+					{
+						$output = ' ';
+					}
+					else
+					{
+						if (strlen($text) > $maxchar || $text == '') {
+							$words = preg_split('/\s/', $text);      
+							$output = '';
+							$i      = 0;
+							while (1) {
+								$length = strlen($output)+strlen($words[$i]);
+								if ($length > $maxchar) {
+									break;
+								} 
+								else {
+									$output .= " " . $words[$i];
+									++$i;
+								}
+							}
+							$output .= $end;
+						} 
+						else {
+							$output = $text;
+						}
+						return $output;
+					}
+				}
+				if((empty($_GET['search'])))
 				{
 					die("You must enter a search query");
 				}			
@@ -105,9 +122,9 @@
 			?>
 				<div class="col-sm-6 col-md-4 col-lg-4">
 					<div class="thumbnail">
-						<img class="resizeWithThumbnail" src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judges">
-						<h2><strong><?php echo $name_of_judge; ?></strong></h2>
-						<p style="color: #1364D1;"><strong><?php echo $msg_of_judge; ?></strong></p>
+						<a href="judgesLink.php"><img class="resizeWithThumbnail" src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judges"></a>
+						<a href="judgesLink.php"><h2><strong><?php echo $name_of_judge; ?></strong></h2></a>
+						<p style="color: #1364D1;"><strong><?php echo substrmsg($msg_of_judge); ?></strong></p>
 					</div>
 				</div>	
 			<?php
@@ -126,9 +143,9 @@
 			?>
 				<div class="col-sm-6 col-md-4 col-lg-4">
 					<div class="thumbnail">
-						<img class="resizeWithThumbnail" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="judges">
-						<h2><strong><?php echo $name_of_team; ?></strong></h2>
-						<p style="color: #1364D1;"><strong><?php echo $msg_of_team; ?></strong></p>
+						<a href="teamsLink.php"><img class="resizeWithThumbnail" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="teams"></a>
+						<a href="teamsLink.php"><h2><strong><?php echo $name_of_team; ?></strong></h2></a>
+						<p style="color: #1364D1;"><strong><?php echo substrmsg($msg_of_team); ?></strong></p>
 					</div>
 				</div>	
 			<?php
@@ -147,9 +164,9 @@
 			?>
 				<div class="col-sm-6 col-md-4 col-lg-4">
 					<div class="thumbnail">
-						<img class="resizeWithThumbnail" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="judges">
-						<h2><strong><?php echo $name_of_recipe; ?></strong></h2>
-						<p style="color: #1364D1;"><strong><?php echo $msg_of_recipe; ?></strong></p>
+						<a href="recipesLink.php"><img class="resizeWithThumbnail" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="recipes"></a>
+						<a href="recipesLink.php"><h2><strong><?php echo $name_of_recipe; ?></strong></h2></a>
+						<p style="color: #1364D1;"><strong><?php echo substrmsg($msg_of_recipe); ?></strong></p>
 					</div>
 				</div>	
 			<?php
@@ -169,8 +186,7 @@
 				<div class="col-sm-6 col-md-4 col-lg-4">
 					<div class="thumbnail">
 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_of_media; ?>" allowfullscreen></iframe>
-						<h2><strong><?php echo $name_of_media; ?></strong></h2>
-						<p style="color: #1364D1;"><strong><?php echo $msg_of_media; ?></strong></p>
+						<a href="mediaLink.php"><h2><strong><?php echo $name_of_media; ?></strong></h2></a>
 					</div>
 				</div>	
 			<?php
@@ -189,9 +205,9 @@
 			?>
 				<div class="col-sm-6 col-md-4 col-lg-4">
 					<div class="thumbnail">
-						<img class="resizeWithThumbnail" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="judges">
-						<h2><strong><?php echo $name_of_gallery; ?></strong></h2>
-						<p style="color: #1364D1;"><strong><?php echo $msg_of_gallery; ?></strong></p>
+						<a href="galleryLink.php"><img class="resizeWithThumbnail"  src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery"></a>
+						<a href="galleryLink.php"><h2><strong><?php echo $name_of_gallery; ?></strong></h2></a>
+						<p style="color: #1364D1;"><strong><?php echo substrmsg($msg_of_gallery); ?></strong></p>
 					</div>
 				</div>	
 			<?php
@@ -210,9 +226,9 @@
 			?>
 				<div class="col-sm-6 col-md-4 col-lg-4">
 					<div class="thumbnail">
-						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_scene; ?>" alt="judges">
-						<h2><strong><?php echo $name_of_scene; ?></strong></h2>
-						<p style="color: #1364D1;"><strong><?php echo $msg_of_scene; ?></strong></p>
+						<a href="behindScenes.php"><img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_scene; ?>" alt="behind the scenes"></a>
+						<a href="behindScenes.php"><h2><strong><?php echo $name_of_scene; ?></strong></h2></a>
+						<p style="color: #1364D1;"><strong><?php echo substrmsg($msg_of_scene); ?></strong></p>
 					</div>
 				</div>	
 			<?php
@@ -251,7 +267,7 @@
 		</div>
 		
 		<div class="col-md-4 footerStyleRight">
-			<a href="behindScense.php"><span style="margin: 20px">Behind The Scense</span></a><br>
+			<a href="behindScenes.php"><span style="margin: 20px">Behind The Scense</span></a><br>
 
 			<a href="about.php"><span style="margin: 50px">About Us</span></a><br>
 

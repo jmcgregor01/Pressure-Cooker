@@ -58,7 +58,7 @@
 						</li>
 					</ul>
 
-					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="/action_page.php">
+					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="search.php" method="get">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Search" name="search">
 						</div>
@@ -100,7 +100,7 @@
 		</div>
 		
 		<div class="col-md-4 footerStyleRight">
-			<a href="behindScense.php"><span style="margin: 20px">Behind The Scense</span></a><br>
+			<a href="behindScenes.php"><span style="margin: 20px">Behind The Scense</span></a><br>
 
 			<a href="about.php"><span style="margin: 50px">About Us</span></a><br>
 
