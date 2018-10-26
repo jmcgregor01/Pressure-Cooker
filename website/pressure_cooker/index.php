@@ -491,7 +491,7 @@
 			</div>
 			<hr>
 
-			<center><img class="img-responsive" src="staticImages\map.png" width: 700px; height: 400px>
+			<center><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6513.655072580212!2d149.13473300974456!3d-35.285413967240615!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b164d6dc64f4e9f%3A0xd9d3b3beb2c34d49!2sCanberra+Institute+of+Technology!5e0!3m2!1sen!2sau!4v1539906020436" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</center>
 		<!--Ending Contact Us Container-->
 		</div>
