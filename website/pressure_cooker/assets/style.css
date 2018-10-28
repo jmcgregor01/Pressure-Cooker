@@ -1,0 +1,539 @@
+/*General Settings*/
+body{
+	background: #fff;
+}
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.carousel-control.right, .carousel-control.left {
+  background-image: none;
+  color: #f4511e;
+}
+
+.slideanim {
+	visibility: hidden;
+}
+
+.slide {
+	animation-name: slide;
+	-webkit-animation-name: slide;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	visibility: visible;
+}
+
+
+
+
+
+/*Navigation Bar*/
+.navbar {
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;    
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+	border-width: 100px;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+
+
+
+
+/*Logo Settings*/
+.glyphicon {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #f4511e;
+}
+
+.mouseOnlogo{
+	margin-left: 20px;
+}
+
+.mouseOnlogo >a:hover{
+	text-decoration: none;
+}
+
+.citLogo{
+	margin-left: 78px; 
+	color: white; 
+	font-weight: bold; 
+	font-size: 50px;
+	font-family: forte;
+}
+
+.pressureCookerLogo{
+	font-weight: bold;
+}
+
+.ciLogoPressureLogo{
+	color: white;
+}
+
+.tLogo{
+	background: #00009F;
+}
+
+.cookerLogo{
+	color: white;
+	background-color: #00009F;
+}
+
+.testBoarder{
+	border: 2px solid #FF0004;
+}
+
+.titleBoarder{
+	border: 2px solid #FF0004;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Image Settings*/
+.resizeJudgeMainPage{
+	height: -webkit-fill-available;
+    max-height: 290px;
+	max-width: 100%;
+	object-fit: contain;
+    object-position: center;
+}
+
+
+.resizeTeamMainPage{
+	height: -webkit-fill-available;
+    max-height: 290px;
+	max-width: 100%;
+	object-fit: contain;
+    object-position: center;
+}
+
+
+.resizeWithThumbnail{
+	height: -webkit-fill-available;
+    max-height: 290px;
+	max-width: 100%;
+	object-fit: contain;
+    object-position: center;
+	display: inline-block;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+}
+
+.resizeCarouselMainPage{
+	max-height: 850px;
+    height: 850px;
+    width: -webkit-fill-available;
+    max-width: fit-content;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Best way to handle small Screens Example1*/
+.example1 {}
+
+@media screen and (min-width: 601px) {
+  .example1 {
+    font-size: 18px;
+	padding-top: 100px;
+	padding-left: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .example1 {
+    font-size: 14px;
+	padding-top: 0px;
+	padding-left: 0px;
+  }
+}
+
+
+/*Best way to handle small Screens Example2*/
+.example2 {}
+
+@media screen and (min-width: 601px) {
+  .example2 {
+    font-size: 18px;
+	padding-top: 100px;
+	padding-right: 50px;
+	padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .example2 {
+    font-size: 14px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+  }
+}
+
+
+/*Best way to handle small Screens Example3*/
+.mediaLinkContainer {}
+
+@media screen and (min-width: 1001px) {
+  .mediaLinkContainer {
+	padding: 500px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .mediaLinkContainer {
+	padding: 0px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.voteAlignment {
+
+}
+
+/*Large Screen*/
+@media screen and (min-width: 1001px) {
+  .voteAlignment {
+	padding: 100px 300px 20px 300px;
+  }
+}
+
+/*Mobile Screen*/
+@media screen and (max-width: 1000px) {
+  .voteAlignment {
+	padding: 100px 20px 20px 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+p.recipesMessageLimit {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 370px;
+}
+
+
+
+
+
+
+
+
+
+
+/*Settings of Container*/
+.bg-1 { 
+  background-color: rgba(31, 145, 244, 1);
+  color: #ffffff;
+}
+
+.bg-2 { 
+  background-color: #474e5d;
+  color: #ffffff;
+}
+
+.bg-3 { 
+  background-color: #ffffff;
+  color: #555555;
+}
+
+.bg-4 { 
+  background-color: rgba(126, 26, 188, 1);
+  color: #ffffff;
+}
+
+.bg-5 { 
+  background-color: #2b3a36;
+  color: #ffffff;
+}
+
+.myContainer {
+  	padding-top: 70px;
+  	padding-bottom: 70px;
+}
+
+
+
+
+
+/*Footer of Page*/
+.footerStyleLeft >a {
+	margin-top: 10px;
+	color: #BCBCBC;
+	float: left;
+}
+
+.footerStyleLeft >a:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.footerStyleRight >a {
+	color: #BCBCBC;
+	float: right;
+}
+
+.footerStyleRight >a:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.footerBoarder {
+	border-top: 1px solid black;
+	background: #222;
+	padding: 20px;
+}
+
+.footerSponsorMarginRight{
+	
+}
+@media screen and (min-width: 1001px) {
+  .footerSponsorMarginRight {
+	padding-right: 0px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .footerSponsorMarginRight {
+	padding-right: 110px;
+
+  }
+}
+
+.footerSponsor center a{
+	color: #BCBCBC;
+}
+
+.footerSponsor center a:hover{
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container-fluid {
+	
+}
+
+
+
+@media screen and (min-width: 900px) {
+  .container-fluid {
+	padding: 0px;
+  }
+}
+
+@media screen and (max-width: 901) {
+  .container-fluid {
+	padding: 10px;
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Slide Animation */
+.slideanim {visibility:hidden;}
+.slide {
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  visibility: visible;
+}
+@keyframes slide {
+0% {
+  opacity: 0;
+  transform: translateY(70%);
+} 
+100% {
+  opacity: 1;
+  transform: translateY(0%);
+}
+}
+@-webkit-keyframes slide {
+0% {
+  opacity: 0;
+  -webkit-transform: translateY(70%);
+} 
+100% {
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+}
+}
+@media screen and (max-width: 768px) {
+.col-sm-4 {
+  text-align: center;
+  margin: 25px 0;
+	padding: 0px;
+}
+.btn-lg {
+	width: 100%;
+	margin-bottom: 35px;
+}
+}
+@media screen and (max-width: 480px) {
+.logo {
+	font-size: 150px;
+	padding: 0px;
+}
+}
