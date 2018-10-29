@@ -18,60 +18,10 @@
 
 <body id="topOfPage">
 	<!--Body Content-->
-	<div class="container-fluid">
-
-		<!--Top Navigation Bar-->
-		<nav class="navbar navbar-default navbar-static-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>                        
-					</button>
-				
-
-					<div class="navbar-header mouseOnlogo">
-						<a href="https://cit.edu.au/">
-							<h2 class="citLogo">
-								<span class="ciLogoPressureLogo">Ci</span><span class="tLogo">T</span>
-							</h2>
-
-							<h4 class="pressureCookerLogo">
-								<span class="ciLogoPressureLogo">PRESSURE</span><span class="cookerLogo">COOKER</span>
-							</h4>
-						</a>
-					
-					</div>
-				</div>
-
-				<div class="collapse navbar-collapse" id="myNavbar" style="margin-top: 35px;">
-					<ul class="nav navbar-nav" style="margin-left: 80px;">
-						<li><a href="index.php"><span style="font-weight: bold; font-size: 15px;">HOME</span></a>
-						</li>
-						<li><a href="judgesLink.php"><span style="font-weight: bold; font-size: 15px;">JUDGES</span></a>
-						</li>
-						<li><a href="teamsLink.php"><span style="font-weight: bold; font-size: 15px;">TEAMS</span></a>
-						</li>
-						<li><a href="recipesLink.php"><span style="font-weight: bold; font-size: 15px;">RECIPES</span></a>
-						</li>
-						<li><a href="mediaLink.php"><span style="font-weight: bold; font-size: 15px;">MEDIA</span></a>
-						</li>
-						<li><a href="galleryLink.php"><span style="font-weight: bold; font-size: 15px;">GALLERY</span></a>
-						</li>
-					</ul>
-
-					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="/action_page.php">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search" name="search">
-						</div>
-
-						<button type="submit" class="btn btn-default">Submit</button>
-					</form>
-				</div>
-			</div>
-			<!--Ending Top Navigation Bar-->
-		</nav>
+				<!--Header template-->
+		<?php
+		include "templates/navigationbar_template.php";
+		?>	
 		
 		
 		
@@ -125,40 +75,10 @@
 	</div>
 
 
-	<!--Footer At the End of Page-->
-	<footer class="goTopAnim footerBoarder">
-		<center><a href="#topOfPage" title="To Top">
-    			<span class="glyphicon glyphicon-chevron-up"></span>
-  			</a>
-		
-		</center>
-<div class="row">
-		<div class="col-md-4 footerStyleLeft">
-			<a href="workingOnIt.php">
-				<div class="col-md-1">
-					<i class="fab fa-android fa-2x" style="color: greenyellow; margin-left: 24px;"></i>
-				</div>
-
-				<div class="col-md-11" style="margin-right: 1px;">
-					Android App
-				</div>
-			</a>
-		</div>
-		
-		<div class="col-md-4 footerSponsor">
-			<center><a class="footerSponsorMarginRight" href="sponsorLink.php">Sponsors</a></center>
-		</div>
-		
-		<div class="col-md-4 footerStyleRight">
-			<a href="behindScense.php"><span style="margin: 20px">Behind The Scense</span></a><br>
-
-			<a href="about.php"><span style="margin: 50px">About Us</span></a><br>
-
-			<a href="admin/indexAdmin.php"><span class="glyphicon glyphicon-log-in"><span style="margin: 35px;"></span></span></a>
-		</div>
-	</div>
-		<!--Ending of Footer-->
-	</footer>
+	<!-- Footer template-->
+	<?php
+	include 'templates/footer_template.php';
+	?>
 
 	<!--Scrolling Script-->
 	<script>

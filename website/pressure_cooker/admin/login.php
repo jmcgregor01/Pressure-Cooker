@@ -32,18 +32,28 @@
 		
 		<button name="sub" class="btn btn-default">Login</button>
 		</form>
+		
+		
+		
 		<?php
-		if(isset($_POST['sub'])){
+			if(isset($_POST['sub'])){
 			$user = $_POST['user'];
 			$pass = $_POST['pass'];
-			$in = "SELECT * FROM admin
-					WHERE user = '$user' AND pass= '$pass'";
-			$run = mysqli_query($conn, $in);
-			$count = mysqli_num_rows($run);
-			if($count != 0){
+			//$stmt = mysqli_stmt_init($conn);
+			$sql = "SELECT * FROM admin
+					WHERE user = ? AND pass= ?";
+			$stmt = mysqli_prepare($conn, $sql);
+			mysqli_stmt_bind_param($stmt, "ss", $user, $pass);
+			mysqli_stmt_execute($stmt);
+			mysqli_stmt_bind_result($stmt, $username, $pass);
+			mysqli_stmt_fetch($stmt);
+			if(!empty($username))
+			{
 				echo "<script>window.open('indexAdmin.php', '_self')</script>";
 				$_SESSION['user'] = $user;
-			}else{
+			}
+			else
+			{
 				echo "<h5>Your Username Or Password is Incrrect</h5>";
 			}
 		}

@@ -61,7 +61,7 @@
 						</li>
 					</ul>
 
-					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="search.php" method="get">
+					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="/action_page.php">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Search" name="search">
 						</div>
@@ -491,7 +491,7 @@
 			</div>
 			<hr>
 
-			<center><img class="img-responsive" src="staticImages\map.png" width: 700px; height: 400px>
+			<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6513.543193413012!2d149.1329614864318!3d-35.286804613391176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd9d3b3beb2c34d49!2sCanberra+Institute+of+Technology!5e0!3m2!1sen!2sau!4v1539905585501" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</center>
 		<!--Ending Contact Us Container-->
 		</div>
@@ -509,40 +509,10 @@
 	</div>
 
 
-	<!--Footer At the End of Page-->
-	<footer class="goTopAnim footerBoarder">
-		<center><a href="#topOfPage" title="To Top">
-    			<span class="glyphicon glyphicon-chevron-up"></span>
-  			</a>
-		
-		</center>
-<div class="row">
-		<div class="col-md-4 footerStyleLeft">
-			<a href="workingOnIt.php">
-				<div class="col-md-1">
-					<i class="fab fa-android fa-2x" style="color: greenyellow; margin-left: 24px;"></i>
-				</div>
-
-				<div class="col-md-11" style="margin-right: 1px;">
-					Android App
-				</div>
-			</a>
-		</div>
-		
-		<div class="col-md-4 footerSponsor">
-			<center><a class="footerSponsorMarginRight" href="sponsorLink.php">Sponsors</a></center>
-		</div>
-		
-		<div class="col-md-4 footerStyleRight">
-			<a href="behindScense.php"><span style="margin: 20px">Behind The Scense</span></a><br>
-
-			<a href="about.php"><span style="margin: 50px">About Us</span></a><br>
-
-			<a href="admin/indexAdmin.php"><span class="glyphicon glyphicon-log-in"><span style="margin: 35px;"></span></span></a>
-		</div>
-	</div>
-		<!--Ending of Footer-->
-	</footer>
+	<!-- Footer template-->
+	<?php
+	include 'templates/footer_template.php';
+	?>
 
 	<!--Scrolling Script-->
 	<script>
