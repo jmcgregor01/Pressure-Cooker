@@ -93,7 +93,7 @@
 		
 		
 
-		<!--Judge Container-->
+		<!--Team Container-->
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 
 			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px;">TEAMS</h1><br>
@@ -155,7 +155,7 @@
 			</div>
 
 
-			<!--Ending Judge Container-->
+			<!--Ending team Container-->
 			<?php
 		if ($show_all != true)
 		{
