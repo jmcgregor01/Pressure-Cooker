@@ -238,9 +238,6 @@
 
 			<!--Ending Judge Container-->
 		</div>
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-				<button class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
-		</div>	
 	<!--Ending Body Content-->
 	</div>
 	<!--Footer At the End of Page-->
