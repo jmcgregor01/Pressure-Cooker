@@ -1,25 +1,21 @@
 <!DOCTYPE html>
-<?php
-	require 'admin\config\db.php';
-?>
+<?php require 'admin\config\db.php' ?>
 <html>
-<head>
-	<!--Head of the Index Page-->
-	<title>Pressure Cooker</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="assets\style.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!--Ending Head of the Index Page-->
-</head>
-
-<body id="topOfPage">
-	<!--Body Content-->
+	<head>
+		<!--Head of the Index Page-->
+		<title>Pressure Cooker</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="assets\style.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!--Ending Head of the Index Page-->
+	</head>
+	<body id="topOfPage">
+			<!--Body Content-->
 	<div class="container-fluid">
-
 		<!--Top Navigation Bar-->
 		<nav class="navbar navbar-default navbar-static-top">
 			<div class="container-fluid">
@@ -59,7 +55,7 @@
 						</li>
 					</ul>
 
-					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="/action_page.php">
+					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="search.php" method="get">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Search" name="search">
 						</div>
@@ -70,58 +66,65 @@
 			</div>
 			<!--Ending Top Navigation Bar-->
 		</nav>
+		<!--Voting Container-->
+		<div id="startAgain" class="container bg-3 voteAlignment text-center" style="padding: 100px;">
 
-		<!--Behind Scenes-->
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-
-			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px; object-fit: none;">BEHIND THE SCENSE</h1><br>
+			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px;">VOTE</h1><br>
 
 			<div class="row" style="padding: 50px;">
-				
-				
-				
-				
-			<?php
-			$behindscense_query = "SELECT * FROM behindscense
-								ORDER BY id DESC
-								LIMIT 0,12";
-			$connect_behindscense_query = mysqli_query($conn, $behindscense_query);
-			$count_rows = mysqli_num_rows($connect_behindscense_query);
-			if($count_rows > 0){
-			while($get_each_row = mysqli_fetch_array($connect_behindscense_query)){
-				$id_of_behindscense = $get_each_row['id'];
-				$name_of_behindscense = $get_each_row['name'];
-				$img_of_behindscense = $get_each_row['img'];
-				$date_behindscense = $get_each_row['date'];
-				$msg_of_behindscense = $get_each_row['msg'];
-			?>			
-				<div class="col-sm-6 col-md-4 col-lg-3">
-						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscense; ?>" alt="behindScenes">
-						<h2><strong><?php echo $name_of_behindscense; ?></strong></h2>
-						<p style="color: #1364D1;"><strong><?php echo $msg_of_behindscense; ?></strong></p><br><br><br><br>
-				</div>
-				
-			<?php
-				}
-			}
-			?>
+					
+				<?php	
+					if(isset($_COOKIE['votecookie']))
+					{
+						echo "<p>Sorry you have already voted.</p>";
+					}
+					else
+					{
+						$sql = "SELECT * FROM teams";
+						$result = mysqli_query($conn, $sql) or die("Error - ".mysqli_error($conn));
+						$value = 0;
+						?>
+						
+						
+						<form action="voteLink.php" method="get">
+							<label for="email">Enter Your Email</label>
+							<br><br>
+							<input required class="form-control" type="email" id="emailId" name="email" style="box-shadow: 3px 4px 2px #efa6a6;"><br><br><br>
+							<p>Please select the team you want to vote for.</p>
+							<br>
+							<label for="vote">Vote:</label>
+							<select name="vote">
+								<?php
+								while($row = mysqli_fetch_array($result))
+								{
+									$name_of_team = $row['name'];
+									$value++;
+									?>
+									<option value="<?php echo "$value"; ?>"><?php echo "$name_of_team"; ?></option>
+									<?php
+								}
+								?>
+							</select>
+							<br>
+							<br>
+							<br>
+							<button name="submit" type="submit" class="btn btn-success btn-md">Vote Now</button>
+						</form>
+						<?php
+					}
+				?>
+						
 			</div>
 
-			<!--Ending Behind Scenes Container-->
-		</div>
-		
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-			<button class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
+			<!--Ending Vote Container-->
 		</div>
 	<!--Ending Body Content-->
 	</div>
-
 	<!--Footer At the End of Page-->
 	<footer class="goTopAnim footerBoarder">
 		<center><a href="#topOfPage" title="To Top">
     			<span class="glyphicon glyphicon-chevron-up"></span>
-  			</a>
-		
+  			</a>		
 		</center>
 <div class="row">
 		<div class="col-md-4 footerStyleLeft">
@@ -141,7 +144,7 @@
 		</div>
 		
 		<div class="col-md-4 footerStyleRight">
-			<a href="behindScense.php"><span style="margin: 20px">Behind The Scense</span></a><br>
+			<a href="behindScenes.php"><span style="margin: 20px">Behind The Scense</span></a><br>
 
 			<a href="about.php"><span style="margin: 50px">About Us</span></a><br>
 
@@ -150,7 +153,6 @@
 	</div>
 		<!--Ending of Footer-->
 	</footer>
-
 	<!--Scrolling Script-->
 	<script>
 		$( document ).ready( function () {
@@ -189,5 +191,5 @@
 			} )
 			<!--Scrolling Script-->
 	</script>
-</body>
+	</body>
 </html>
