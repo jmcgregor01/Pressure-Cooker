@@ -16,10 +16,12 @@
 	<!--Ending Head of the Index Page-->
 </head>
 
+
 		<!--Header template-->
 		<?php
 		include "templates/navigationbar_template.php";
 		?>
+
 
 		<!--Behind Scenes-->
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
@@ -66,10 +68,12 @@
 	<!--Ending Body Content-->
 	</div>
 
+
 	<!-- Footer template-->
 	<?php
 	include 'templates/footer_template.php';
 	?>
+
 
 	<!--Scrolling Script-->
 	<script>

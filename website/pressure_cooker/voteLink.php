@@ -17,39 +17,20 @@
 </head>
 
 <body id="topOfPage">
+
 		
 		<!--Header template-->
 		<?php
 		include "templates/navigationbar_template.php";
 		?>	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<div class="container bg-3 text-center">
-			<h1 style="font-weight: bold; background: #1A81AC; color: white; border-radius: 5px;">NEED EMAIL FOR VOTE</h1><br>
+			<h1 style="font-weight: bold; background: #1A81AC; color: white; border-radius: 5px;">VOTE</h1><br>
 		</div>
-		
-		
 		<div class="container bg-3 voteAlignment text-center" >
-			
-					<form action="" method="post">
-						<label for="email">Enter Your Email</label>
-						<input required class="form-control" type="email" id="emailId" name="email" style="box-shadow: 3px 4px 2px #efa6a6;"><br><br><br>
-						<button name="submit" type="submit" class="btn btn-success btn-md" style="float: right">Next</button>
-					</form>
+
 		
-		</div>
 		<?php
-			if(isset($_POST['submit'])){
+			/*if(isset($_POST['submit'])){
 				$email_from_user = $_POST['email'];
 				$query = "SELECT * 
 							FROM voters";
@@ -68,34 +49,44 @@
 						}
 					}
 				}
+			}*/
+			$email = $_GET['email'];
+			$vote = $_GET['vote'];
+			
+			$sql = "SELECT * FROM voters WHERE email = '$email'";
+			$result = mysqli_query($conn, $sql) or die("Error - ".mysqli_error($conn));
+			$count = mysqli_num_rows(mysqli_query($conn, $sql));
+			if($count > 0)
+			{
+				echo "<p>You have already voted</p>";
+			}
+			else
+			{
+				echo "<p>Thank you for voting</p>";
+				$sql = "INSERT INTO voters VALUES('', '$email')";
+				$result = mysqli_query($conn, $sql) or die("Error - ".mysqli_error($conn));
+				setcookie('votecookie', '1', time()+60*60*24*30);
+				if($vote == 1)
+				{
+					$sql = "UPDATE votes SET team1 = team1 + 1 WHERE id = 1";
+					$result = mysqli_query($conn, $sql) or die("Error - ".mysqli_error($conn));
+				}
+				else
+				{
+					$sql = "UPDATE votes SET team2 = team2 + 1 WHERE id = 1";
+					$result = mysqli_query($conn, $sql) or die("Error - ".mysqli_error($conn));
+				}
 			}
 			
 		?>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		</div>
 	</div>
-
 
 	<!-- Footer template-->
 	<?php
 	include 'templates/footer_template.php';
 	?>
+
 
 	<!--Scrolling Script-->
 	<script>
