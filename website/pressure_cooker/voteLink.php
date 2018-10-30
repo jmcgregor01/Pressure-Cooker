@@ -17,89 +17,20 @@
 </head>
 
 <body id="topOfPage">
-	<!--Body Content-->
-	<div class="container-fluid">
 
-		<!--Top Navigation Bar-->
-		<nav class="navbar navbar-default navbar-static-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>                        
-					</button>
-				
-
-					<div class="navbar-header mouseOnlogo">
-						<a href="https://cit.edu.au/">
-							<h2 class="citLogo">
-								<span class="ciLogoPressureLogo">Ci</span><span class="tLogo">T</span>
-							</h2>
-
-							<h4 class="pressureCookerLogo">
-								<span class="ciLogoPressureLogo">PRESSURE</span><span class="cookerLogo">COOKER</span>
-							</h4>
-						</a>
-					
-					</div>
-				</div>
-
-				<div class="collapse navbar-collapse" id="myNavbar" style="margin-top: 35px;">
-					<ul class="nav navbar-nav" style="margin-left: 80px;">
-						<li><a href="index.php"><span style="font-weight: bold; font-size: 15px;">HOME</span></a>
-						</li>
-						<li><a href="judgesLink.php"><span style="font-weight: bold; font-size: 15px;">JUDGES</span></a>
-						</li>
-						<li><a href="teamsLink.php"><span style="font-weight: bold; font-size: 15px;">TEAMS</span></a>
-						</li>
-						<li><a href="recipesLink.php"><span style="font-weight: bold; font-size: 15px;">RECIPES</span></a>
-						</li>
-						<li><a href="mediaLink.php"><span style="font-weight: bold; font-size: 15px;">MEDIA</span></a>
-						</li>
-						<li><a href="galleryLink.php"><span style="font-weight: bold; font-size: 15px;">GALLERY</span></a>
-						</li>
-					</ul>
-
-					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="search.php" method="get">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search" name="search">
-						</div>
-
-						<button type="submit" class="btn btn-default">Submit</button>
-					</form>
-				</div>
-			</div>
-			<!--Ending Top Navigation Bar-->
-		</nav>
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<div class="container bg-3 text-center">
-			<h1 style="font-weight: bold; background: #1A81AC; color: white; border-radius: 5px;">NEED EMAIL FOR VOTE</h1><br>
-		</div>
-		
-		
-		<div class="container bg-3 voteAlignment text-center" >
-			
-					<form action="" method="post">
-						<label for="email">Enter Your Email</label>
-						<input required class="form-control" type="email" id="emailId" name="email" style="box-shadow: 3px 4px 2px #efa6a6;"><br><br><br>
-						<button name="submit" type="submit" class="btn btn-success btn-md" style="float: right">Next</button>
-					</form>
-		
-		</div>
+		<!--Header template-->
 		<?php
-			if(isset($_POST['submit'])){
+		include "templates/navigationbar_template.php";
+		?>	
+		<div class="container bg-3 text-center">
+			<h1 style="font-weight: bold; background: #1A81AC; color: white; border-radius: 5px;">VOTE</h1><br>
+		</div>
+		<div class="container bg-3 voteAlignment text-center" >
+
+		
+		<?php
+			/*if(isset($_POST['submit'])){
 				$email_from_user = $_POST['email'];
 				$query = "SELECT * 
 							FROM voters";
@@ -118,64 +49,44 @@
 						}
 					}
 				}
+			}*/
+			$email = $_GET['email'];
+			$vote = $_GET['vote'];
+			
+			$sql = "SELECT * FROM voters WHERE email = '$email'";
+			$result = mysqli_query($conn, $sql) or die("Error - ".mysqli_error($conn));
+			$count = mysqli_num_rows(mysqli_query($conn, $sql));
+			if($count > 0)
+			{
+				echo "<p>You have already voted</p>";
+			}
+			else
+			{
+				echo "<p>Thank you for voting</p>";
+				$sql = "INSERT INTO voters VALUES('', '$email')";
+				$result = mysqli_query($conn, $sql) or die("Error - ".mysqli_error($conn));
+				setcookie('votecookie', '1', time()+60*60*24*30);
+				if($vote == 1)
+				{
+					$sql = "UPDATE votes SET team1 = team1 + 1 WHERE id = 1";
+					$result = mysqli_query($conn, $sql) or die("Error - ".mysqli_error($conn));
+				}
+				else
+				{
+					$sql = "UPDATE votes SET team2 = team2 + 1 WHERE id = 1";
+					$result = mysqli_query($conn, $sql) or die("Error - ".mysqli_error($conn));
+				}
 			}
 			
 		?>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	</div>
-
-
-	<!--Footer At the End of Page-->
-	<footer class="goTopAnim footerBoarder" style="margin-top: 400px;">
-		<center><a href="#topOfPage" title="To Top">
-    			<span class="glyphicon glyphicon-chevron-up"></span>
-  			</a>
-		
-		</center>
-<div class="row">
-		<div class="col-md-4 footerStyleLeft">
-			<a href="workingOnIt.php">
-				<div class="col-md-1">
-					<i class="fab fa-android fa-2x" style="color: greenyellow; margin-left: 24px;"></i>
-				</div>
-
-				<div class="col-md-11" style="margin-right: 1px;">
-					Android App
-				</div>
-			</a>
-		</div>
-		
-		<div class="col-md-4 footerSponsor">
-			<center><a class="footerSponsorMarginRight" href="sponsorLink.php">Sponsors</a></center>
-		</div>
-		
-		<div class="col-md-4 footerStyleRight">
-			<a href="behindScenes.php"><span style="margin: 20px">Behind The Scense</span></a><br>
-
-			<a href="about.php"><span style="margin: 50px">About Us</span></a><br>
-
-			<a href="admin/indexAdmin.php"><span class="glyphicon glyphicon-log-in"><span style="margin: 35px;"></span></span></a>
 		</div>
 	</div>
-		<!--Ending of Footer-->
-	</footer>
+
+	<!-- Footer template-->
+	<?php
+	include 'templates/footer_template.php';
+	?>
+
 
 	<!--Scrolling Script-->
 	<script>
