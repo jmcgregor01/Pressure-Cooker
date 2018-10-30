@@ -148,9 +148,7 @@
 		
 		
 			<?php
-			$vote_query = "SELECT * FROM teams
-								ORDER BY id DESC
-								LIMIT 0,3";
+			$vote_query = "SELECT * FROM votes";
 			$connect_vote_query = mysqli_query($conn, $vote_query);
 			$count_rows = mysqli_num_rows($connect_vote_query);
 			$show_or_not_vote = 'hidden';
@@ -170,17 +168,18 @@
 				
 			<?php
 				while($get_each_row = mysqli_fetch_array($connect_vote_query)){
-					$id_of_vote = $get_each_row['id'];
-					$name_of_vote = $get_each_row['name'];
-					$img_of_vote = $get_each_row['img'];
-					$msg_of_vote = $get_each_row['msg'];
-					$date_vote = $get_each_row['date'];
-					$votes_of_team = $get_each_row['vote'];
+					$team1 = $get_each_row['team1'];
+					$team2 = $get_each_row['team2'];
 			?>
 				<div class="col-sm-6 col-md-6 col-lg-4">
-						<img class="resizevoteMainPage"  src="admin\dynamicImages\teams\<?php echo $img_of_vote; ?>" alt="vote">
-						<p><strong><?php echo $name_of_vote; ?></strong></p>
-						<a href="voteLink.php" class="btn btn-success btn-lg">Vote Us <span class="badge"><?php echo $votes_of_team; ?></a>
+						<img class="resizevoteMainPage"  src="admin\dynamicImages\teams\5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape (1).jpg" alt="vote">
+						<p><strong>Team 1</strong></p>
+						<a href="voting.php" class="btn btn-success btn-lg">Votes <span class="badge"><?php echo $team1; ?></a>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-4">
+						<img class="resizevoteMainPage"  src="admin\dynamicImages\teams\5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape (1).jpg" alt="vote">
+						<p><strong>Team 2</strong></p>
+						<a href="voting.php" class="btn btn-success btn-lg">Votes <span class="badge"><?php echo $team2; ?></a>
 				</div>
 			<?php
 				}
@@ -189,7 +188,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $show_or_not_votes; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="votesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</a><br>
+			<br><a href="voting.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Vote Now!</a><br>
 			<!--Ending vote Container-->
 			</div>
 			
