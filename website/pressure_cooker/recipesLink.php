@@ -94,7 +94,7 @@
 			{
 				?></div>
 				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-					<form action="/Pressure-Cooker/website/pressure_cooker/recipesLink.php" method="get">
+					<form action="/pressure_cooker/recipesLink.php" method="get">
 						<button class="btn btn-info btn-lg"; type = "submit" name = "All" value = "true" style="float: right; margin-right: 20px;">Get More</button><br>
 					</form>
 				</div>
