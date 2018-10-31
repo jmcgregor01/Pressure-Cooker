@@ -17,7 +17,6 @@
 	<!--Body Content-->
 	<div class="container-fluid">
 
-				
 		<?php
 		include "templates/navigationbar_template.php";
 		?>
