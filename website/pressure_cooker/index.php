@@ -188,7 +188,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $show_or_not_votes; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="voting.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Vote Now!</a><br>
+			<br><a href="voting.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Vote Now!</a><br>  
 			<!--Ending vote Container-->
 			</div>
 			
