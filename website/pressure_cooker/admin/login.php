@@ -43,7 +43,7 @@
 			$sql = "SELECT * FROM admin
 					WHERE user = ? AND pass= ?";
 			$stmt = mysqli_prepare($conn, $sql);
-			mysqli_stmt_bind_param($stmt, "ss", $user, $pass);
+			mysqli_stmt_bind_param($stmt, "ss", $user, hash('sha256', $pass));
 			mysqli_stmt_execute($stmt);
 			mysqli_stmt_bind_result($stmt, $username, $pass);
 			mysqli_stmt_fetch($stmt);
