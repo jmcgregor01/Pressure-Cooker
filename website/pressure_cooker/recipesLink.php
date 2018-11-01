@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	require 'admin\config\db.php';
+	require 'admin/config/db.php';
 ?>
 <html>
 <head>
@@ -17,23 +17,13 @@
 </head>
 
 <body id="topOfPage">
+    <div class="container-fluid">
 	<!--Body Content-->
 	<!--Header template-->
 		<?php
 		include "templates/navigationbar_template.php";
 		?>	
-
-
-
-
-
-	
-
-
-
-
-
-		<!--Judge Container-->
+        <!--recipe Container-->
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 
 			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px;">RECIPES</h1><br>
@@ -42,8 +32,7 @@
 
 				<?php
 				$recipe_query = "SELECT * FROM recipes
-									ORDER BY date DESC
-									LIMIT 0,12";
+									ORDER BY date DESC";
 				$connect_recipe_query = mysqli_query($conn, $recipe_query);
 				$count_rows = mysqli_num_rows($connect_recipe_query);
 				if($count_rows > 0){
@@ -54,28 +43,30 @@
 						$msg_of_recipe = $get_each_row['msg'];
 						$date_recipe = $get_each_row['date'];
 				?>
-				<div class="col-sm-6 col-md-4 col-lg-3">
-					<div class="thumbnail">
-						<img class="resizeWithThumbnail" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="team image">
-						<h2><strong><?php echo $name_of_recipe; ?></strong></h2>
-						<p class="recipesMessageLimit" style="color: #1364D1;"><strong><?php echo $msg_of_recipe; ?></strong></p>
+				    
+				    <div class="col-sm-6 col-md-4 col-lg-3">
+				    <form action="recipeDetails.php" method="GET">
+				    <input type="hidden" name="recipe_id" value="<?php echo $id_of_recipe;?>">
+				    
+				    <div class="thumbnail">
+				        <input type="image" img class= "resizeWithThumbnail" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="team image">
+						<h2><strong><?php echo $id_of_recipe.$name_of_recipe; ?></strong></h2>
+					    
+                        <p class="recipesMessageLimit" style="color: #1364D1;"><strong><?php echo $msg_of_recipe; ?></strong></p>
 					</div>
+					</form> 
+					
 				</div>
 				<?php
 					}
 				}
 				?>
 				</div>
-			<!--Ending Judge Container-->
-		</div>
-		
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-			<button class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
-		</div>
-		
-
+				</div>
+				<!-----------recipe00Section-------------->
+				
 	<!--Ending Body Content-->
-	</div>
+	
 
 
 	<!-- Footer template-->
@@ -83,43 +74,7 @@
 	include 'templates/footer_template.php';
 	?>
 
-	<!--Scrolling Script-->
-	<script>
-		$( document ).ready( function () {
-				// Add smooth scrolling to all links in navbar + footer link
-				$( ".navbar a, .goTopAnim a[href='#topOfPage']" ).on( 'click', function ( event ) {
-					// Make sure this.hash has a value before overriding default behavior
-					if ( this.hash !== "" ) {
-						// Prevent default anchor click behavior
-						event.preventDefault();
-
-						// Store hash
-						var hash = this.hash;
-
-						// Using jQuery's animate() method to add smooth page scroll
-						// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-						$( 'html, body' ).animate( {
-							scrollTop: $( hash ).offset().top
-						}, 900, function () {
-
-							// Add hash (#) to URL when done scrolling (default click behavior)
-							window.location.hash = hash;
-						} );
-					} // End if
-				} );
-
-				$( window ).scroll( function () {
-					$( ".slideanim" ).each( function () {
-						var pos = $( this ).offset().top;
-
-						var winTop = $( window ).scrollTop();
-						if ( pos < winTop + 600 ) {
-							$( this ).addClass( "slide" );
-						}
-					} );
-				} );
-			} )
-			<!--Scrolling Script-->
-	</script>
+	
+</div>
 </body>
 </html>

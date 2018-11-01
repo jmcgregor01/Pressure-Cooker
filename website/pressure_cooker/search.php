@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php require 'admin\config\db.php' ?>
+<?php
+	require 'admin/config/db.php';
+?>
 <html>
 	<head>
 		<!--Head of the Index Page-->
