@@ -32,10 +32,7 @@
 
 					<div class="navbar-header mouseOnlogo">
 						<a href="https://cit.edu.au/">
-							<h2 class="citLogo">
-								<span class="ciLogoPressureLogo">Ci</span><span class="tLogo">T</span>
-							</h2>
-
+								<img src="staticImages\CIT_logo_stacked_white_RTO.png" alt="CIT Logo" style="width:20%; height:20%; padding:3px">
 							<h4 class="pressureCookerLogo">
 								<span class="ciLogoPressureLogo">PRESSURE</span><span class="cookerLogo">COOKER</span>
 							</h4>
@@ -156,7 +153,7 @@
 				$show_or_not_vote = '';
 			?>		
 		<!--vote Container-->
-		<div id="voteSection" class="<?php echo $show_or_not_vote; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 100px;">
+		<div id="voteSection" class="<?php echo $show_or_not_vote; ?> container-fluid myContainer bg-9 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
@@ -187,7 +184,7 @@
 			?>
 			</div>
 		</div>
-		<div class="<?php echo $show_or_not_votes; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 50px;">
+		<div class="<?php echo $show_or_not_votes; ?> container-fluid myContainer bg-9 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="voting.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Vote Now!</a><br>  
 			<!--Ending vote Container-->
 			</div>
@@ -320,7 +317,7 @@
 				$show_or_not_recipe = '';
 			?>
 		<!--Recipes Container-->
-		<div id="recipesSection" class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-2 text-center goTopAnim" style="padding: 100px;">
+		<div id="recipesSection" class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
@@ -352,7 +349,7 @@
 			}
 			?>
 		</div>
-		<div class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-2 text-center goTopAnim" style="padding: 50px;">
+		<div class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="recipesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</a><br>
 		<!--Ending Recipes Container-->
 		</div>
@@ -378,7 +375,7 @@
 				$show_or_not_media = '';
 			?>		
 		<!--Media Container-->
-		<div id="mediaSection" class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-4 text-center goTopAnim" style="padding: 100px;">
+		<div id="mediaSection" class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-0 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
@@ -411,7 +408,7 @@
 			}
 			?>			
 		</div>
-		<div class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-4 text-center goTopAnim" style="padding: 50px;">
+		<div class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-0 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="mediaLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</a><br>
 		<!--Ending Media Container-->
 		</div>
@@ -480,7 +477,7 @@
 		
 		
 		<!--Contact Us Container-->
-		<div id="citContacts" class="container-fluid myContainer bg-5 text-center goTopAnim" style="padding: 100px;">
+		<div id="citContacts" class="container-fluid myContainer bg-7 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     			<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
