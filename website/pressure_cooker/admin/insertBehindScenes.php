@@ -24,28 +24,28 @@
 </head>
 <body>
 	<div class="row">
-	
+		
 		<?php
 		//Includes admin panel template.
 		include "templates/adminpanel_template.php";
 		?>
 		
 			<div class="container" style="background: #FFF;">
-				<h2>Insert New Judge</h2>
+				<h2>Insert New Behind the Scenes Image</h2>
 				<hr>
 				
 				
 				
 				
 				
-				<form action="insertJudge.php" method="post" enctype="multipart/form-data">
-					<label for="nameId">Name of Judge</label>
+				<form action="insertBehindScenes.php" method="post" enctype="multipart/form-data">
+					<label for="nameId">Name of Behind the Scenes Image</label>
 					<input required type="text" name="name" id="nameId" class="form-control"><br>
 					
-					<label for="imgId">Image of Judge</label>
+					<label for="imgId">Image of Behind the Scenes</label>
 					<input required type="file" name="img" id="imgId" class="form-control"><br>
 					
-					<label for="msgId">About Judge</label>
+					<label for="msgId">About Behind the Scenes Image</label>
 					<textarea required class="form-control" id="msgId" name="msg" style="height: 150px"></textarea><br>
 					<button name="submit" class="btn btn-success" style="float: right">Add</button>
 				</form>
@@ -58,11 +58,11 @@
 						$img = $_FILES['img']['name'];
 						$imgPath = $_FILES['img']['tmp_name'];
 						$msg = $_POST['msg'];
-						$insert = "INSERT INTO judges(name, img, msg)
+						$insert = "INSERT INTO behindscenes(name, img, msg)
 									VALUE('$name', '$img', '$msg')";
 						$run = mysqli_query($conn, $insert);
 						if($run){
-							move_uploaded_file($imgPath, "dynamicImages/judges/$img");
+							move_uploaded_file($imgPath, "dynamicImages/behindScenes/$img");
 							
 							echo "<script>alert('Your News Insert Successfully')</script>";
 						}else{

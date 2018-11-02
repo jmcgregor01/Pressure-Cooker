@@ -45,7 +45,7 @@
 
 				<div class="collapse navbar-collapse" id="myNavbar" style="margin-top: 35px;">
 					<ul class="nav navbar-nav" style="margin-left: 80px;">
-						<li class="active disabled"><a href="#"><span style="font-weight: bold; font-size: 15px;">HOME</span></a>
+						<li><a href="#"><span style="font-weight: bold; font-size: 15px;">HOME</span></a>
 						</li>
 						<li><a href="#judgesSection"><span style="font-weight: bold; font-size: 15px;">JUDGES</span></a>
 						</li>
@@ -53,7 +53,7 @@
 						</li>
 						<li><a href="#recipesSection"><span style="font-weight: bold; font-size: 15px;">RECIPES</span></a>
 						</li>
-						<li><a href="#mediaSection"><span style="font-weight: bold; font-size: 15px;">MEDIA</span></a>
+						<li><a href="#mediaSection"><span style="font-weight: bold; font-size: 15px;">WATCH NOW</span></a>
 						</li>
 						<li><a href="#gallerySection"><span style="font-weight: bold; font-size: 15px;">GALLERY</span></a>
 						</li>
@@ -162,7 +162,7 @@
   			</a>
 
 			<h2>Vote Here</h2><br>
-			<h4>See yor team win!</h4>
+			<h4>Vote for your team to win!</h4>
 
 			<div class="row text-center  slideanim">
 				

@@ -39,7 +39,7 @@
 								LIMIT 0,12";
 
 			$connect_behindscenes_query = mysqli_query($conn, $behindscenes_query);
-			$count_rows = mysqli_num_rows($connect_behindscense_query);
+			$count_rows = mysqli_num_rows($connect_behindscenes_query);
 			$max_display = 1;
 			$displayed = 0;
 			if (empty($_GET["All"]))
@@ -51,20 +51,20 @@
 				$show_all = $_GET["All"];
 			}
 			if($count_rows > 0){
-			while($get_each_row = mysqli_fetch_array($connect_behindscense_query)){
-				$id_of_behindscense = $get_each_row['id'];
-				$name_of_behindscense = $get_each_row['name'];
-				$img_of_behindscense = $get_each_row['img'];
-				$date_behindscense = $get_each_row['date'];
-				$msg_of_behindscense = $get_each_row['msg'];
+			while($get_each_row = mysqli_fetch_array($connect_behindscenes_query)){
+				$id_of_behindscenes = $get_each_row['id'];
+				$name_of_behindscenes = $get_each_row['name'];
+				$img_of_behindscenes = $get_each_row['img'];
+				$date_behindscenes = $get_each_row['date'];
+				$msg_of_behindscenes = $get_each_row['msg'];
 				$displayed++;
 				if ($displayed <= $max_display)
 				{
 					?>			
 					<div class="col-sm-6 col-md-4 col-lg-3">
-						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscense; ?>" alt="behindScenes">
-						<h2><strong><?php echo $name_of_behindscense; ?></strong></h2>
-						<p style="color: #1364D1;"><strong><?php echo $msg_of_behindscense; ?></strong></p><br><br><br><br>
+						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindScenes">
+						<h2><strong><?php echo $name_of_behindscenes; ?></strong></h2>
+						<p style="color: #1364D1;"><strong><?php echo $msg_of_behindscenes; ?></strong></p><br><br><br><br>
 					</div>
 					<?php
 
@@ -73,9 +73,9 @@
 				{
 					?>			
 					<div class="col-sm-6 col-md-4 col-lg-3">
-						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscense; ?>" alt="behindScenes">
-						<h2><strong><?php echo $name_of_behindscense; ?></strong></h2>
-						<p style="color: #1364D1;"><strong><?php echo $msg_of_behindscense; ?></strong></p><br><br><br><br>
+						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindScenes">
+						<h2><strong><?php echo $name_of_behindscenes; ?></strong></h2>
+						<p style="color: #1364D1;"><strong><?php echo $msg_of_behindscenes; ?></strong></p><br><br><br><br>
 					</div>
 					<?php
 				}
