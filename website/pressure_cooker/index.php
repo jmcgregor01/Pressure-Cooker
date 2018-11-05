@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 	<!--Ending Head of the Index Page-->
 </head>
 
@@ -545,7 +546,7 @@
 			</div>
 			<hr>
 
-			<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6513.543193413012!2d149.1329614864318!3d-35.286804613391176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd9d3b3beb2c34d49!2sCanberra+Institute+of+Technology!5e0!3m2!1sen!2sau!4v1539905585501" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6513.543193413012!2d149.1329614864318!3d-35.286804613391176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd9d3b3beb2c34d49!2sCanberra+Institute+of+Technology!5e0!3m2!1sen!2sau!4v1539905585501" width="1000" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</center>
 		<!--Ending Contact Us Container-->
 		</div>

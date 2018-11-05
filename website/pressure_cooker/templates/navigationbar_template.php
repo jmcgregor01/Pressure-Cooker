@@ -33,7 +33,7 @@
 						</li>
 						<li><a href="recipesLink.php"><span style="font-weight: bold; font-size: 15px;">RECIPES</span></a>
 						</li>
-						<li><a href="mediaLink.php"><span style="font-weight: bold; font-size: 15px;">MEDIA</span></a>
+						<li><a href="mediaLink.php"><span style="font-weight: bold; font-size: 15px;">WATCH NOW</span></a>
 						</li>
 						<li><a href="galleryLink.php"><span style="font-weight: bold; font-size: 15px;">GALLERY</span></a>
 						</li>
