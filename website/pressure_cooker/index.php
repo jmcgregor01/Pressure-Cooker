@@ -336,7 +336,7 @@
 				$date_recipe = $get_each_row['date'];
 			?>
 			<div class="row slideanim" style="padding: 50px;">
-				<div class="col-lg-6 col-md-6 col-sm-6">
+			<div class="col-lg-6 col-md-6 col-sm-6">
 					
 						<img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
 						<h2><strong><?php echo $name_of_recipe; ?></strong></h2>

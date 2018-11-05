@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	require 'admin\config\db.php';
+	require 'admin/config/db.php';
 ?>
 <html>
 <head>
@@ -17,23 +17,13 @@
 </head>
 
 <body id="topOfPage">
+    <div class="container-fluid">
 	<!--Body Content-->
 	<!--Header template-->
 		<?php
 		include "templates/navigationbar_template.php";
 		?>	
-
-
-
-
-
-	
-
-
-
-
-
-		<!--Judge Container-->
+        <!--recipe Container-->
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 
 			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px;">RECIPES</h1><br>
@@ -42,8 +32,7 @@
 
 				<?php
 				$recipe_query = "SELECT * FROM recipes
-									ORDER BY date DESC
-									LIMIT 0,12";
+									ORDER BY date DESC";
 				$connect_recipe_query = mysqli_query($conn, $recipe_query);
 				$count_rows = mysqli_num_rows($connect_recipe_query);
 				$max_display = 3;
@@ -63,6 +52,8 @@
 						$img_of_recipe = $get_each_row['img'];
 						$msg_of_recipe = $get_each_row['msg'];
 						$date_recipe = $get_each_row['date'];
+
+
 						$displayed++;
 						if ($displayed <= $max_display)
 						{
@@ -84,11 +75,13 @@
 								</div>
 							</div><?php
 						}
+
 					}
 				}
 				?>
 				</div>
-			<!--Ending Judge Container-->
+
+			<!--Ending Recipe Container-->
 			<?php
 			if ($show_all != true)
 			{
@@ -102,10 +95,9 @@
 			}
 			?>
 
-		
 
 	<!--Ending Body Content-->
-	</div>
+	
 
 
 	<!-- Footer template-->
@@ -113,43 +105,7 @@
 	include 'templates/footer_template.php';
 	?>
 
-	<!--Scrolling Script-->
-	<script>
-		$( document ).ready( function () {
-				// Add smooth scrolling to all links in navbar + footer link
-				$( ".navbar a, .goTopAnim a[href='#topOfPage']" ).on( 'click', function ( event ) {
-					// Make sure this.hash has a value before overriding default behavior
-					if ( this.hash !== "" ) {
-						// Prevent default anchor click behavior
-						event.preventDefault();
-
-						// Store hash
-						var hash = this.hash;
-
-						// Using jQuery's animate() method to add smooth page scroll
-						// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-						$( 'html, body' ).animate( {
-							scrollTop: $( hash ).offset().top
-						}, 900, function () {
-
-							// Add hash (#) to URL when done scrolling (default click behavior)
-							window.location.hash = hash;
-						} );
-					} // End if
-				} );
-
-				$( window ).scroll( function () {
-					$( ".slideanim" ).each( function () {
-						var pos = $( this ).offset().top;
-
-						var winTop = $( window ).scrollTop();
-						if ( pos < winTop + 600 ) {
-							$( this ).addClass( "slide" );
-						}
-					} );
-				} );
-			} )
-			<!--Scrolling Script-->
-	</script>
+	
+</div>
 </body>
 </html>
