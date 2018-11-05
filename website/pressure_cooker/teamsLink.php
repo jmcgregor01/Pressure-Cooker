@@ -77,7 +77,6 @@
 					$img_of_team = $get_each_row['img'];
 					$msg_of_team = $get_each_row['msg'];
 					$date_team = $get_each_row['date'];
-					$votes_of_team = $get_each_row['vote'];
 					$displayed++;
 					if ($displayed <= $max_display)
 					{
@@ -86,7 +85,7 @@
 							<div class="thumbnail">
 								<img class="resizeTeamMainPage" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
 								<p style="color: #1364D1;"><strong><?php echo $name_of_team; ?></strong></p>
-								<a href="voteLink.php" class="btn btn-success btn-lg">Vote Us <span class="badge"><?php echo $votes_of_team; ?></span></a><br><br>
+								<a href="voteLink.php" class="btn btn-success btn-lg">Vote Us <span class="badge"></span></a><br><br>
 							</div>
 						</div>
 						<?php
@@ -98,7 +97,7 @@
 								<div class="thumbnail">
 									<img class="resizeTeamMainPage" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
 									<p style="color: #1364D1;"><strong><?php echo $name_of_team; ?></strong></p>
-									<a href="voteLink.php" class="btn btn-success btn-lg">Vote Us <span class="badge"><?php echo $votes_of_team; ?></span></a><br><br>
+									<a href="voteLink.php" class="btn btn-success btn-lg">Vote Us <span class="badge"></span></a><br><br>
 								</div>
 						</div>
 					<?php
