@@ -46,7 +46,7 @@
 		
 		
 
-		<!--Judge Container-->
+		<!--Team Container-->
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 
 			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px;">TEAMS</h1><br>
@@ -58,7 +58,17 @@
 								LIMIT 0,8";
 			$connect_team_query = mysqli_query($conn, $team_query);
 			$count_rows = mysqli_num_rows($connect_team_query);
-			$show_or_not_team = 'hidden';
+			$max_display = 4;
+			$displayed = 0;
+			
+			if (empty($_GET["All"]))
+			{
+				$show_all = Null;
+			}
+			else
+			{
+				$show_all = $_GET["All"];
+			}
 			if($count_rows > 0){
 				while($get_each_row = mysqli_fetch_array($connect_team_query)){
 					$id_of_team = $get_each_row['id'];
@@ -67,30 +77,51 @@
 					$msg_of_team = $get_each_row['msg'];
 					$date_team = $get_each_row['date'];
 					$votes_of_team = $get_each_row['vote'];
-				
-			?>					
-				<div class="col-sm-6 col-md-4 col-lg-3">
-					<div class="thumbnail">
-						<img class="resizeTeamMainPage" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
-						<p style="color: #1364D1;"><strong><?php echo $name_of_team; ?></strong></p>
-						
-						<a href="voteLink.php" class="btn btn-success btn-lg">Vote Us <span class="badge"><?php echo $votes_of_team; ?></span></a><br><br>
-					</div>
-				</div>
-
-			<?php
+					$displayed++;
+					if ($displayed <= $max_display)
+					{
+						?>					
+						<div class="col-sm-6 col-md-4 col-lg-3">
+							<div class="thumbnail">
+								<img class="resizeTeamMainPage" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
+								<p style="color: #1364D1;"><strong><?php echo $name_of_team; ?></strong></p>
+								<a href="voteLink.php" class="btn btn-success btn-lg">Vote Us <span class="badge"><?php echo $votes_of_team; ?></span></a><br><br>
+							</div>
+						</div>
+						<?php
+					}
+					elseif ($show_all == true)
+					{
+						?>
+						<div class="col-sm-6 col-md-4 col-lg-3">
+								<div class="thumbnail">
+									<img class="resizeTeamMainPage" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
+									<p style="color: #1364D1;"><strong><?php echo $name_of_team; ?></strong></p>
+									<a href="voteLink.php" class="btn btn-success btn-lg">Vote Us <span class="badge"><?php echo $votes_of_team; ?></span></a><br><br>
+								</div>
+						</div>
+					<?php
+					}
 				}
 			}
-		
-			?>			
-				</div>
+			?>
+			</div>
 
-			<!--Ending Judge Container-->
-		</div>
+
+			<!--Ending team Container-->
+			<?php
+		if ($show_all != true)
+		{
+			?>
+				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+					<form action="/pressure_cooker/teamsLink.php" method="get">
+						<button class="btn btn-info btn-lg"; type = "submit" name = "All" value = "true" style="float: right; margin-right: 20px;">Get More</button><br>
+					</form>
+				</div>
+		<?php
+		}
+		?>
 		
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-			<button class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
-		</div>
 		
 
 	<!--Ending Body Content-->

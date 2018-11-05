@@ -299,24 +299,24 @@ p.recipesMessageLimit {
   background-color: rgba(31, 145, 244, 1);
   color: #ffffff;
 }
-
-.bg-2 { 
+ .bg-2 { 
   background-color: #474e5d;
   color: #ffffff;
 }
-
-.bg-3 { 
+ .bg-3 { 
   background-color: #ffffff;
   color: #555555;
 }
-
-.bg-4 { 
+ .bg-4 { 
   background-color: rgba(126, 26, 188, 1);
   color: #ffffff;
 }
-
-.bg-5 { 
+ .bg-5 { 
   background-color: #2b3a36;
+  color: #ffffff;
+}
+ .bg-6 { 
+  background-color: #FF8000;
   color: #ffffff;
 }
 

@@ -40,6 +40,16 @@
 								LIMIT 0,12";
 			$connect_gallery_query = mysqli_query($conn, $gallery_query);
 			$count_rows = mysqli_num_rows($connect_gallery_query);
+			$max_display = 4;
+					$displayed = 0;
+					if (empty($_GET["All"]))
+					{
+						$show_all = Null;
+					}
+					else
+					{
+						$show_all = $_GET["All"];
+					}
 			if($count_rows > 0){
 			while($get_each_row = mysqli_fetch_array($connect_gallery_query)){
 				$id_of_gallery = $get_each_row['id'];
@@ -47,33 +57,45 @@
 				$img_of_gallery = $get_each_row['img'];
 				$date_gallery = $get_each_row['date'];
 				$msg_of_gallery = $get_each_row['msg'];
-			?>					
-				<div class="col-sm-6 col-md-4 col-lg-3">
+				$displayed++;
+				if ($displayed <= $max_display)
+				{
+					?>					
+					<div class="col-sm-6 col-md-4 col-lg-3">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery">
 						<h2><strong><?php echo $name_of_gallery; ?></strong></h2>
 						<p style="color: #1364D1;"><strong><?php echo $msg_of_gallery; ?></strong></p><br><br><br><br>
-				</div>
-			<?php
+					</div>
+					<?php
+				}
+				else if ($show_all == true)
+				{
+					?>					
+					<div class="col-sm-6 col-md-4 col-lg-3">
+						<img class="resizeWithThumbnail" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery">
+						<h2><strong><?php echo $name_of_gallery; ?></strong></h2>
+						<p style="color: #1364D1;"><strong><?php echo $msg_of_gallery; ?></strong></p><br><br><br><br>
+					</div>
+				<?php
 				}
 			}
+		}
 			?>				
 			</div>
 			<!--Ending Judge Container-->
-		</div>
-		
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-			<button class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+					<?php
+			if ($show_all != true)
+			{
+				?>
+				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+					<form action="/pressure_cooker/galleryLink.php" method="get">
+						<button class="btn btn-info btn-lg"; type = "submit" name = "All" value = "true" style="float: right; margin-right: 20px;">Get More</button><br>
+					</form>
+				</div>
+			<?php
+			}
+			?>
 		
 		
 		
@@ -106,19 +128,7 @@
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 
 	<!--Ending Body Content-->
 	</div>

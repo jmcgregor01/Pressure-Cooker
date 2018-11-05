@@ -20,6 +20,7 @@
 		?>	
 
 
+
 	<!-- Footer template-->
 	<?php
 	include 'templates/footer_template.php';

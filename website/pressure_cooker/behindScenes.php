@@ -16,10 +16,12 @@
 	<!--Ending Head of the Index Page-->
 </head>
 
+
 		<!--Header template-->
 		<?php
 		include "templates/navigationbar_template.php";
 		?>
+
 
 		<!--Behind Scenes-->
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
@@ -35,8 +37,19 @@
 			$behindscenes_query = "SELECT * FROM behindscenes
 								ORDER BY id DESC
 								LIMIT 0,12";
+
 			$connect_behindscenes_query = mysqli_query($conn, $behindscenes_query);
 			$count_rows = mysqli_num_rows($connect_behindscenes_query);
+			$max_display = 1;
+			$displayed = 0;
+			if (empty($_GET["All"]))
+			{
+			$show_all = Null;
+			}
+			else
+			{
+				$show_all = $_GET["All"];
+			}
 			if($count_rows > 0){
 			while($get_each_row = mysqli_fetch_array($connect_behindscenes_query)){
 				$id_of_behindscenes = $get_each_row['id'];
@@ -44,32 +57,55 @@
 				$img_of_behindscenes = $get_each_row['img'];
 				$date_behindscenes = $get_each_row['date'];
 				$msg_of_behindscenes = $get_each_row['msg'];
-			?>			
-				<div class="col-sm-6 col-md-4 col-lg-3">
+				$displayed++;
+				if ($displayed <= $max_display)
+				{
+					?>			
+					<div class="col-sm-6 col-md-4 col-lg-3">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindScenes">
 						<h2><strong><?php echo $name_of_behindscenes; ?></strong></h2>
 						<p style="color: #1364D1;"><strong><?php echo $msg_of_behindscenes; ?></strong></p><br><br><br><br>
-				</div>
-				
-			<?php
+					</div>
+					<?php
+
 				}
+				else if ($show_all == true)
+				{
+					?>			
+					<div class="col-sm-6 col-md-4 col-lg-3">
+						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindScenes">
+						<h2><strong><?php echo $name_of_behindscenes; ?></strong></h2>
+						<p style="color: #1364D1;"><strong><?php echo $msg_of_behindscenes; ?></strong></p><br><br><br><br>
+					</div>
+					<?php
+				}
+			}
 			}
 			?>
 			</div>
 
 			<!--Ending Behind Scenes Container-->
-		</div>
-		
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-			<button class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
-		</div>
+			<?php
+			if ($show_all != true)
+			{
+				?>
+				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+					<form action="/pressure_cooker/behindScenes.php" method="get">
+						<button class="btn btn-info btn-lg"; type = "submit" name = "All" value = "true" style="float: right; margin-right: 20px;">Get More</button><br>
+					</form>
+				</div>
+		<?php
+		}
+		?>
 	<!--Ending Body Content-->
 	</div>
+
 
 	<!-- Footer template-->
 	<?php
 	include 'templates/footer_template.php';
 	?>
+
 
 	<!--Scrolling Script-->
 	<script>

@@ -45,7 +45,7 @@
 
 				<div class="collapse navbar-collapse" id="myNavbar" style="margin-top: 35px;">
 					<ul class="nav navbar-nav" style="margin-left: 80px;">
-						<li class="active disabled"><a href="#"><span style="font-weight: bold; font-size: 15px;">HOME</span></a>
+						<li><a href="#"><span style="font-weight: bold; font-size: 15px;">HOME</span></a>
 						</li>
 						<li><a href="#judgesSection"><span style="font-weight: bold; font-size: 15px;">JUDGES</span></a>
 						</li>
@@ -53,7 +53,7 @@
 						</li>
 						<li><a href="#recipesSection"><span style="font-weight: bold; font-size: 15px;">RECIPES</span></a>
 						</li>
-						<li><a href="#mediaSection"><span style="font-weight: bold; font-size: 15px;">MEDIA</span></a>
+						<li><a href="#mediaSection"><span style="font-weight: bold; font-size: 15px;">WATCH NOW</span></a>
 						</li>
 						<li><a href="#gallerySection"><span style="font-weight: bold; font-size: 15px;">GALLERY</span></a>
 						</li>
@@ -136,6 +136,60 @@
 					<span class="sr-only">Next</span>
 				</a>
 			<!--Ending of Carousel-->
+			</div>
+			
+
+		
+		
+		
+		
+		
+		
+		
+		
+			<?php
+			$vote_query = "SELECT * FROM votes";
+			$connect_vote_query = mysqli_query($conn, $vote_query);
+			$count_rows = mysqli_num_rows($connect_vote_query);
+			$show_or_not_vote = 'hidden';
+			if($count_rows > 0){
+				$show_or_not_vote = '';
+			?>		
+		<!--vote Container-->
+		<div id="voteSection" class="<?php echo $show_or_not_vote; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 100px;">
+			<a href="#topOfPage" title="To Top">
+    		<span class="glyphicon glyphicon-chevron-up"></span>
+  			</a>
+
+			<h2>Vote Here</h2><br>
+			<h4>Vote for your team to win!</h4>
+
+			<div class="row text-center  slideanim">
+				
+			<?php
+				while($get_each_row = mysqli_fetch_array($connect_vote_query)){
+					$team1 = $get_each_row['team1'];
+					$team2 = $get_each_row['team2'];
+			?>
+				<div class="col-sm-6 col-md-6 col-lg-4">
+						<img class="resizevoteMainPage"  src="admin\dynamicImages\teams\5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape (1).jpg" alt="vote">
+						<p><strong>Team 1</strong></p>
+						<a href="voting.php" class="btn btn-success btn-lg">Votes <span class="badge"><?php echo $team1; ?></a>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-4">
+						<img class="resizevoteMainPage"  src="admin\dynamicImages\teams\5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape (1).jpg" alt="vote">
+						<p><strong>Team 2</strong></p>
+						<a href="voting.php" class="btn btn-success btn-lg">Votes <span class="badge"><?php echo $team2; ?></a>
+				</div>
+			<?php
+				}
+			}
+			?>
+			</div>
+		</div>
+		<div class="<?php echo $show_or_not_votes; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 50px;">
+			<br><a href="voting.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Vote Now!</a><br>  
+			<!--Ending vote Container-->
 			</div>
 			
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2018 at 05:29 AM
+-- Generation Time: Oct 29, 2018 at 05:14 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -253,20 +253,16 @@ CREATE TABLE `teams` (
   `name` text NOT NULL,
   `img` text NOT NULL,
   `msg` text NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `vote` int(100) NOT NULL
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `teams`
 --
 
-INSERT INTO `teams` (`id`, `name`, `img`, `msg`, `date`, `vote`) VALUES
-(2, 'Mali And Jali', '5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape.jpg', 'Hello, We are a team!', '2018-10-22 03:00:19', 99999),
-(3, 'Ali And Jali', '5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape.jpg', 'Hello, We are a team!', '2018-10-10 07:49:05', 10),
-(4, 'Ali And Jali', '5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape.jpg', 'Hello, We are a team!', '2018-10-10 07:49:05', 50),
-(5, 'Ali And Jali', '5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape.jpg', 'Hello, We are a team!', '2018-10-10 07:49:05', 400),
-(6, 'Ali And Jali', '5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape.jpg', 'Hello, We are a team!', '2018-10-10 07:49:05', 500);
+INSERT INTO `teams` (`id`, `name`, `img`, `msg`, `date`) VALUES
+(2, 'Team 1', '5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape.jpg', 'Hello, We are a team!', '2018-10-29 00:42:48'),
+(3, 'Team 2', '5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape.jpg', 'Hello, We are a team!', '2018-10-29 00:43:04');
 
 -- --------------------------------------------------------
 
@@ -284,7 +280,33 @@ CREATE TABLE `voters` (
 --
 
 INSERT INTO `voters` (`id`, `email`) VALUES
-(1, 'phone.asim@gmail.com');
+(1, 'phone.asim@gmail.com'),
+(2, 'eg@example.com'),
+(3, 'egg@example.com'),
+(4, 'jacob.test@cit.com'),
+(5, 'what@what.com'),
+(6, 'test@test.com'),
+(7, 'test@testt.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `votes`
+--
+
+CREATE TABLE `votes` (
+  `id` int(2) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `team1` int(5) NOT NULL,
+  `team2` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `votes`
+--
+
+INSERT INTO `votes` (`id`, `name`, `team1`, `team2`) VALUES
+(1, 'Overall Vote', 2, 4);
 
 --
 -- Indexes for dumped tables
@@ -351,6 +373,12 @@ ALTER TABLE `voters`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `votes`
+--
+ALTER TABLE `votes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -412,7 +440,13 @@ ALTER TABLE `teams`
 -- AUTO_INCREMENT for table `voters`
 --
 ALTER TABLE `voters`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `votes`
+--
+ALTER TABLE `votes`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
