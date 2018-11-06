@@ -1,5 +1,5 @@
 <?php
-	require 'config/db.php';
+	require __DIR__.'/config/db.php';
 	$get = $_GET['id'];
 	$delete = "DELETE FROM gallery WHERE id ='$get'";
 	$run = mysqli_query($conn, $delete);

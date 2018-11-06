@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	require 'admin/config/db.php';
+	require __DIR__.'/admin/config/db.php';
 ?>
 <html>
 <head>
@@ -90,7 +90,7 @@
 			{
 				?>
 				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-					<form action="/pressure_cooker/galleryLink.php" method="get">
+					<form action= <?php echo __DIR__."/pressure_cooker/galleryLink.php";?> method="get">
 						<button class="btn btn-info btn-lg"; type = "submit" name = "All" value = "true" style="float: right; margin-right: 20px;">Get More</button><br>
 					</form>
 				</div>

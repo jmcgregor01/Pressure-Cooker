@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	require 'config/db.php';
+	require __DIR__.'/config/db.php';
 	session_start();
 	if(isset($_SESSION['user'])){
 		header("location:login.php");

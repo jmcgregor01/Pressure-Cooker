@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	require 'admin\config\db.php';
+	require __DIR__.'/admin/config/db.php';
 ?>
 <html>
 <head>
