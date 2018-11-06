@@ -33,7 +33,8 @@
 				        $id_of_recipe = $get_each_row['id'];
 						$name_of_recipe = $get_each_row['name'];
 						$img_of_recipe = $get_each_row['img'];
-						$msg_of_recipe = $get_each_row['msg'];
+						$ingredients_of_recipe = $get_each_row['ingredients'];
+						$method_of_recipe = $get_each_row['method'];
 						$date_recipe = $get_each_row['date'];
 				?>
 				
@@ -43,16 +44,19 @@
 				<br>
 					    <h2><strong><?php echo $name_of_recipe; ?></strong></h2>
 					    <br>
-						<img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe ; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
+                        <img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe ; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
+						<h3 class="example1" style="text-align: justify;"><strong>METHOD</strong></h3>
+						<br>
+						<p class="example3" style="text-align: justify;"><?php echo $method_of_recipe; ?></p>
 				</div>
 				
 				<div class="col-lg-6 col-md-6 col-sm-6">
-					<p class="example1" style="text-align: justify;"><?php echo $msg_of_recipe; ?>...</p>
+				    <br>
+				    <h3 class="example1" style="text-align: justify;"><strong>INGREDIENTS</strong></h3>
+				    <p class="example3" style="text-align: justify;"><?php echo $ingredients_of_recipe; ?></p>
 					
 				</div>
-			
-			
-    </div>    
+				</div>    
     <!---------ending recipe00Section--------!>
     <?php
 	include 'templates/footer_template.php';

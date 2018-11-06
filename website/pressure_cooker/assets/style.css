@@ -197,6 +197,22 @@ body{
   }
 }
 
+.example3{}
+
+@media screen and (max-width: 600px) {
+  .example3 {
+    font-size: 14px;
+	padding-top: 0px;
+	padding-left: 0px;
+  }
+}
+@media screen and (min-width: 601px) {
+  .example3 {
+    font-size: 18px;
+	padding-top: 0px;
+	padding-left: 50px;
+  }
+}
 
 /*Best way to handle small Screens Example2*/
 .example2 {}
