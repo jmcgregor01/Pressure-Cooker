@@ -26,7 +26,7 @@
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim mediaLinkContainer">
 
 
-			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px; margin: 100px;">EPISODES</h1><br>
+			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;">EPISODES</h1><br>
 					<?php
 					$media_query = "SELECT * FROM media
 										ORDER BY id DESC
@@ -97,7 +97,7 @@
 				?>
 				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 					<form action="/pressure_cooker/mediaLink.php" method="get">
-						<button class="btn btn-info btn-lg"; type = "submit" name = "All" value = "true" style="float: right; margin-right: 20px;">Get More</button><br>
+						<button class="btn btn-info btn-lg"; type = "submit" name = "All" value = "true" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</button><br>
 					</form>
 				</div>
 		<?php

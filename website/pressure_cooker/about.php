@@ -26,7 +26,7 @@
 		<!--About Us Container-->
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 
-			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px; object-fit: none;">ABOUT US</h1><br>
+			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px; object-fit: none;">ABOUT US</h1><br>
 
 			<article class="post">
 				<div id="content_container_71298">
