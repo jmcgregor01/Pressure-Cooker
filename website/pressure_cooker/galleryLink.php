@@ -41,15 +41,29 @@
 								LIMIT 0,12";
 			$connect_gallery_query = mysqli_query($conn, $gallery_query);
 			$count_rows = mysqli_num_rows($connect_gallery_query);
-			$max_display = 4;
-					$displayed = 0;
-					if (empty($_GET["All"]))
+			$cap = 4;
+					if (empty($_POST["Show"]))
 					{
-						$show_all = Null;
+						$displayed = 0;
+						$max_display = $cap;
+			            $min_display = 0;
+						setcookie('display', $displayed);
 					}
-					else
+					else if($_POST["Show"] == '+')
 					{
-						$show_all = $_GET["All"];
+						$displayed = $_COOKIE['display'] + $cap;
+						setcookie('display', $displayed);
+						$max_display = $displayed + $cap;
+						$min_display = $displayed;
+						$displayed = 0;
+					}
+					else if($_POST["Show"] == "-")
+					{
+						$displayed = $_COOKIE['display'] - $cap;
+						setcookie('display', $displayed);
+						$max_display = $displayed + $cap;
+						$min_display = $displayed;
+						$displayed = 0;
 					}
 			if($count_rows > 0){
 			while($get_each_row = mysqli_fetch_array($connect_gallery_query)){
@@ -59,7 +73,7 @@
 				$date_gallery = $get_each_row['date'];
 				$msg_of_gallery = $get_each_row['msg'];
 				$displayed++;
-				if ($displayed <= $max_display)
+				if ($min_display < $displayed && $displayed <= $max_display)
 				{
 					?>					
 					<div class="col-sm-6 col-md-4 col-lg-3">
@@ -68,16 +82,6 @@
 						<p style="color: #1364D1;"><strong><?php echo $msg_of_gallery; ?></strong></p><br><br><br><br>
 					</div>
 					<?php
-				}
-				else if ($show_all == true)
-				{
-					?>					
-					<div class="col-sm-6 col-md-4 col-lg-3">
-						<img class="resizeWithThumbnail" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery">
-						<h2><strong><?php echo $name_of_gallery; ?></strong></h2>
-						<p style="color: #1364D1;"><strong><?php echo $msg_of_gallery; ?></strong></p><br><br><br><br>
-					</div>
-				<?php
 				}
 			}
 		}
@@ -86,12 +90,22 @@
 			<!--Ending Judge Container-->
 
 					<?php
-			if ($show_all != true)
+			if ($count_rows > $max_display)
 			{
 				?>
 				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-					<form action= <?php echo __DIR__."/pressure_cooker/galleryLink.php";?> method="get">
-						<button class="btn btn-info btn-lg"; type = "submit" name = "All" value = "true" style="float: right; margin-right: 20px;">Get More</button><br>
+					<form action= "<?php echo "galleryLink.php";?>" method="post">
+						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '+' style="float: right; margin-right: 20px;">Next</button><br>
+					</form>
+				</div>
+				<?php
+			}
+				if ($count_rows > $min_display && $min_display != 0)
+				{
+				?>
+				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+					<form action= "<?php echo "galleryLink.php";?>" method="post">
+						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '-' style="float: right; margin-right: 20px;">Back</button><br>
 					</form>
 				</div>
 			<?php

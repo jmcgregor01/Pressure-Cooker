@@ -36,16 +36,30 @@
 									ORDER BY date DESC";
 				$connect_recipe_query = mysqli_query($conn, $recipe_query);
 				$count_rows = mysqli_num_rows($connect_recipe_query);
-				$max_display = 3;
-				$displayed = 0;
-				if (empty($_GET["All"]))
-				{
-					$show_all = Null;
-				}
-				else
-				{
-					$show_all = $_GET["All"];
-				}
+				$cap = 4;
+					if (empty($_POST["Show"]))
+					{
+						$displayed = 0;
+						$max_display = $cap;
+			            $min_display = 0;
+						setcookie('display', $displayed);
+					}
+					else if($_POST["Show"] == '+')
+					{
+						$displayed = $_COOKIE['display'] + $cap;
+						setcookie('display', $displayed);
+						$max_display = $displayed + $cap;
+						$min_display = $displayed;
+						$displayed = 0;
+					}
+					else if($_POST["Show"] == "-")
+					{
+						$displayed = $_COOKIE['display'] - $cap;
+						setcookie('display', $displayed);
+						$max_display = $displayed + $cap;
+						$min_display = $displayed;
+						$displayed = 0;
+					}
 				if($count_rows > 0){
 					while($get_each_row = mysqli_fetch_array($connect_recipe_query)){
 						$id_of_recipe = $get_each_row['id'];
@@ -56,17 +70,7 @@
 
 
 						$displayed++;
-						if ($displayed <= $max_display)
-						{
-							?><div class="col-sm-6 col-md-4 col-lg-3">
-								<div class="thumbnail">
-									<img class="resizeWithThumbnail" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="team image">
-									<h2><strong><?php echo $name_of_recipe; ?></strong></h2>
-									<p class="recipesMessageLimit" style="color: #1364D1;"><strong><?php echo $msg_of_recipe; ?></strong></p>
-								</div>
-							</div><?php
-						}
-						elseif ($show_all == true)
+						if ($min_display < $displayed && $displayed <= $max_display)
 						{
 							?><div class="col-sm-6 col-md-4 col-lg-3">
 								<div class="thumbnail">
@@ -83,18 +87,28 @@
 				</div>
 
 			<!--Ending Recipe Container-->
-			<?php
-			if ($show_all != true)
+<?php
+			if ($count_rows > $max_display)
 			{
-				?></div>
+				?>
 				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-					<form action="/pressure_cooker/recipesLink.php" method="get">
-						<button class="btn btn-info btn-lg"; type = "submit" name = "All" value = "true" style="float: right; margin-right: 20px;">Get More</button><br>
+					<form action="recipesLink.php" method="POST">
+						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '+' style="float: right; margin-right: 20px;">Next</button><br>
 					</form>
 				</div>
-			<?php
-			}
+		<?php
+		}
+		else if ($count_rows > $min_display && $min_display != 0)
+		{
 			?>
+			<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+					<form action="recipesLink.php" method="POST">
+						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '-' style="float: right; margin-right: 20px;">Back</button><br>
+					</form>
+				</div>
+				<?php
+		}
+		?>
 
 
 	<!--Ending Body Content-->
