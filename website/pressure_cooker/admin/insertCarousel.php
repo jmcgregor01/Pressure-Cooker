@@ -1,12 +1,13 @@
-<!DOCTYPE html>
+
 <?php
+	session_start();
 	require __DIR__.'/config/db.php';
 	@$get = $_GET['id'];
-	session_start();
 	if(!isset($_SESSION['user'])){
 		header("location:login.php");
 	}else{
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Admin Panel</title>

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
 <?php
-	require __DIR__.'/config/db.php';
 	session_start();
+	require __DIR__.'/config/db.php';
 	if(!isset($_SESSION['user'])){
 		header("location:login.php");
 	}else{
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Admin Panel</title>
