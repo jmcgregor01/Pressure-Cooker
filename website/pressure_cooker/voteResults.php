@@ -69,7 +69,7 @@
 		<!--Voting Container-->
 		<div id="startAgain" class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 
-			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px;">VOTE</h1><br>
+			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px;">VOTE</h1><br>
 
 			<div class="row" style="padding: 50px;">
 					
@@ -239,7 +239,7 @@
 			<!--Ending Judge Container-->
 		</div>
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-				<button class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
+				<button class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</button><br>
 		</div>	
 	<!--Ending Body Content-->
 	</div>

@@ -69,7 +69,7 @@
 		<!--Voting Container-->
 		<div id="startAgain" class="container bg-3 voteAlignment text-center" style="padding: 100px;">
 
-			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px;">VOTE</h1><br>
+			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px;">VOTE</h1><br>
 
 			<div class="row" style="padding: 50px;">
 					

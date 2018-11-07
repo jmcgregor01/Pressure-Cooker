@@ -1,6 +1,6 @@
 /*General Settings*/
 body{
-	background: #fff;
+	background: #fffff;
 }
 
 .thumbnail {
@@ -54,13 +54,13 @@ body{
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #f4511e !important;
+    color: #ef7900 !important;
     background-color: #fff !important;
 }
 
 .navbar-default .navbar-toggle {
     border-color: transparent;
-    color: #fff !important;
+    color: #fffff !important;
 }
 
 
@@ -88,23 +88,6 @@ body{
 	font-weight: bold; 
 	font-size: 50px;
 	font-family: forte;
-}
-
-.pressureCookerLogo{
-	font-weight: bold;
-}
-
-.ciLogoPressureLogo{
-	color: white;
-}
-
-.tLogo{
-	background: #00009F;
-}
-
-.cookerLogo{
-	color: white;
-	background-color: #00009F;
 }
 
 .testBoarder{
