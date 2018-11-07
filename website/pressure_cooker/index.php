@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 	<!--Ending Head of the Index Page-->
 </head>
 
@@ -23,9 +24,8 @@
 		<!--Top Navigation Bar-->
 		<?php
 		include "templates/navigationbar_template.php";
-		?>	
-
-		
+		?>
+		<!--Ending Top Navigation Bar-->
 			<?php
 			$carousel_query = "SELECT * FROM carousel
 								ORDER BY id DESC";
@@ -106,7 +106,7 @@
   			</a>
 
 			<h2>Vote Here</h2><br>
-			<h4>See yor team win!</h4>
+			<h4>Vote for your team to win!</h4>
 
 			<div class="row text-center  slideanim">
 				
@@ -278,7 +278,7 @@
 				$date_recipe = $get_each_row['date'];
 			?>
 			<div class="row slideanim" style="padding: 50px;">
-				<div class="col-lg-6 col-md-6 col-sm-6">
+			<div class="col-lg-6 col-md-6 col-sm-6">
 					
 						<img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
 						<h2><strong><?php echo $name_of_recipe; ?></strong></h2>
@@ -487,7 +487,7 @@
 			</div>
 			<hr>
 
-			<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6513.543193413012!2d149.1329614864318!3d-35.286804613391176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd9d3b3beb2c34d49!2sCanberra+Institute+of+Technology!5e0!3m2!1sen!2sau!4v1539905585501" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6513.543193413012!2d149.1329614864318!3d-35.286804613391176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd9d3b3beb2c34d49!2sCanberra+Institute+of+Technology!5e0!3m2!1sen!2sau!4v1539905585501" width="1000" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</center>
 		<!--Ending Contact Us Container-->
 		</div>

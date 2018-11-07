@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	require 'admin\config\db.php';
+	require __DIR__.'/admin/config/db.php';
 ?>
 <html>
 <head>
@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 	<!--Ending Head of the Index Page-->
 </head>
 
@@ -76,7 +77,6 @@
 					$img_of_team = $get_each_row['img'];
 					$msg_of_team = $get_each_row['msg'];
 					$date_team = $get_each_row['date'];
-					$votes_of_team = $get_each_row['vote'];
 					$displayed++;
 					if ($displayed <= $max_display)
 					{
@@ -85,7 +85,7 @@
 							<div class="thumbnail">
 								<img class="resizeTeamMainPage" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
 								<p style="color: #1364D1;"><strong><?php echo $name_of_team; ?></strong></p>
-								<a href="voteLink.php" class="btn btn-success btn-lg">Vote Us <span class="badge"><?php echo $votes_of_team; ?></span></a><br><br>
+								<a href="voteLink.php" class="btn btn-success btn-lg">Vote Us <span class="badge"></span></a><br><br>
 							</div>
 						</div>
 						<?php
@@ -97,7 +97,7 @@
 								<div class="thumbnail">
 									<img class="resizeTeamMainPage" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
 									<p style="color: #1364D1;"><strong><?php echo $name_of_team; ?></strong></p>
-									<a href="voteLink.php" class="btn btn-success btn-lg">Vote Us <span class="badge"><?php echo $votes_of_team; ?></span></a><br><br>
+									<a href="voteLink.php" class="btn btn-success btn-lg">Vote Us <span class="badge"></span></a><br><br>
 								</div>
 						</div>
 					<?php

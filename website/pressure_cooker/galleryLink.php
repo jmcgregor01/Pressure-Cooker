@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	require 'admin/config/db.php';
+	require __DIR__.'/admin/config/db.php';
 ?>
 <html>
 <head>
@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 	<!--Ending Head of the Index Page-->
 </head>
 
@@ -89,7 +90,7 @@
 			{
 				?>
 				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-					<form action="/pressure_cooker/galleryLink.php" method="get">
+					<form action="galleryLink.php" method="get">
 						<button class="btn btn-info btn-lg"; type = "submit" name = "All" value = "true" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</button><br>
 					</form>
 				</div>

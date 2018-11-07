@@ -1,12 +1,12 @@
-<!DOCTYPE html>
 <?php
-	require 'config\db.php';
-	@$get = $_GET['id'];
 	session_start();
+	require __DIR__.'/config/db.php';
+	@$get = $_GET['id'];
 	if(!isset($_SESSION['user'])){
 		header("location:login.php");
 	}else{
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Admin Panel</title>
@@ -24,37 +24,14 @@
 </head>
 <body>
 	<div class="row">
-		<div class="col-md-3">
-			<div class="heading">
-				<h3 style="text-align: center; font-weight: bold; color: white; line-height: 50px">Admin Panel</h3>
-				<div class="pro">
-				</div>
-				<div class="menu">
-					<ul>
-						<li><a href="indexAdmin.php"><i class="fas fa-tachometer-alt" style="color: white; font-size: 25px; margin-right: 15px;"></i>Dashboard</a></li>
-						<li><a href="viewCarousel.php"><i class="fas fa-caret-square-left" style="color: white; font-size: 25px; margin-right: 15px;"></i>Edit Carousel</a></li>
-						<li><a href="viewJudges.php"><i class="fas fa-gavel" style="color: white; font-size: 25px; margin-right: 15px;"></i>Insert Judges</a></li>
-						<li><a href="viewTeam.php"><i class="fab fa-slideshare" style="color: white; font-size: 25px; margin-right: 15px;"></i>Insert Teams</a></li>
-						<li><a href="viewRecipes.php"><i class="fas fa-cocktail" style="color: white; font-size: 25px; margin-right: 15px;"></i>Insert Recipes</a></li>
-						<li><a href="viewMedia.php"><i class="fas fa-video" style="color: white; font-size: 25px; margin-right: 15px;"></i>Insert Episodes</a></li>
-						<li><a href="viewGallery.php"><i class="fas fa-images" style="color: white; font-size: 25px; margin-right: 15px;"></i>Insert Gallery</a></li>
-						<li><a href="viewSponsors.php"><i class="fas fa-dollar-sign" style="color: white; font-size: 25px; margin-right: 15px;"></i>Insert Sponsors</a></li>
-						<li><a href="viewBehindScenses.php"><i class="fas fa-theater-masks" style="color: white; font-size: 25px; margin-right: 15px;"></i>Insert BehindScense</a></li>
-						<li><a href="viewContactUs.php"><i class="fa fa-phone" style="color: white; font-size: 25px; margin-right: 15px;"></i>Contact Us</a></li>
-						<li><a href="changeUser.php"><i class="fas fa-desktop" style="color: white; font-size: 25px; margin-right: 15px;"></i>Change UserName</a></li>
-						<li><a href="changePass.php"><i class="fas fa-key" style="color: white; font-size: 25px; margin-right: 15px;"></i>Change Password</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-9">
-			<div class="container-fluid" style="background: blue; border: 1px solid;">
-				<form action="logout.php">
-					<button class= "btn btn-purple" style="float: right; margin: 10px">Log Out</button>
-				</form>
-			</div>
+		
+		<?php
+		//Includes admin panel template.
+		include "templates/adminpanel_template.php";
+		?>
+		
 			<div class="container" style="background: #FFF;">
-				<h2>Insert New Media</h2>
+				<h2>Insert New Episode</h2>
 				<hr>
 				
 				
@@ -62,13 +39,13 @@
 				
 				
 				<form action="insertMedia.php" method="post" enctype="multipart/form-data">
-					<label for="nameId">Name of Media</label>
+					<label for="nameId">Name of Episode</label>
 					<input required type="text" name="name" id="nameId" class="form-control"><br>
 					
-					<label for="videoId">Link of Media</label>
+					<label for="videoId">Link of Episode</label>
 					<input required type="text" name="video" id="videoId" class="form-control"><br>
 					
-					<label for="msgId">About Media</label>
+					<label for="msgId">About Episode</label>
 					<textarea required class="form-control" id="msgId" name="msg" style="height: 150px"></textarea><br>
 					<button name="submit" class="btn btn-success" style="float: right">Add</button>
 				</form>
@@ -79,6 +56,8 @@
 					if(isset($_POST['submit'])){
 						$name = $_POST['name'];
 						$video = $_POST['video'];
+						$video_split = explode('=', $video);
+						$video = $video_split[1];
 						$msg = $_POST['msg'];
 						
 						$insert = "INSERT INTO media(name, video, msg)
