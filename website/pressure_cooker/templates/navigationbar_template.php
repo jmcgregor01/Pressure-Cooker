@@ -11,15 +11,12 @@
 					</button>
 
 					<div class="navbar-header mouseOnlogo">
+						<div class="navbar-header mouseOnlogo">
 						<a href="https://cit.edu.au/">
-							<h2 class="citLogo">
-								<span class="ciLogoPressureLogo">Ci</span><span class="tLogo">T</span>
-							</h2>
-
-							<h4 class="pressureCookerLogo">
-								<span class="ciLogoPressureLogo">PRESSURE</span><span class="cookerLogo">COOKER</span>
-							</h4>
+							<img src="staticImages\Pressure-Cooker-logo.png" alt="PC Logo" style="width:80px; height:80px; padding:3px">
+							<img src="staticImages\CIT_logo_stacked_white_RTO.png" alt="CIT Logo" style="width:80px; height:80px; padding:3px">
 						</a>
+						</div>
 					</div>
 				</div>
 
@@ -33,7 +30,7 @@
 						</li>
 						<li><a href="recipesLink.php"><span style="font-weight: bold; font-size: 15px;">RECIPES</span></a>
 						</li>
-						<li><a href="mediaLink.php"><span style="font-weight: bold; font-size: 15px;">MEDIA</span></a>
+						<li><a href="mediaLink.php"><span style="font-weight: bold; font-size: 15px;">WATCH NOW</span></a>
 						</li>
 						<li><a href="galleryLink.php"><span style="font-weight: bold; font-size: 15px;">GALLERY</span></a>
 						</li>

@@ -31,21 +31,21 @@
 		?>
 		
 			<div class="container" style="background: #FFF;">
-				<h2>Insert New Episode</h2>
+				<h2>Insert New Behind the Scenes Image</h2>
 				<hr>
 				
 				
 				
 				
 				
-				<form action="insertMedia.php" method="post" enctype="multipart/form-data">
-					<label for="nameId">Name of Episode</label>
+				<form action="insertBehindScenes.php" method="post" enctype="multipart/form-data">
+					<label for="nameId">Name of Behind the Scenes Image</label>
 					<input required type="text" name="name" id="nameId" class="form-control"><br>
 					
-					<label for="videoId">Link of Episode</label>
-					<input required type="text" name="video" id="videoId" class="form-control"><br>
+					<label for="imgId">Image of Behind the Scenes</label>
+					<input required type="file" name="img" id="imgId" class="form-control"><br>
 					
-					<label for="msgId">About Episode</label>
+					<label for="msgId">About Behind the Scenes Image</label>
 					<textarea required class="form-control" id="msgId" name="msg" style="height: 150px"></textarea><br>
 					<button name="submit" class="btn btn-success" style="float: right">Add</button>
 				</form>
@@ -55,15 +55,14 @@
 				<?php
 					if(isset($_POST['submit'])){
 						$name = $_POST['name'];
-						$video = $_POST['video'];
-						$video_split = explode('=', $video);
-						$video = $video_split[1];
+						$img = $_FILES['img']['name'];
+						$imgPath = $_FILES['img']['tmp_name'];
 						$msg = $_POST['msg'];
-						
-						$insert = "INSERT INTO media(name, video, msg)
-									VALUE('$name', '$video', '$msg')";
+						$insert = "INSERT INTO behindscenes(name, img, msg)
+									VALUE('$name', '$img', '$msg')";
 						$run = mysqli_query($conn, $insert);
 						if($run){
+							move_uploaded_file($imgPath, "dynamicImages/behindScenes/$img");
 							
 							echo "<script>alert('Your News Insert Successfully')</script>";
 						}else{

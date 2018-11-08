@@ -1,6 +1,6 @@
 /*General Settings*/
 body{
-	background: #fff;
+	background: #fffff;
 }
 
 .thumbnail {
@@ -39,7 +39,7 @@ body{
 /*Navigation Bar*/
 .navbar {
     margin-bottom: 0;
-    background-color: #f4511e;
+    background-color: #152136;
     z-index: 9999;    
     border: 0;
     font-size: 12px !important;
@@ -54,13 +54,13 @@ body{
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #f4511e !important;
+    color: #ef7900 !important;
     background-color: #fff !important;
 }
 
 .navbar-default .navbar-toggle {
     border-color: transparent;
-    color: #fff !important;
+    color: #fffff !important;
 }
 
 
@@ -71,7 +71,7 @@ body{
 .glyphicon {
   font-size: 20px;
   margin-bottom: 20px;
-  color: #f4511e;
+  color: #ef7900 ;
 }
 
 .mouseOnlogo{
@@ -88,23 +88,6 @@ body{
 	font-weight: bold; 
 	font-size: 50px;
 	font-family: forte;
-}
-
-.pressureCookerLogo{
-	font-weight: bold;
-}
-
-.ciLogoPressureLogo{
-	color: white;
-}
-
-.tLogo{
-	background: #00009F;
-}
-
-.cookerLogo{
-	color: white;
-	background-color: #00009F;
 }
 
 .testBoarder{
@@ -311,29 +294,49 @@ p.recipesMessageLimit {
 
 
 /*Settings of Container*/
+.bg-0  { 
+  background-color: #007f48;
+  color: #FFFFFF;
+}
 .bg-1 { 
-  background-color: rgba(31, 145, 244, 1);
-  color: #ffffff;
+  background-color: #005789;
+  color: #FFFFFF;
 }
-
-.bg-2 { 
-  background-color: #474e5d;
-  color: #ffffff;
+ .bg-2 { 
+  background-color: #009dc5;
+  color: #FFFFFF;
 }
-
-.bg-3 { 
-  background-color: #ffffff;
-  color: #555555;
+ .bg-3 { 
+  background-color: #FFFFFF;
+  color: ##152136;
 }
-
-.bg-4 { 
-  background-color: rgba(126, 26, 188, 1);
-  color: #ffffff;
+ .bg-4 { 
+  background-color: #8abd24;
+  color: #FFFFFF;
 }
-
-.bg-5 { 
-  background-color: #2b3a36;
-  color: #ffffff;
+ .bg-5 { 
+  background-color: #a31781;
+  color: #FFFFFF;
+}
+ .bg-6 { 
+  background-color: #e71a80;
+  color: #FFFFFF;
+}
+ .bg-7 { 
+  background-color: #80398e;
+  color: #FFFFFF;
+}
+ .bg-8 { 
+  background-color: #fbba00;
+  color: #FFFFFF;
+}
+ .bg-9 { 
+  background-color: #dc0d15;
+  color: #FFFFFF;
+}
+ .bg-10 { 
+  background-color: #ef7900;
+  color: #FFFFFF;
 }
 
 .myContainer {
@@ -371,7 +374,7 @@ p.recipesMessageLimit {
 
 .footerBoarder {
 	border-top: 1px solid black;
-	background: #222;
+	background: #152136;
 	padding: 20px;
 }
 

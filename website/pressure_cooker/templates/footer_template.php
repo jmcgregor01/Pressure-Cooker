@@ -7,15 +7,7 @@
 		</center>
 <div class="row">
 		<div class="col-md-4 footerStyleLeft">
-			<a href="workingOnIt.php">
-				<div class="col-md-1">
-					<i class="fab fa-android fa-2x" style="color: greenyellow; margin-left: 24px;"></i>
-				</div>
-
-				<div class="col-md-11" style="margin-right: 1px;">
-					Android App
-				</div>
-			</a>
+			
 		</div>
 		
 		<div class="col-md-4 footerSponsor">

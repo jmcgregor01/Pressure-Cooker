@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 	<!--Ending Head of the Index Page-->
 </head>
 
@@ -25,7 +26,7 @@
 		<!--About Us Container-->
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 
-			<h1 style="font-weight: bold; background: blue; color: white; border-radius: 5px; object-fit: none;">ABOUT US</h1><br>
+			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px; object-fit: none;">ABOUT US</h1><br>
 
 			<article class="post">
 				<div id="content_container_71298">

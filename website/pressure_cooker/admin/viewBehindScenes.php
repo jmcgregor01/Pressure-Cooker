@@ -32,17 +32,17 @@
 		
 			<div class="container" style="background: #FFF;">
 			<?php
-			$judge_query = "SELECT * FROM judges
+			$judge_query = "SELECT * FROM behindscenes
 									ORDER BY id DESC";
 			$connect_judge_query = mysqli_query($conn, $judge_query);
 			$count_rows = mysqli_num_rows($connect_judge_query);
 			$number_of_items = 1;
 			?>
-				<h2>View Judges</h2>
-				<h6 style="font-weight: bold">Total Judges : <span class="badge"><?php echo $count_rows; ?></span></h6>
+				<h2>View Behind the Scenes Images</h2>
+				<h6 style="font-weight: bold">Total Behind the Scenes Images: <span class="badge"><?php echo $count_rows; ?></span></h6>
 				<hr>
 				<center><h3><?php echo $get; ?></h3></center>
-				<a href="insertJudge.php" class="btn btn-info" style="float:right">Insert Judge</a>
+				<a href="insertBehindScenes.php" class="btn btn-info" style="float:right">Insert Behind the Scenes Image</a>
 					<table class="table table-hover table-striped table-bordered">
 						<tr>
 							<th>S.No</th>
@@ -63,7 +63,7 @@
 							<th><?php echo $number_of_items++; ?></th>
 							<th><?php echo $name_of_judge; ?></th>
 							<th><?php echo $date_judge; ?></th>
-							<th>&nbsp;<a href="deleteJudge.php?id=<?php echo $id_of_judge; ?>" class="btn btn-danger">Delete</a></th>
+							<th>&nbsp;<a href="deleteBehindScenes.php?id=<?php echo $id_of_judge; ?>" class="btn btn-danger">Delete</a></th>
 						</tr>
 			<?php
 				}
