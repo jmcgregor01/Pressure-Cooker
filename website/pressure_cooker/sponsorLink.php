@@ -47,7 +47,7 @@
 			
 			if (empty($_GET["All"]))
 			{
-				$show_all = Null;
+				$show_all = true;
 			}
 			else
 			{
