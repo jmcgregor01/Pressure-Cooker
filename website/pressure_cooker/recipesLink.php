@@ -65,21 +65,26 @@
 						$id_of_recipe = $get_each_row['id'];
 						$name_of_recipe = $get_each_row['name'];
 						$img_of_recipe = $get_each_row['img'];
-						$msg_of_recipe = $get_each_row['msg'];
+						$ingredients_of_recipe = $get_each_row['ingredients'];
+						$method_of_recipe = $get_each_row['method'];
 						$date_recipe = $get_each_row['date'];
 
-
-						$displayed++;
-						if ($min_display < $displayed && $displayed <= $max_display)
-						{
-							?><div class="col-sm-6 col-md-4 col-lg-3">
-								<div class="thumbnail">
-									<img class="resizeWithThumbnail" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="team image">
-									<h2><strong><?php echo $name_of_recipe; ?></strong></h2>
-									<p class="recipesMessageLimit" style="color: #1364D1;"><strong><?php echo $msg_of_recipe; ?></strong></p>
-								</div>
-							</div><?php
-						}
+				?>
+				    
+				    <div class="col-sm-6 col-md-4 col-lg-3">
+				    <form action="recipeDetails.php" method="GET">
+				    <input type="hidden" name="recipe_id" value="<?php echo $id_of_recipe;?>">
+				    
+				    <div class="thumbnail">
+				        <input type="image" img class = "resizeWithThumbnail" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="recipe image">
+						<h4><strong><?php echo $name_of_recipe; ?></strong></h4>
+					    
+                        <!---<p class="recipesMessageLimit" style="color: #1364D1;"><strong><?php echo $ingredients_of_recipe; ?></strong></p>--->
+					</div>
+					</form> 
+					
+				</div>
+				<?php
 
 					}
 				}
