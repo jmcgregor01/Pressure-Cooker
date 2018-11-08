@@ -22,67 +22,10 @@
 	<div class="container-fluid">
 
 		<!--Top Navigation Bar-->
-		<nav class="navbar navbar-default navbar-static-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>                        
-					</button>
-
-					<div class="navbar-header mouseOnlogo">
-						<a href="https://cit.edu.au/">
-							<h2 class="citLogo">
-								<span class="ciLogoPressureLogo">Ci</span><span class="tLogo">T</span>
-							</h2>
-
-							<h4 class="pressureCookerLogo">
-								<span class="ciLogoPressureLogo">PRESSURE</span><span class="cookerLogo">COOKER</span>
-							</h4>
-						</a>
-					</div>
-				</div>
-
-				<div class="collapse navbar-collapse" id="myNavbar" style="margin-top: 35px;">
-					<ul class="nav navbar-nav" style="margin-left: 80px;">
-						<li><a href="#"><span style="font-weight: bold; font-size: 15px;">HOME</span></a>
-						</li>
-						<li><a href="#judgesSection"><span style="font-weight: bold; font-size: 15px;">JUDGES</span></a>
-						</li>
-						<li><a href="#teamSection"><span style="font-weight: bold; font-size: 15px;">TEAMS</span></a>
-						</li>
-						<li><a href="#recipesSection"><span style="font-weight: bold; font-size: 15px;">RECIPES</span></a>
-						</li>
-						<li><a href="#mediaSection"><span style="font-weight: bold; font-size: 15px;">WATCH NOW</span></a>
-						</li>
-						<li><a href="#gallerySection"><span style="font-weight: bold; font-size: 15px;">GALLERY</span></a>
-						</li>
-						<li><a href="#citContacts"><span style="font-weight: bold; font-size: 15px;">CONTACT</span></a>
-						</li>
-					</ul>
-
-					<form style="margin-right: 50px;" class="navbar-form navbar-right" action="search.php">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search" name="search">
-						</div>
-
-						<button type="submit" class="btn btn-default">Submit</button>
-					</form>
-				</div>
-			</div>
-			<!--Ending Top Navigation Bar-->
-		</nav>
-
-		
-
-		
-		
-		
-		
-		
-		
-		
+		<?php
+		include "templates/navigationbar_template.php";
+		?>
+		<!--Ending Top Navigation Bar-->
 			<?php
 			$carousel_query = "SELECT * FROM carousel
 								ORDER BY id DESC";
@@ -157,7 +100,7 @@
 				$show_or_not_vote = '';
 			?>		
 		<!--vote Container-->
-		<div id="voteSection" class="<?php echo $show_or_not_vote; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 100px;">
+		<div id="voteSection" class="<?php echo $show_or_not_vote; ?> container-fluid myContainer bg-4 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
@@ -175,21 +118,19 @@
 				<div class="col-sm-6 col-md-6 col-lg-4">
 						<img class="resizevoteMainPage"  src="admin\dynamicImages\teams\5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape (1).jpg" alt="vote">
 						<p><strong>Team 1</strong></p>
-						<a href="voting.php" class="btn btn-success btn-lg">Votes <span class="badge"><?php echo $team1; ?></a>
+						<a href="voting.php" class="btn btn-success btn-lg" style = "background-color: #007f48; border-color: #007f48;">Votes <span class="badge"><?php echo $team1; ?></a>
 				</div>
 				<div class="col-sm-6 col-md-6 col-lg-4">
 						<img class="resizevoteMainPage"  src="admin\dynamicImages\teams\5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape (1).jpg" alt="vote">
 						<p><strong>Team 2</strong></p>
-						<a href="voting.php" class="btn btn-success btn-lg">Votes <span class="badge"><?php echo $team2; ?></a>
+						<a href="voting.php" class="btn btn-success btn-lg" style = "background-color: #007f48; border-color: #007f48;">Votes <span class="badge"><?php echo $team2; ?></a>
 				</div>
 			<?php
 				}
 			}
 			?>
 			</div>
-		</div>
-		<div class="<?php echo $show_or_not_votes; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="voting.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Vote Now!</a><br>  
+		</div> 
 			<!--Ending vote Container-->
 			</div>
 			
@@ -243,7 +184,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $show_or_not_judges; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="judgesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</a><br>
+			<br><a href="judgesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 			<!--Ending Judge Container-->
 		</div>
 		
@@ -297,7 +238,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $show_or_not_team; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="teamsLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</a><br>
+			<br><a href="teamsLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Team Container-->
 		</div>
 		
@@ -321,7 +262,7 @@
 				$show_or_not_recipe = '';
 			?>
 		<!--Recipes Container-->
-		<div id="recipesSection" class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-2 text-center goTopAnim" style="padding: 100px;">
+		<div id="recipesSection" class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
@@ -353,8 +294,8 @@
 			}
 			?>
 		</div>
-		<div class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-2 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="recipesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</a><br>
+		<div class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
+			<br><a href="recipesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Recipes Container-->
 		</div>
 		
@@ -379,7 +320,7 @@
 				$show_or_not_media = '';
 			?>		
 		<!--Media Container-->
-		<div id="mediaSection" class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-4 text-center goTopAnim" style="padding: 100px;">
+		<div id="mediaSection" class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-5 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
@@ -412,8 +353,8 @@
 			}
 			?>			
 		</div>
-		<div class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-4 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="mediaLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</a><br>
+		<div class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-5 text-center goTopAnim" style="padding: 50px;">
+			<br><a href="mediaLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Media Container-->
 		</div>
 		
@@ -465,7 +406,7 @@
 
 		</div>
 		<div class="<?php echo $show_or_not_gallery; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="galleryLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</a><br>
+			<br><a href="galleryLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Gallery Container-->
 		</div>
 		
@@ -481,7 +422,7 @@
 		
 		
 		<!--Contact Us Container-->
-		<div id="citContacts" class="container-fluid myContainer bg-5 text-center goTopAnim" style="padding: 100px;">
+		<div id="citContacts" class="container-fluid myContainer bg-6 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     			<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
