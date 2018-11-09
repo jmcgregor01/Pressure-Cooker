@@ -41,16 +41,30 @@
 
 			$connect_behindscenes_query = mysqli_query($conn, $behindscenes_query);
 			$count_rows = mysqli_num_rows($connect_behindscenes_query);
-			$max_display = 1;
-			$displayed = 0;
-			if (empty($_GET["All"]))
-			{
-			$show_all = Null;
-			}
-			else
-			{
-				$show_all = $_GET["All"];
-			}
+			$cap = 4;
+					if (empty($_POST["Show"]))
+					{
+						$displayed = 0;
+						$max_display = $cap;
+			            $min_display = 0;
+						setcookie('display', $displayed);
+					}
+					else if($_POST["Show"] == '+')
+					{
+						$displayed = $_COOKIE['display'] + $cap;
+						setcookie('display', $displayed);
+						$max_display = $displayed + $cap;
+						$min_display = $displayed;
+						$displayed = 0;
+					}
+					else if($_POST["Show"] == "-")
+					{
+						$displayed = $_COOKIE['display'] - $cap;
+						setcookie('display', $displayed);
+						$max_display = $displayed + $cap;
+						$min_display = $displayed;
+						$displayed = 0;
+					}
 			if($count_rows > 0){
 			while($get_each_row = mysqli_fetch_array($connect_behindscenes_query)){
 				$id_of_behindscenes = $get_each_row['id'];
@@ -59,20 +73,10 @@
 				$date_behindscenes = $get_each_row['date'];
 				$msg_of_behindscenes = $get_each_row['msg'];
 				$displayed++;
-				if ($displayed <= $max_display)
+				if ($min_display < $displayed && $displayed <= $max_display)
 				{
-					?>			
-					<div class="col-sm-6 col-md-4 col-lg-3">
-						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindScenes">
-						<h2><strong><?php echo $name_of_behindscenes; ?></strong></h2>
-						<p style="color: #1364D1;"><strong><?php echo $msg_of_behindscenes; ?></strong></p><br><br><br><br>
-					</div>
-					<?php
-
-				}
-				else if ($show_all == true)
-				{
-					?>			
+					?>
+					
 					<div class="col-sm-6 col-md-4 col-lg-3">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindScenes">
 						<h2><strong><?php echo $name_of_behindscenes; ?></strong></h2>
@@ -84,20 +88,30 @@
 			}
 			?>
 			</div>
-
-			<!--Ending Behind Scenes Container-->
 			<?php
-			if ($show_all != true)
+			if($count_rows > $max_display)
 			{
 				?>
-				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-					<form action="behindScenes.php" method="get">
-						<button class="btn btn-info btn-lg"; type = "submit" name = "All" value = "true" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</button><br>
+
+			<!--Ending Behind Scenes Container-->
+			<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+					<form action="behindScenes.php" method="post">
+						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '+' style="float: right; margin-right: 20px;">Next</button><br>
+					</form>
+					</div>
+					<?php
+			}
+			else if ($count_rows > $min_display && $min_display != 0)
+			{
+				?><div>
+					<form action="behindScenes.php" method="post">
+						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '-' style="float: right; margin-right: 20px;">Back</button><br>
+
 					</form>
 				</div>
-		<?php
-		}
-		?>
+				<?php
+			}
+			?>
 	<!--Ending Body Content-->
 	</div>
 
