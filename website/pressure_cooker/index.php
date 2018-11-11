@@ -81,68 +81,7 @@
 				</a>
 			<!--Ending of Carousel-->
 			</div>
-			
-
-		
-		
-		
-		
-		
-		
-		
-		
-			<?php
-			$vote_query = "SELECT * FROM votes";
-			$connect_vote_query = mysqli_query($conn, $vote_query);
-			$count_rows = mysqli_num_rows($connect_vote_query);
-			$show_or_not_vote = 'hidden';
-			if($count_rows > 0){
-				$show_or_not_vote = '';
-			?>		
-		<!--vote Container-->
-		<div id="voteSection" class="<?php echo $show_or_not_vote; ?> container-fluid myContainer bg-4 text-center goTopAnim" style="padding: 100px;">
-			<a href="#topOfPage" title="To Top">
-    		<span class="glyphicon glyphicon-chevron-up"></span>
-  			</a>
-
-			<h2>Vote Here</h2><br>
-			<h4>Vote for your team to win!</h4>
-
-			<div class="row text-center  slideanim">
-				
-			<?php
-				while($get_each_row = mysqli_fetch_array($connect_vote_query)){
-					$team1 = $get_each_row['team1'];
-					$team2 = $get_each_row['team2'];
-			?>
-				<div class="col-sm-6 col-md-6 col-lg-4">
-						<img class="resizevoteMainPage"  src="admin\dynamicImages\teams\5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape (1).jpg" alt="vote">
-						<p><strong>Team 1</strong></p>
-						<a href="voting.php" class="btn btn-success btn-lg" style = "background-color: #007f48; border-color: #007f48;">Votes <span class="badge"><?php echo $team1; ?></a>
-				</div>
-				<div class="col-sm-6 col-md-6 col-lg-4">
-						<img class="resizevoteMainPage"  src="admin\dynamicImages\teams\5a582551ac3ed_608mkr9_group2_mattaly_colourlandscape (1).jpg" alt="vote">
-						<p><strong>Team 2</strong></p>
-						<a href="voting.php" class="btn btn-success btn-lg" style = "background-color: #007f48; border-color: #007f48;">Votes <span class="badge"><?php echo $team2; ?></a>
-				</div>
-			<?php
-				}
-			}
-			?>
 			</div>
-		</div> 
-			<!--Ending vote Container-->
-			</div>
-			
-
-		
-		
-		
-		
-		
-		
-		
-		
 			<?php
 			$judge_query = "SELECT * FROM judges
 								ORDER BY id DESC
@@ -162,8 +101,7 @@
 			<h2>Our Judges</h2><br>
 			<h4>We are here to Judge</h4>
 
-			<div class="row text-center  slideanim">
-				
+			<div class="row text-center  slideanim">	
 			<?php
 				while($get_each_row = mysqli_fetch_array($connect_judge_query)){
 					$id_of_judge = $get_each_row['id'];
@@ -187,16 +125,6 @@
 			<br><a href="judgesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 			<!--Ending Judge Container-->
 		</div>
-		
-		
-
-		
-		
-		
-		
-		
-		
-
 			<?php
 			$team_query = "SELECT * FROM teams
 								ORDER BY id DESC
@@ -211,11 +139,9 @@
 		<div id="teamSection" class="<?php echo $show_or_not_team; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
-  			</a>
-		
+  			</a>	
 			<h2>Our Teams</h2><br>
-			<h4>We are here to Serve</h4>
-			
+			<h4>We are here to Serve</h4>			
 			<div class="row  slideanim">
 			<?php
 			while($get_each_row = mysqli_fetch_array($connect_team_query)){
@@ -241,16 +167,6 @@
 			<br><a href="teamsLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Team Container-->
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 			<?php
 			$recipe_query = "SELECT * FROM recipes
 								ORDER BY id DESC
@@ -265,8 +181,7 @@
 		<div id="recipesSection" class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
-  			</a>
-		
+  			</a>	
 			<h2>Latest Recipe</h2><br>
 			<?php
 			while($get_each_row = mysqli_fetch_array($connect_recipe_query)){
@@ -277,18 +192,6 @@
 						$method_of_recipe = $get_each_row['method'];
 						$date_recipe = $get_each_row['date'];
 			?>
-			<!---div class="row slideanim" style="padding: 50px;">
-			<div class="col-lg-6 col-md-6 col-sm-6">
-					
-						<img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
-						<h2><strong><?php echo $name_of_recipe; ?></strong></h2>
-				</div>
-				
-				<div class="col-lg-6 col-md-6 col-sm-6">
-					<p class="example1" style="text-align: justify;"><?php echo substr($msg_of_recipe, 0, 900); ?>...</p>
-					
-				</div>
-			</div>-->
 			<div class="row" style="padding: 50px;">
 				<div class="col-lg-6 col-md-6 col-sm-6">
 				<br>
@@ -316,17 +219,6 @@
 			<br><a href="recipesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Recipes Container-->
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 			<?php
 			$media_query = "SELECT * FROM media
 								ORDER BY id DESC
@@ -375,16 +267,6 @@
 			<br><a href="mediaLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Media Container-->
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 			<?php
 			$gallery_query = "SELECT * FROM gallery
 								ORDER BY id DESC
@@ -427,18 +309,6 @@
 			<br><a href="galleryLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Gallery Container-->
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<!--Contact Us Container-->
 		<div id="citContacts" class="container-fluid myContainer bg-6 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
@@ -474,8 +344,6 @@
 						</div>
 					</div>
 					</form>
-					
-					
 					<?php
 						if(isset($_POST['submit'])){
 							$name = $_POST['name'];
@@ -491,16 +359,6 @@
 							}
 						}
 					?>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
 				</div>
 			</div>
 			<hr>
@@ -509,25 +367,12 @@
 			</center>
 		<!--Ending Contact Us Container-->
 		</div>
-
-
-
-
-
-
-
-
-
-
 	<!--Ending Body Content-->
 	</div>
-
-
 	<!-- Footer template-->
 	<?php
 	include 'templates/footer_template.php';
 	?>
-
 	<!--Scrolling Script-->
 	<script>
 		$( document ).ready( function () {

@@ -23,31 +23,10 @@
 		<?php
 		include "templates/navigationbar_template.php";
 		?>	
-
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		<!--Judge Container-->
 		<div id="startAgain" class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 
-			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px;">JUDGES</h1><br>
+			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px;">JUDGES & HOST</h1><br>
 
 			<div class="row" style="padding: 50px;">
 					
@@ -106,40 +85,7 @@
 				}
 			}
 			?>
-			</div>
-	
-			
-	
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+			</div>	
 		<!--Ending Judge Container-->
 		<?php
 		if ($show_all != true)
@@ -153,41 +99,12 @@
 		<?php
 		}
 		?>
-		
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	<!--Ending Body Content-->
 	</div>
-
-
 	<!-- Footer template-->
 	<?php
 	include 'templates/footer_template.php';
 	?>
-
 	<!--Scrolling Script-->
 	<script>
 		$( document ).ready( function () {
