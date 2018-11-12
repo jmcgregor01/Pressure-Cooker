@@ -98,23 +98,23 @@
 					<form action="behindScenes.php" method="post">
 						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '+' style="float: right; margin-right: 20px;">Next</button><br>
 					</form>
-					</div>
+					<br><br>
 					<?php
 			}
-			else if ($count_rows > $min_display && $min_display != 0)
+			if ($count_rows > $min_display && $min_display != 0)
 			{
-				?><div>
+				?>
 					<form action="behindScenes.php" method="post">
 						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '-' style="float: right; margin-right: 20px;">Back</button><br>
 
 					</form>
-				</div>
+				
 				<?php
 			}
 			?>
+		</div>
 	<!--Ending Body Content-->
 	</div>
-
 
 	<!-- Footer template-->
 	<?php

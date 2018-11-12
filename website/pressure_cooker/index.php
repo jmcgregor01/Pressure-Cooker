@@ -83,6 +83,92 @@
 			</div>
 			</div>
 			<?php
+			$behind_query = "SELECT * FROM behindscenes
+								ORDER BY id DESC
+								LIMIT 0,3";
+			$connect_behind_query = mysqli_query($conn, $behind_query);
+			$count_rows = mysqli_num_rows($connect_behind_query);
+			$show_or_not_behinds = 'hidden';
+			if($count_rows > 0){
+				$show_or_not_behinds = '';
+			?>		
+		<!--Behind Container-->
+		<div id="behindsSection" class="<?php echo $show_or_not_behinds; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+			<a href="#topOfPage" title="To Top">
+    		<span class="glyphicon glyphicon-chevron-up"></span>
+  			</a>
+
+			<h2>Behind the Curtain</h2><br>
+			<h4>How we did it</h4>
+
+			<div class="row text-center  slideanim">	
+			<?php
+				while($get_each_row = mysqli_fetch_array($connect_behind_query)){
+					$id_of_behind = $get_each_row['id'];
+					$name_of_behind = $get_each_row['name'];
+					$img_of_behind = $get_each_row['img'];
+					$msg_of_behind = $get_each_row['msg'];
+					$date_behind = $get_each_row['date'];
+			?>
+				<div class="col-sm-6 col-md-6 col-lg-4">
+						<img class="resizeJudgeMainPage"  src="admin\dynamicImages\behindScenes\<?php echo $img_of_behind; ?>" alt="behind">
+						<p><strong><?php echo $name_of_behind; ?></strong></p>
+						<p><?php echo $msg_of_behind; ?></p>
+				</div>
+			<?php
+				}
+			}
+			?>
+			</div>
+		</div>
+		<div class="<?php echo $show_or_not_behinds; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
+			<br><a href="behindScenes.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
+			<!--End Behind Container-->
+		</div>
+			<?php
+			$sponsors_query = "SELECT * FROM sponsor
+								ORDER BY id DESC
+								LIMIT 0,3";
+			$connect_sponsors_query = mysqli_query($conn, $sponsors_query);
+			$count_rows = mysqli_num_rows($connect_sponsors_query);
+			$show_or_not_sponsors = 'hidden';
+			if($count_rows > 0){
+				$show_or_not_behinds = '';
+			?>		
+		<!--Sponsors Container-->
+		<div id="sponsorsSection" class = "container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+			<a href="#topOfPage" title="To Top">
+    		<span class="glyphicon glyphicon-chevron-up"></span>
+  			</a>
+
+			<h2>Our Sponsors</h2><br>
+			<h4>Who supported us</h4>
+
+			<div class="row text-center  slideanim">	
+			<?php
+				while($get_each_row = mysqli_fetch_array($connect_sponsors_query)){
+					$id_of_sponsors= $get_each_row['id'];
+					$name_of_sponsors= $get_each_row['name'];
+					$img_of_sponsors= $get_each_row['img'];
+					$msg_of_sponsors= $get_each_row['msg'];
+					$date_sponsors= $get_each_row['date'];
+			?>
+				<div class="col-sm-6 col-md-6 col-lg-4">
+						<img class="resizeJudgeMainPage"  src="admin\dynamicImages\sponsors\<?php echo $img_of_sponsors; ?>" alt="sponsors">
+						<p><strong><?php echo $name_of_sponsors; ?></strong></p>
+						<p><?php echo $msg_of_sponsors; ?></p>
+				</div>
+			<?php
+				}
+			}
+			?>
+			</div>
+		</div>
+		<div class = "container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
+			<br><a href="sponsorLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
+			<!--End Sponsors Container-->
+			</div>
+			<?php
 			$judge_query = "SELECT * FROM judges
 								ORDER BY id DESC
 								LIMIT 0,3";
@@ -140,7 +226,7 @@
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>	
-			<h2>Our Teams</h2><br>
+			<h2>Our Contestants</h2><br>
 			<h4>We are here to Serve</h4>			
 			<div class="row  slideanim">
 			<?php
@@ -309,59 +395,56 @@
 			<br><a href="galleryLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Gallery Container-->
 		</div>
-		<!--Contact Us Container-->
-		<div id="citContacts" class="container-fluid myContainer bg-6 text-center goTopAnim" style="padding: 100px;">
-			<a href="#topOfPage" title="To Top">
-    			<span class="glyphicon glyphicon-chevron-up"></span>
-  			</a>
+		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 
-			<h2 class="text-center">CONTACT</h2>
+			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px; object-fit: none;">ABOUT US</h1><br>
 
-			<div class="row">
-				<div class="col-sm-2 col-lg-3 col-lg-offset-2">
-					<p>Contact us and we'll get back to you within 24 hours.</p>
-					<p><span class="glyphicon glyphicon-map-marker"></span> GPO Box 826 Canberra, ACT 2601</p>
-					<p><span class="glyphicon glyphicon-phone"></span> +61 2 6207 3188</p>
-					<p><span class="glyphicon glyphicon-envelope"></span> infoline@cit.edu.au</p>
-				</div>
-
-				<div class="col-sm-10 slideanim col-lg-5">
-					<form action="index.php" method="post" enctype="multipart/form-data">
+			<article class="post">
+				<div id="content_container_71298">
+					<p>At Canberra Institute of Technology we have a dedicated Brand and Business Development Division adept at finding training solutions in partnership with industry and community organisations.</p>
+					<p>We work across CIT to source quality training programs and solutions for industry sectors as diverse as the construction industry to the health sector and government clients.</p>
+					<p>CIT we can confidently boast our industry specialist trainers carry current industry expertise into every training situation, keen to work closely with existing and new clients to design niche training options for your company.</p>
+					<p>At CIT we take pride in having designed training solutions for local, national and international partners.</p>
+				</div><br><br><br><br><br><br><br>
+				<div class="contact-continer">
+					<h2>Contact Us</h2>
+					<hr>
 					<div class="row">
-						<div class="col-sm-6 form-group">
-							<input class="form-control" id="nameId" name="name" placeholder="Name" type="text" required>
+						<div class="col-sm-4">
+							<div class="image">
+								<img src="https://cit.edu.au/__data/assets/file/0010/69949/envelope03.svg" alt="Post" width="70">
+							</div>
+							<div class="text">
+								<strong>Post </strong>
+								<p>GPO Box 826 <br>Canberra ACT 2601</p>
+							</div>
 						</div>
-						<div class="col-sm-6 form-group">
-							<input class="form-control" id="emailId" name="email" placeholder="Email" type="email" required>
+						<div class="col-sm-4">
+							<div class="image">
+								<img src="https://cit.edu.au/__data/assets/file/0011/69950/phone02.svg" alt="Email" width="70">
+							</div>
+							<div class="text">
+								<strong>Call</strong>
+								<p>Business Growth and Development</p>
+								<a href="tel:61262053298" class="tel-link">(02) 6205 3298</a>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="image">
+								<img src="https://cit.edu.au/__data/assets/file/0003/69951/envelope04.svg" alt="Phone" width="70">
+							</div>
+							<div class="text">
+								<strong>Email</strong>
+								<p>CIT Brand & Business<br>Development</p>
+								<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#100;&#64;&#99;&#105;&#116;&#46;&#101;&#100;&#117;&#46;&#97;&#117;">&#98;&#100;&#64;&#99;&#105;&#116;&#46;&#101;&#100;&#117;&#46;&#97;&#117;</a>
+							</div>
 						</div>
 					</div>
-
-					<textarea class="form-control" id="commentsId" name="comments" placeholder="Comment" rows="5"></textarea><br>
-
-					<div class="row">
-						<div class="col-sm-12 form-group">
-							<button name="submit" class="btn btn-default pull-right" type="submit">Send</button>
-						</div>
-					</div>
-					</form>
-					<?php
-						if(isset($_POST['submit'])){
-							$name = $_POST['name'];
-							$email = $_POST['email'];
-							$comments = $_POST['comments'];
-							$insert = "INSERT INTO contactus(name, email, msg)
-										VALUE('$name', '$email', '$comments')";
-							$run = mysqli_query($conn, $insert);
-							if($run){
-								echo "<script>alert('Your News Insert Successfully')</script>";
-							}else{
-								echo "<script>alert('Your News Insert Unsuccessfully')</script>";
-							}
-						}
-					?>
 				</div>
-			</div>
-			<hr>
+
+			</article>
+		<!--Ending About Us Container-->
+		</div>
 
 			<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6513.543193413012!2d149.1329614864318!3d-35.286804613391176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd9d3b3beb2c34d49!2sCanberra+Institute+of+Technology!5e0!3m2!1sen!2sau!4v1539905585501" width="1000" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</center>

@@ -1,3 +1,28 @@
+
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
 <div class="container-fluid">
 
 		<!--Top Navigation Bar-->
@@ -28,11 +53,21 @@
 						</li>
 						<li><a href="judgesLink.php"><span style="font-weight: bold; font-size: 15px;">JUDGES & HOST</span></a>
 						</li>
-						<li><a href="teamsLink.php"><span style="font-weight: bold; font-size: 15px;">TEAMS</span></a>
+						<li><a href="teamsLink.php"><span style="font-weight: bold; font-size: 15px;">CONTESTANTS</span></a>
 						</li>
 						<li><a href="recipesLink.php"><span style="font-weight: bold; font-size: 15px;">RECIPES</span></a>
 						</li>
-						<li><a href="mediaLink.php"><span style="font-weight: bold; font-size: 15px;">WATCH NOW</span></a>
+						<li>
+						<div class="dropdown">
+							<button onclick="myFunction()" class="dropbtn" style="font-weight: 600; letter-spacing: 3px; font-size: 15px;">WATCH NOW</button>
+							<div id="myDropdown" class="dropdown-content">
+								<a href="mediaLink.php">EPISODES</a>
+								<a href="judgesLink.php">JUDGES</a>
+								<a href="teamsLink.php">CONTESTANTS</a>
+								<a href="behindScenes.php">BEHIND THE SCENES</a>
+								<a href="behindScenes.php">BONUS CONTENT</a>
+							</div>
+						</div>
 						</li>
 						<li><a href="galleryLink.php"><span style="font-weight: bold; font-size: 15px;">GALLERY</span></a>
 						</li>
@@ -49,3 +84,4 @@
 			</div>
 			<!--Ending Top Navigation Bar-->
 		</nav>
+		

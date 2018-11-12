@@ -101,13 +101,12 @@
 					<form action="recipesLink.php" method="POST">
 						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '+' style="float: right; margin-right: 20px;">Next</button><br>
 					</form>
-				</div>
+				<br><br>
 		<?php
 		}
-		else if ($count_rows > $min_display && $min_display != 0)
+		if ($count_rows > $min_display && $min_display != 0)
 		{
 			?>
-			<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 					<form action="recipesLink.php" method="POST">
 						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '-' style="float: right; margin-right: 20px;">Back</button><br>
 					</form>
@@ -115,6 +114,8 @@
 				<?php
 		}
 		?>
+		</div>
+		</div>
 
 
 	<!--Ending Body Content-->

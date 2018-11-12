@@ -88,30 +88,32 @@
 			?>				
 			</div>
 			<!--Ending Judge Container-->
+			<div class="container-fluid myContainer bg-3 text-center goTopAnim">
 
 					<?php
 			if ($count_rows > $max_display)
 			{
 				?>
-				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-
-					<form action= "<?php echo "galleryLink.php";?>" method="post">
+				
+				<form action= "<?php echo "galleryLink.php";?>" method="post">
 						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '+' style="float: right; margin-right: 20px;">Next</button><br>
 					</form>
-				</div>
+					<br><br>
+
+					
 				<?php
 			}
 				if ($count_rows > $min_display && $min_display != 0)
 				{
 				?>
-				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 					<form action= "<?php echo "galleryLink.php";?>" method="post">
 						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '-' style="float: right; margin-right: 20px;">Back</button><br>
 					</form>
-				</div>
+				
 			<?php
 			}
 			?>
+			</div>
 		
 		
 		
