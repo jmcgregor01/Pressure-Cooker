@@ -30,6 +30,41 @@
 		
 	
 
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 		
 		
@@ -140,7 +175,8 @@
 				$show_or_not_judges = '';
 			?>		
 		<!--Judge Container-->
-		<div id="judgesSection" class="<?php echo $show_or_not_judges; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+		<div class="myView bg-3">
+		<div id="judgesSection" class="<?php echo $show_or_not_judges; ?> container-fluid myContainer bg-3 text-center goTopAnim">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
@@ -167,6 +203,7 @@
 			}
 			?>
 			</div>
+		</div>
 		</div>
 		<div class="<?php echo $show_or_not_judges; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="judgesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
@@ -198,7 +235,8 @@
 				$show_or_not_team = '';
 			?>
 		<!--Team Container-->
-		<div id="teamSection" class="<?php echo $show_or_not_team; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 100px;">
+		<div class="myView bg-1">
+		<div id="teamSection" class="<?php echo $show_or_not_team; ?> container-fluid myContainer bg-1 text-center goTopAnim">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>	
@@ -224,6 +262,7 @@
 			}
 			?>
 			</div>
+		</div>
 		</div>
 		<div class="<?php echo $show_or_not_team; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="teamsLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
@@ -260,7 +299,8 @@
 				$show_or_not_recipe = '';
 			?>
 		<!--Recipes Container-->
-		<div id="recipesSection" class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+		<div class="myView bg-3">
+		<div id="recipesSection" class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-3 text-center goTopAnim">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>	
@@ -274,7 +314,7 @@
 						$method_of_recipe = $get_each_row['method'];
 						$date_recipe = $get_each_row['date'];
 			?>
-			<div class="row" style="padding: 50px;">
+			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-6">
 				<br>
 					    <h2><strong><?php echo $name_of_recipe; ?></strong></h2>
@@ -296,6 +336,7 @@
 				}
 			}
 			?>
+		</div>
 		</div>
 		<div class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="recipesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
@@ -332,7 +373,8 @@
 				$show_or_not_media = '';
 			?>		
 		<!--Media Container-->
-		<div id="mediaSection" class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-5 text-center goTopAnim" style="padding: 100px;">
+		<div class="myView bg-5">
+		<div id="mediaSection" class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-5 text-center goTopAnim">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
@@ -346,7 +388,7 @@
 				$msg_of_media = $get_each_row['msg'];
 				$date_media = $get_each_row['date'];
 			?>
-			<div class="row slideanim" style="padding: 50px;">
+			<div class="row slideanim">
 				<div class="col-lg-6 col-md-6 col-sm-6">
 						
 					<p class="example2" style="text-align: justify;"><?php echo substr($msg_of_media, 0, 900); ?>...</p>
@@ -364,6 +406,7 @@
 				}
 			}
 			?>			
+		</div>
 		</div>
 		<div class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-5 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="mediaLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
@@ -401,12 +444,13 @@
 				$show_or_not_gallery = '';
 			?>	
 		<!--Gallery Container-->
-		<div id="gallerySection" class="<?php echo $show_or_not_gallery; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+		<div class="myView bg-3">
+		<div id="gallerySection" class="<?php echo $show_or_not_gallery; ?> container-fluid myContainer bg-3 text-center goTopAnim">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
 			<h2><strong>Gallery</strong></h2>
-			<div class="row slideanim" style="padding: 50px;">
+			<div class="row slideanim">
 				
 			<?php
 			while($get_each_row = mysqli_fetch_array($connect_gallery_query)){
@@ -427,6 +471,7 @@
 			?>					
 			</div>
 
+		</div>
 		</div>
 		<div class="<?php echo $show_or_not_gallery; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="galleryLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
@@ -455,12 +500,13 @@
 				$show_or_not_behindscenes = '';
 			?>	
 		<!--Behindscenes Container-->
-		<div id="behindscenesSection" class="<?php echo $show_or_not_behindscenes; ?> container-fluid myContainer bg-8 text-center goTopAnim" style="padding: 100px;">
+		<div class="myView bg-8">
+		<div id="behindscenesSection" class="<?php echo $show_or_not_behindscenes; ?> container-fluid myContainer bg-8 text-center goTopAnim">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
 			<h2><strong>Behind The Scenes</strong></h2>
-			<div class="row slideanim" style="padding: 50px;">
+			<div class="row slideanim">
 				
 			<?php
 			while($get_each_row = mysqli_fetch_array($connect_behindscenes_query)){
@@ -481,6 +527,7 @@
 			?>					
 			</div>
 
+		</div>
 		</div>
 		<div class="<?php echo $show_or_not_behindscenes; ?> container-fluid myContainer bg-8 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="behindScenes.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
@@ -516,12 +563,13 @@
 				$show_or_not_sponsor = '';
 			?>	
 		<!--Sponsors Container-->
-		<div id="sponsorSection" class="<?php echo $show_or_not_sponsor; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+		<div class="myView bg-3">
+		<div id="sponsorSection" class="<?php echo $show_or_not_sponsor; ?> container-fluid myContainer bg-3 text-center goTopAnim">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
 			<h2><strong>Sponsors</strong></h2>
-			<div class="row slideanim" style="padding: 50px;">
+			<div class="row slideanim">
 				
 			<?php
 			while($get_each_row = mysqli_fetch_array($connect_sponsor_query)){
@@ -542,6 +590,7 @@
 			?>					
 			</div>
 
+		</div>
 		</div>
 		<div class="<?php echo $show_or_not_sponsor; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="sponsorLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
@@ -571,7 +620,8 @@
 	
 	
 		<!--Contact Us Container-->
-		<div id="citContacts" class="container-fluid myContainer bg-0 text-center goTopAnim" style="padding: 100px;">
+		<div class="myView bg-0">
+		<div id="citContacts" class="container-fluid myContainer bg-0 text-center goTopAnim">
 			<a href="#topOfPage" title="To Top">
     			<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
@@ -628,6 +678,7 @@
 			</center>
 			</div>
 		<!--Ending Contact Us Container-->
+		</div>
 		</div>
 	<!--Ending Body Content-->
 	</div>
