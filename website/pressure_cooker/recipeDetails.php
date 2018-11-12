@@ -47,13 +47,13 @@
                         <img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe ; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
 						<h3 class="example1" style="text-align: justify;"><strong>METHOD</strong></h3>
 						<br>
-						<p class="example3" style="text-align: justify;"><?php echo $method_of_recipe; ?></p>
+						<p class="example3" style="text-align: justify;"><?php echo nl2br($method_of_recipe); ?></p>
 				</div>
 				
 				<div class="col-lg-6 col-md-6 col-sm-6">
 				    <br>
 				    <h3 class="example1" style="text-align: justify;"><strong>INGREDIENTS</strong></h3>
-				    <p class="example3" style="text-align: justify;"><?php echo $ingredients_of_recipe; ?></p>
+				    <p class="example3" style="text-align: justify;"><?php echo nl2br($ingredients_of_recipe); ?></p>
 					
 				</div>
 				</div>    

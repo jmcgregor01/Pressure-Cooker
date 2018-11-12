@@ -56,7 +56,7 @@
 					$id_of_judge = $get_each_row['id'];
 					$name_of_judge = $get_each_row['name'];
 					$img_of_judge = $get_each_row['img'];
-					$msg_of_judge = $get_each_row['msg'];
+					$msg_of_judge = $get_each_row['method'];
 					$date_judge = $get_each_row['date'];
 			?>	
 						<tr>

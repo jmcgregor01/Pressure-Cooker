@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2018 at 01:23 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Generation Time: Nov 12, 2018 at 04:02 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -79,13 +81,6 @@ CREATE TABLE `carousel` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `etc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `carousel`
---
-
-INSERT INTO `carousel` (`id`, `img1`, `img2`, `img3`, `date`, `etc`) VALUES
-(6, 'mkr9_ep49_ae_2nd-course_jamon-wrapped-lamb-brains-with-caper-mayonnaise-2.jpg', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', 'manu.jpg', '2018-10-12 04:40:36', '');
 
 -- --------------------------------------------------------
 
@@ -184,7 +179,8 @@ CREATE TABLE `media` (
 
 INSERT INTO `media` (`id`, `name`, `video`, `msg`, `date`, `etc`) VALUES
 (3, 'Cook Saag', 'SBZj-BAz-Ec', 'sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas', '2018-10-10 13:01:44', ''),
-(4, 'Cook Saag', 'HgnXfevdoXY', 'sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas', '2018-10-10 13:01:44', '');
+(4, 'Cook Saag', 'HgnXfevdoXY', 'sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas', '2018-10-10 13:01:44', ''),
+(5, 'Keyboard Cat', 'J---aiyznGQ', 'Keyboard cat playing the keyboard.', '2018-11-12 01:05:54', '');
 
 -- --------------------------------------------------------
 
@@ -196,7 +192,8 @@ CREATE TABLE `recipes` (
   `id` int(10) NOT NULL,
   `name` text NOT NULL,
   `img` text NOT NULL,
-  `msg` text NOT NULL,
+  `ingredients` varchar(1024) NOT NULL,
+  `method` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `etc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -205,14 +202,16 @@ CREATE TABLE `recipes` (
 -- Dumping data for table `recipes`
 --
 
-INSERT INTO `recipes` (`id`, `name`, `img`, `msg`, `date`, `etc`) VALUES
-(1, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
-(2, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
-(3, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
-(4, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
-(5, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
-(6, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
-(7, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', '');
+INSERT INTO `recipes` (`id`, `name`, `img`, `ingredients`, `method`, `date`, `etc`) VALUES
+(1, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', '', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
+(2, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', '', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
+(3, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', '', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
+(4, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', '', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
+(5, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', '', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
+(6, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', '', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
+(7, 'Dal Chawal', 'mkr9_ep49_ae_4th-course_pork-belly-with-sprouts-apple-and-calvados-sauce-2.jpg', '', 'asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe. asdf asdf klsdf sdf sdfl asdf se dv cv slek salfe slkfe lfe.', '2018-10-10 11:07:40', ''),
+(8, 'Fried RIce', 'sample image.jpg', 'Rice\r\nPeas\r\nCarrot\r\nBeans', '1. Cook the Rice', '2018-11-12 02:35:28', ''),
+(9, 'Crispy Skin Lemon Chicken and Potatoes', 'crispy-skin-lemon-chicken-and-potatoes_1980x1320-120036-1.jpg', '1kg chicken thigh cutlets, skin on\r\n60g butter\r\n500g baby potatoes\r\n4 lemons, halved\r\n1 â„2 cup fresh oregano sprigs, plus extra, to serve\r\n4 garlic cloves, unpeeled\r\n250ml (1 cup) Massel chicken style liquid stock', 'Step 1\r\nPreheat oven to 180C/160C fan forced. Pat the chicken skin dry with paper towel and season.\r\nStep 2\r\nMelt half the butter in an ovenproof frying pan over medium-high heat. Add chicken, skin side down, and cook for 5 minutes or until golden. Turn and cook for a further 2 minutes. Transfer chicken to a plate. Add the potatoes to the pan. Cook, turning regularly, for 4-5 minutes or until golden. Transfer to a plate. Add 4 lemon halves, cut side down, to pan. Cook for 2-3 minutes, until caramelised. Transfer to a plate and reserve.\r\nStep 3\r\nReduce heat to low. Squeeze juice from remaining lemon halves into pan and stir to deglaze. Add squeezed lemon halves, potatoes, oregano and garlic to the pan. Cook for 2 minutes. Remove pan from heat and add stock. Arrange chicken, skin side up, on top of potatoes, keeping the skin exposed. Bake for 25-30 minutes or until chicken is cooked through and potatoes are tender. Transfer chicken, potatoes and garlic to a plate. Cover to keep warm.\r\nStep 4\r\nStrain the liquid from the pan into a small saucepan. Discard solids. Bring to the boil over high heat. Cook for 10-15 minutes or until sauce reduces and thickens slightly. Stir in remaining butter until melted. Season. Drizzle sauce over the chicken and potatoes. Scatter with extra oregano and serve with reserved caramelised lemon.', '2018-11-12 02:44:25', '');
 
 -- --------------------------------------------------------
 
@@ -238,7 +237,8 @@ INSERT INTO `sponsor` (`id`, `name`, `img`, `date`, `msg`) VALUES
 (3, 'Bababo', 'buyfreshbuylocal.jpg', '2018-10-11 07:13:31', 'Food Waste Infographic shareable'),
 (4, 'Bababo Bababo', 'Food Waste Infographic shareable.jpg', '2018-10-11 07:13:31', 'Food Waste Infographic shareable'),
 (5, 'Bababo', 'images.png', '2018-10-11 07:13:31', 'Food Waste Infographic shareable'),
-(6, 'Bababo Bababo', 'kids-badminton-championship-thumbanail-copy.jpg', '2018-10-11 07:13:31', 'Food Waste Infographic shareable');
+(6, 'Bababo Bababo', 'kids-badminton-championship-thumbanail-copy.jpg', '2018-10-11 07:13:31', 'Food Waste Infographic shareable'),
+(7, 'ffds', 'sample image.jpg', '2018-11-12 02:22:52', 'sfdsfds');
 
 -- --------------------------------------------------------
 
@@ -284,7 +284,8 @@ INSERT INTO `voters` (`id`, `email`) VALUES
 (4, 'jacob.test@cit.com'),
 (5, 'what@what.com'),
 (6, 'test@test.com'),
-(7, 'test@testt.com');
+(7, 'test@testt.com'),
+(8, '');
 
 -- --------------------------------------------------------
 
@@ -304,7 +305,7 @@ CREATE TABLE `votes` (
 --
 
 INSERT INTO `votes` (`id`, `name`, `team1`, `team2`) VALUES
-(1, 'Overall Vote', 2, 4);
+(1, 'Overall Vote', 2, 5);
 
 --
 -- Indexes for dumped tables
@@ -409,17 +410,17 @@ ALTER TABLE `judges`
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `sponsor`
 --
 ALTER TABLE `sponsor`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `teams`
 --
@@ -429,12 +430,13 @@ ALTER TABLE `teams`
 -- AUTO_INCREMENT for table `voters`
 --
 ALTER TABLE `voters`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `votes`
 --
 ALTER TABLE `votes`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

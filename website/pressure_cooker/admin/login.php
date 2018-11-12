@@ -24,14 +24,16 @@
 		<form action="" method="post">
 		<h1 style="font-weight: bold;">Admin <span style="color: red;">Login panel</span></h1>
 		<br><br>
-		<label for="b">Write a user Name</label>
+		<label for="b">Username</label>
 		<input name="user" type="text" class="form-control" id="b" style="width: 400px; box-shadow: 3px 4px 2px #efa6a6;"><br>
 		
-		<label for="ba">Write a user Password</label>
+		<label for="ba">Password</label>
 		<input name="pass" type="password" class="form-control" id="ba" style="width: 400px; box-shadow: 3px 4px 2px #efa6a6;"><br>
 		
 		<button name="sub" class="btn btn-default">Login</button>
 		</form>
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+		<a href="../index.php"><img src="homepage-icon.png" alt="Homepage" style="width:70px;height:42px;border:0;"></a>
 		
 		
 		
@@ -60,6 +62,7 @@
 		}
 		?>
 	</center>
+	
 </body>
 </html>
 <?php } ?>

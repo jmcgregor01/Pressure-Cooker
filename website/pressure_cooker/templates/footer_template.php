@@ -19,7 +19,6 @@
 
 			<a href="about.php"><span style="margin: 50px">About Us</span></a><br>
 
-			<a href="admin/indexAdmin.php"><span class="glyphicon glyphicon-log-in"><span style="margin: 35px;"></span></span></a>
 		</div>
 	</div>
 		<!--Ending of Footer-->

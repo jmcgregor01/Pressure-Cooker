@@ -39,14 +39,17 @@
 				
 				
 				<form action="insertRecipe.php" method="post" enctype="multipart/form-data">
-					<label for="nameId">Name of Recipe</label>
+					<label for="nameId">Recipe Name</label>
 					<input required type="text" name="name" id="nameId" class="form-control"><br>
 					
-					<label for="imgId">Image of Recipe</label>
+					<label for="imgId">Recipe Image</label>
 					<input required type="file" name="img" id="imgId" class="form-control"><br>
 					
-					<label for="msgId">About Recipe</label>
-					<textarea required class="form-control" id="msgId" name="msg" style="height: 150px"></textarea><br>
+					<label for="ingredientsId">Recipe Ingredients</label>
+					<textarea required class="form-control" id="ingredientsId" name="ingredients" style="height: 150px"></textarea><br>
+					
+					<label for="methodId">Recipe Method</label>
+					<textarea required class="form-control" id="msgId" name="method" style="height: 150px"></textarea><br>
 					<button name="submit" class="btn btn-success" style="float: right">Add</button>
 				</form>
 
@@ -57,16 +60,17 @@
 						$name = $_POST['name'];
 						$img = $_FILES['img']['name'];
 						$imgPath = $_FILES['img']['tmp_name'];
-						$msg = $_POST['msg'];
-						$insert = "INSERT INTO recipes(name, img, msg)
-									VALUE('$name', '$img', '$msg')";
+						$ingredients = $_POST['ingredients'];
+						$method = $_POST['method'];
+						$insert = "INSERT INTO recipes(name, img, ingredients, method)
+									VALUE('$name', '$img', '$ingredients', '$method')";
 						$run = mysqli_query($conn, $insert);
 						if($run){
 							move_uploaded_file($imgPath, "dynamicImages/recipes/$img");
 							
-							echo "<script>alert('Your News Insert Successfully')</script>";
+							echo "<script>alert('Your Recipe Inserted Successfully')</script>";
 						}else{
-							echo "<script>alert('Your News Insert Unsuccessfully')</script>";
+							echo "<script>alert('Your Recipe Inserted Unsuccessfully')</script>";
 						}
 					}
 				?>

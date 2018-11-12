@@ -33,8 +33,6 @@
 					
 				
 			<?php
-				$found = false;
-				
 				if((empty($_GET['search'])))
 				{
 					die("You must enter a search query");
@@ -45,9 +43,6 @@
 				//Search Judges
 				$sql = "SELECT * FROM judges WHERE name LIKE '%$search%' ORDER BY date DESC LIMIT 0,9";
 				$result = mysqli_query($conn, $sql) or die("Error searching - ".mysqli_error($conn));
-				if (mysqli_num_rows($result) > 0) {
-					$found = true;
-				}
 				while($row = mysqli_fetch_array($result))
 				{
 					$name_of_judge = $row['name'];
@@ -66,9 +61,6 @@
 				//Search Teams
 				$sql = "SELECT * FROM teams WHERE name LIKE '%$search%' ORDER BY date DESC LIMIT 0,9";
 				$result = mysqli_query($conn, $sql) or die("Error searching - ".mysqli_error($conn));
-				if (mysqli_num_rows($result) > 0) {
-					$found = true;
-				}
 				while($row = mysqli_fetch_array($result))
 				{
 					$name_of_team = $row['name'];
@@ -87,9 +79,6 @@
 				//Search Recipes
 				$sql = "SELECT * FROM recipes WHERE name LIKE '%$search%' ORDER BY date DESC LIMIT 0,9";
 				$result = mysqli_query($conn, $sql) or die("Error searching - ".mysqli_error($conn));
-				if (mysqli_num_rows($result) > 0) {
-					$found = true;
-				}
 				while($row = mysqli_fetch_array($result))
 				{
 					$name_of_recipe = $row['name'];
@@ -109,9 +98,6 @@
 				//Search Gallery
 				$sql = "SELECT * FROM gallery WHERE name LIKE '%$search%' ORDER BY date DESC LIMIT 0,9";
 				$result = mysqli_query($conn, $sql) or die("Error searching - ".mysqli_error($conn));
-				if (mysqli_num_rows($result) > 0) {
-					$found = true;
-				}
 				while($row = mysqli_fetch_array($result))
 				{
 					$name_of_gallery = $row['name'];
@@ -130,9 +116,6 @@
 				//Search Behind the Scenes
 				$sql = "SELECT * FROM behindscenes WHERE name LIKE '%$search%' ORDER BY date DESC LIMIT 0,9";
 				$result = mysqli_query($conn, $sql) or die("Error searching - ".mysqli_error($conn));
-				if (mysqli_num_rows($result) > 0) {
-					$found = true;
-				}
 				while($row = mysqli_fetch_array($result))
 				{
 					$name_of_scene = $row['name'];
@@ -151,9 +134,6 @@
 				//Search Episodes
 				$sql = "SELECT * FROM media WHERE name LIKE '%$search%' ORDER BY date DESC LIMIT 0,9";
 				$result = mysqli_query($conn, $sql) or die("Error searching - ".mysqli_error($conn));
-				if (mysqli_num_rows($result) > 0) {
-					$found = true;
-				}
 				while($row = mysqli_fetch_array($result))
 				{
 					$name_of_media = $row['name'];
@@ -166,9 +146,6 @@
 					</div>
 				</div>	
 			<?php
-				}
-				if(!$found){
-					echo "No matches found!";
 				}
 			?>			
 			</div>
