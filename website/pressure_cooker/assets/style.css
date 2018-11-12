@@ -32,10 +32,6 @@ body{
 	visibility: visible;
 }
 
-
-
-
-
 /*Navigation Bar*/
 .navbar {
     margin-bottom: 0;
@@ -54,7 +50,7 @@ body{
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #ef7900 !important;
+    color: red !important;
     background-color: #fff !important;
 }
 
@@ -63,15 +59,33 @@ body{
     color: #fffff !important;
 }
 
+@media screen and (min-width: 768px) {
+  .navbar-nav ul li a:hover{
+	    background-color: black !important;
+		color: white !important;
+  }
+}
 
+@media screen and (min-width: 768px) {
+  .navbar-nav ul li a{
+	font-weight: bold; 
+	font-size: 15px; 
+	color: red !important;
+  }
+}
 
-
+@media screen and (min-width: 768px) {
+  .navbar-nav ul li.active a{
+	    background-color: black !important;
+		color: white !important;
+  }
+}
 
 /*Logo Settings*/
 .glyphicon {
   font-size: 20px;
   margin-bottom: 20px;
-  color: #ef7900 ;
+  color: red ;
 }
 
 .mouseOnlogo{
@@ -108,7 +122,7 @@ body{
 
 
 
-/*Image Settings*/
+
 .resizeJudgeMainPage{
 	height: -webkit-fill-available;
     max-height: 290px;
@@ -127,13 +141,32 @@ body{
 }
 
 
-.resizeWithThumbnail{
-	height: -webkit-fill-available;
-    max-height: 290px;
-	max-width: 100%;
-	object-fit: contain;
+.resizeWithThumbnail {
+    height: 330px;
+    height: -webkit-fill-available;
+    max-height: 330px;
+	width: 490px;
+    max-width: 100%;
+    object-fit: cover;
     object-position: center;
-	display: inline-block;
+    display: inline-block;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+}
+
+.resizeWithIndividualView {
+    height: 330px;
+    height: -webkit-fill-available;
+    max-height: auto;
+	width: 490px;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: inline-block;
     padding: 4px;
     line-height: 1.42857143;
     background-color: #fff;
@@ -143,14 +176,12 @@ body{
 }
 
 .resizeCarouselMainPage{
-	max-height: 850px;
-    height: 850px;
     width: -webkit-fill-available;
+	width: -moz-fill-available;
     max-width: fit-content;
     object-fit: cover;
     object-position: center;
 }
-
 
 
 
@@ -308,7 +339,7 @@ p.recipesMessageLimit {
 }
  .bg-3 { 
   background-color: #FFFFFF;
-  color: ##152136;
+  color: #152136;
 }
  .bg-4 { 
   background-color: #8abd24;
@@ -319,7 +350,7 @@ p.recipesMessageLimit {
   color: #FFFFFF;
 }
  .bg-6 { 
-  background-color: #e71a80;
+  background-color: #5892a7;
   color: #FFFFFF;
 }
  .bg-7 { 
@@ -328,7 +359,7 @@ p.recipesMessageLimit {
 }
  .bg-8 { 
   background-color: #fbba00;
-  color: #FFFFFF;
+  color: black;
 }
  .bg-9 { 
   background-color: #dc0d15;
@@ -408,7 +439,48 @@ p.recipesMessageLimit {
 
 
 
-
+@media (max-width: 1164px) {
+        .navbar-header {
+                float: none;
+        }
+        .navbar-toggle {
+                display: block;
+        }
+        .navbar-collapse {
+                border-top: 1px solid transparent;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        .navbar-collapse.collapse {
+                display: none!important;
+        }
+        .navbar-collapse.collapse.in {
+            display: block!important;
+        }
+        .navbar-nav {
+                float: none!important;
+                margin: 7.5px -15px;
+        }
+        .navbar-nav>li {
+                float: none;
+        }
+        .navbar-nav>li>a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+        }
+    .navbar-form {
+        padding: 10px 15px;
+        margin-top: 8px;
+        margin-right: -15px;
+        margin-bottom: 8px;
+        margin-left: -15px;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .1);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .1);
+        width:auto;
+        float:none!important;
+    }
+}
 
 
 

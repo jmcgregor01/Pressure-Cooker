@@ -21,11 +21,26 @@
 	<!--Body Content-->
 	<div class="container-fluid">
 
+		
 		<!--Top Navigation Bar-->
 		<?php
-		include "templates/navigationbar_template.php";
+		include "templates/navigationbar_template_main.php";
 		?>
 		<!--Ending Top Navigation Bar-->
+		
+	
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 			<?php
 			$carousel_query = "SELECT * FROM carousel
 								ORDER BY id DESC";
@@ -81,7 +96,39 @@
 				</a>
 			<!--Ending of Carousel-->
 			</div>
-			</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 			<?php
 			$judge_query = "SELECT * FROM judges
 								ORDER BY id DESC
@@ -98,7 +145,7 @@
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
 
-			<h2>Our Judges</h2><br>
+			<h2><strong>Our Judges</strong></h2><br>
 			<h4>We are here to Judge</h4>
 
 			<div class="row text-center  slideanim">	
@@ -124,6 +171,21 @@
 		<div class="<?php echo $show_or_not_judges; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="judgesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 			<!--Ending Judge Container-->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		</div>
 			<?php
 			$team_query = "SELECT * FROM teams
@@ -140,7 +202,7 @@
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>	
-			<h2>Our Teams</h2><br>
+			<h2><strong>Our Teams</strong></h2><br>
 			<h4>We are here to Serve</h4>			
 			<div class="row  slideanim">
 			<?php
@@ -165,8 +227,28 @@
 		</div>
 		<div class="<?php echo $show_or_not_team; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="teamsLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
-		<!--Ending Team Container-->
+		<!--Ending Team Container-->	
 		</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 			<?php
 			$recipe_query = "SELECT * FROM recipes
 								ORDER BY id DESC
@@ -182,7 +264,7 @@
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>	
-			<h2>Latest Recipe</h2><br>
+			<h2><strong>Latest Recipe</strong></h2><br>
 			<?php
 			while($get_each_row = mysqli_fetch_array($connect_recipe_query)){
 				        $id_of_recipe = $get_each_row['id'];
@@ -219,6 +301,26 @@
 			<br><a href="recipesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Recipes Container-->
 		</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 			<?php
 			$media_query = "SELECT * FROM media
 								ORDER BY id DESC
@@ -235,7 +337,7 @@
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
 			
-			<h2>Latest Episode</h2>
+			<h2><strong>Latest Episode</strong></h2>
 			<?php
 			while($get_each_row = mysqli_fetch_array($connect_media_query)){
 				$id_of_media = $get_each_row['id'];
@@ -267,6 +369,27 @@
 			<br><a href="mediaLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Media Container-->
 		</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 			<?php
 			$gallery_query = "SELECT * FROM gallery
 								ORDER BY id DESC
@@ -282,7 +405,7 @@
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
-			<h2>Gallery</h2>
+			<h2><strong>Gallery</strong></h2>
 			<div class="row slideanim" style="padding: 50px;">
 				
 			<?php
@@ -309,13 +432,151 @@
 			<br><a href="galleryLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Gallery Container-->
 		</div>
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		
+		
+		
+					<?php
+			$behindscenes_query = "SELECT * FROM behindscenes
+								ORDER BY id DESC
+								LIMIT 0,6";
+			$connect_behindscenes_query = mysqli_query($conn, $behindscenes_query);
+			$count_rows = mysqli_num_rows($connect_behindscenes_query);
+			$show_or_not_behindscenes = 'hidden';
+			if($count_rows > 0){
+				$show_or_not_behindscenes = '';
+			?>	
+		<!--Sponsors Container-->
+		<div id="behindscenesSection" class="<?php echo $show_or_not_behindscenes; ?> container-fluid myContainer bg-8 text-center goTopAnim" style="padding: 100px;">
+			<a href="#topOfPage" title="To Top">
+    		<span class="glyphicon glyphicon-chevron-up"></span>
+  			</a>
+			<h2><strong>Behind The Scenes</strong></h2>
+			<div class="row slideanim" style="padding: 50px;">
+				
+			<?php
+			while($get_each_row = mysqli_fetch_array($connect_behindscenes_query)){
+				$id_of_behindscenes = $get_each_row['id'];
+				$name_of_behindscenes = $get_each_row['name'];
+				$img_of_behindscenes = $get_each_row['img'];
+				$date_behindscenes = $get_each_row['date'];
+				$msg_of_behindscenes = $get_each_row['msg'];
+			?>	
+
+				<div class="col-sm-6 col-md-4 col-lg-4">
+					<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindscenes">
+					<h2 style="font-size: 18px"><?php echo $name_of_behindscenes; ?></h2><br><br><br><br>
+				</div>
+			<?php
+				}
+			}
+			?>					
+			</div>
+
+		</div>
+		<div class="<?php echo $show_or_not_behindscenes; ?> container-fluid myContainer bg-8 text-center goTopAnim" style="padding: 50px;">
+			<br><a href="behindScenes.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
+		<!--Ending Sponsors Container-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+	
+	
+	
+
+			<?php
+			$sponsor_query = "SELECT * FROM sponsor
+								ORDER BY id DESC
+								LIMIT 0,6";
+			$connect_sponsor_query = mysqli_query($conn, $sponsor_query);
+			$count_rows = mysqli_num_rows($connect_sponsor_query);
+			$show_or_not_sponsor = 'hidden';
+			if($count_rows > 0){
+				$show_or_not_sponsor = '';
+			?>	
+		<!--Sponsors Container-->
+		<div id="sponsorSection" class="<?php echo $show_or_not_sponsor; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 100px;">
+			<a href="#topOfPage" title="To Top">
+    		<span class="glyphicon glyphicon-chevron-up"></span>
+  			</a>
+			<h2><strong>Sponsors</strong></h2>
+			<div class="row slideanim" style="padding: 50px;">
+				
+			<?php
+			while($get_each_row = mysqli_fetch_array($connect_sponsor_query)){
+				$id_of_sponsor = $get_each_row['id'];
+				$name_of_sponsor = $get_each_row['name'];
+				$img_of_sponsor = $get_each_row['img'];
+				$date_sponsor = $get_each_row['date'];
+				$msg_of_sponsor = $get_each_row['msg'];
+			?>	
+
+				<div class="col-sm-6 col-md-4 col-lg-4">
+					<img class="resizeWithThumbnail" src="admin\dynamicImages\sponsors\<?php echo $img_of_sponsor; ?>" alt="sponsor">
+					<h2 style="font-size: 18px"><?php echo $name_of_sponsor; ?></h2><br><br><br><br>
+				</div>
+			<?php
+				}
+			}
+			?>					
+			</div>
+
+		</div>
+		<div class="<?php echo $show_or_not_sponsor; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 50px;">
+			<br><a href="sponsorLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
+		<!--Ending Sponsors Container-->
+		</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		<!--Contact Us Container-->
-		<div id="citContacts" class="container-fluid myContainer bg-6 text-center goTopAnim" style="padding: 100px;">
+		<div id="citContacts" class="container-fluid myContainer bg-0 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     			<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
 
-			<h2 class="text-center">CONTACT</h2>
+			<h2 class="text-center"><strong>CONTACT</strong></h2>
 
 			<div class="row">
 				<div class="col-sm-2 col-lg-3 col-lg-offset-2">

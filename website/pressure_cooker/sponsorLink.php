@@ -1,7 +1,7 @@
-<!DOCTYPE html>
 <?php
 	require __DIR__.'/admin/config/db.php';
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<!--Head of the Index Page-->
@@ -21,6 +21,17 @@
 	<!--Body Content-->
 			<!--Header template-->
 		<?php
+			$home_select = "";
+			$judge_select = "";
+			$team_select = "";
+			$recipe_select = "";
+			$media_select = "";
+			$gallery_select = "";
+			$behind_select = "";
+			$sponsor_select = "active disabled";
+			$android_select = "";
+			$about_select = "";
+	
 		include "templates/navigationbar_template.php";
 		?>	
 

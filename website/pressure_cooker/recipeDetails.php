@@ -1,7 +1,7 @@
-<!DOCTYPE html>
 <?php
 	require __DIR__.'/admin/config/db.php';
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<!--Head of the Index Page-->
@@ -21,6 +21,7 @@
 	<!--Body Content-->
 	<!--Header template-->
 		<?php
+		
 		include "templates/navigationbar_template.php";
 		?>	
 		

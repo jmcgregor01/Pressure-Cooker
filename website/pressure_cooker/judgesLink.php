@@ -1,7 +1,7 @@
-<!DOCTYPE html>
 <?php
 	require __DIR__.'/admin/config/db.php';
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<!--Head of the Index Page-->
@@ -21,8 +21,54 @@
 	<!--Body Content-->
 			<!--Header template-->
 		<?php
+			$home_select = "";
+			$judge_select = "active disabled";
+			$team_select = "";
+			$recipe_select = "";
+			$media_select = "";
+			$gallery_select = "";
+			$behind_select = "";
+			$sponsor_select = "";
+			$android_select = "";
+			$about_select = "";
+	
 		include "templates/navigationbar_template.php";
 		?>	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		<!--Judge Container-->
 		<div id="startAgain" class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 

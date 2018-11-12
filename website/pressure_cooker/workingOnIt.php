@@ -15,11 +15,25 @@
 
 <body id="topOfPage">
 			<!--Header template-->
+	<div class="container-fluid">
 		<?php
+			$home_select = "";
+			$judge_select = "";
+			$team_select = "";
+			$recipe_select = "";
+			$media_select = "";
+			$gallery_select = "";
+			$behind_select = "";
+			$sponsor_select = "";
+			$android_select = "active disabled";
+			$about_select = "";
 		include "templates/navigationbar_template.php";
 		?>	
-
-
+		
+		<div id="startAgain" class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+			<h1 class="bg-3 text-center workingOnIt" style="padding-bottom: 999px;">WORKING ON IT :)</h1>
+		</div>
+	</div>
 
 	<!-- Footer template-->
 	<?php

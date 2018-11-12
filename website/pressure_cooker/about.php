@@ -19,6 +19,17 @@
 	<div class="container-fluid">
 
 		<?php
+			$home_select = "";
+			$judge_select = "";
+			$team_select = "";
+			$recipe_select = "";
+			$media_select = "";
+			$gallery_select = "";
+			$behind_select = "";
+			$sponsor_select = "";
+			$android_select = "";
+			$about_select = "active disabled";
+	
 		include "templates/navigationbar_template.php";
 		?>
 

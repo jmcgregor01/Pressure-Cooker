@@ -1,7 +1,7 @@
-<!DOCTYPE html>
 <?php
 	require 'admin/config/db.php';
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<!--Head of the Index Page-->

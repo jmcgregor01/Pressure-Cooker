@@ -6,20 +6,13 @@
 		
 		</center>
 <div class="row">
-		<div class="col-md-4 footerStyleLeft">
-			
+
+		
+		<div class="footerSponsor">
+			<center><a class="footerSponsorMarginRight" href="https://elearn.cit.edu.au">https://elearn.cit.edu.au</a></center>
 		</div>
 		
-		<div class="col-md-4 footerSponsor">
-			<center><a class="footerSponsorMarginRight" href="sponsorLink.php">Sponsors</a></center>
-		</div>
-		
-		<div class="col-md-4 footerStyleRight">
-			<a href="behindScenes.php"><span style="margin: 20px">Behind The Scenes</span></a><br>
 
-			<a href="about.php"><span style="margin: 50px">About Us</span></a><br>
-
-		</div>
 	</div>
 		<!--Ending of Footer-->
 	</footer>
