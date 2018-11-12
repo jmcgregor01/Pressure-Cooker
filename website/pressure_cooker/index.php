@@ -454,7 +454,7 @@
 			if($count_rows > 0){
 				$show_or_not_behindscenes = '';
 			?>	
-		<!--Sponsors Container-->
+		<!--Behindscenes Container-->
 		<div id="behindscenesSection" class="<?php echo $show_or_not_behindscenes; ?> container-fluid myContainer bg-8 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
@@ -484,7 +484,7 @@
 		</div>
 		<div class="<?php echo $show_or_not_behindscenes; ?> container-fluid myContainer bg-8 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="behindScenes.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
-		<!--Ending Sponsors Container-->
+		<!--Ending Behindscenes Container-->
 		</div>
 		
 		
@@ -516,7 +516,7 @@
 				$show_or_not_sponsor = '';
 			?>	
 		<!--Sponsors Container-->
-		<div id="sponsorSection" class="<?php echo $show_or_not_sponsor; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 100px;">
+		<div id="sponsorSection" class="<?php echo $show_or_not_sponsor; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
@@ -543,7 +543,7 @@
 			</div>
 
 		</div>
-		<div class="<?php echo $show_or_not_sponsor; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 50px;">
+		<div class="<?php echo $show_or_not_sponsor; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="sponsorLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
 		<!--Ending Sponsors Container-->
 		</div>
