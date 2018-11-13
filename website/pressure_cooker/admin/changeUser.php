@@ -35,13 +35,13 @@
 				<hr>
 				
 				<form action="changeUser.php" method="post">
-					<label for="name11">Write Your New UserName</label>
+					<label for="name11">New username:</label>
 					<input required type="text" name="newname" id="newNameId" class="form-control"><br>
 					
-					<label for="name2">Write Your Old UserName</label>
+					<label for="name2">Old username:</label>
 					<input required type="text" name="oldname" id="oldNameId" class="form-control"><br>
 					
-					<label for="name3">Write Your existing Password</label>
+					<label for="name3">Current Password:</label>
 					<input required type="password" name="password" id="passwordId" class="form-control"><br>
 					<button name="submit" class="btn btn-success" style="float: right">Update</button>
 				</form>
@@ -49,7 +49,7 @@
 					if(isset($_POST['submit'])){
 						$newname = $_POST['newname'];
 						$oldname = $_POST['oldname'];
-						$password = $_POST['password'];
+						$password = hash('sha256', $_POST['password']);
 						
 						$select = "SELECT * FROM admin";
 						$run = mysqli_query($conn, $select);
@@ -62,12 +62,12 @@
 								$runUpdate = mysqli_query($conn, $update);
 								
 									if($runUpdate){
-										echo "<center><h6>Your New Username is Update</h6></center>";
+										echo "<center><h6>Username updated</h6></center>";
 									}else{
-										echo "<center><h6>Your New Username is not Update</h6></center>";
+										echo "<center><h6>Username not updated</h6></center>";
 									}
 							}else{
-								echo "<center><h6>Your Old Username or Existing Password is wrong</h6></center>";
+								echo "<center><h6>Old username or current password incorrect</h6></center>";
 							}
 						}
 					}
