@@ -126,18 +126,12 @@
 				<?php
 		}
 		?>
-
-
-	<!--Ending Body Content-->
-	
-
-
+		</div>
+		</div>
 	<!-- Footer template-->
 	<?php
 	include 'templates/footer_template.php';
 	?>
 
-	
-</div>
 </body>
 </html>

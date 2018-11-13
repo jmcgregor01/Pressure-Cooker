@@ -1,6 +1,6 @@
 <?php
-	require __DIR__.'/admin/config/db.php';
-	@$get = $_GET['judge'];
+require __DIR__ . '/admin/config/db.php';
+@$get = $_GET[ 'judge' ];
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,116 +21,79 @@
 <body id="topOfPage">
 	<!--Body Content-->
 	<div class="container-fluid">
-		
-		<!--Header template-->
-		<?php
-			$home_select = "";
-			$judge_select = "";
-			$team_select = "";
-			$recipe_select = "";
-			$media_select = "";
-			$gallery_select = "";
-			$behind_select = "";
-			$sponsor_select = "";
-			$android_select = "";
-			$about_select = "";
-	
-		include "templates/navigationbar_template.php";
-		?>	
-	
-	
-	
-	
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		<?php
+		$home_select = "";
+		$judge_select = "";
+		$team_select = "";
+		$recipe_select = "";
+		$media_select = "";
+		$gallery_select = "";
+		$behind_select = "";
+		$sponsor_select = "";
+		$android_select = "";
+		$about_select = "";
+
+		include "templates/navigationbar_template.php";
+		?>
+
 		<!--Judge Container-->
 		<div class="myView bg-3">
-		<div id="startAgain" class="container-fluid myContainer bg-3 goTopAnim">
+			<div id="startAgain" class="container-fluid myContainer bg-3 goTopAnim">
 
-			
-			<?php
-			$judge_query = "SELECT * FROM judges
+
+				<?php
+				$judge_query = "SELECT * FROM judges
 									WHERE id = $get";
-			$connect_judge_query = mysqli_query($conn, $judge_query);
-			$count_rows = mysqli_num_rows($connect_judge_query);
-			if($count_rows > 0){
-			while($get_each_row = mysqli_fetch_array($connect_judge_query)){
-					$id_of_judge = $get_each_row['id'];
-					$name_of_judge = $get_each_row['name'];
-					$img_of_judge = $get_each_row['img'];
-					$msg_of_judge = $get_each_row['msg'];
-					$date_judge = $get_each_row['date'];
+				$connect_judge_query = mysqli_query( $conn, $judge_query );
+				$count_rows = mysqli_num_rows( $connect_judge_query );
+				if ( $count_rows > 0 ) {
+					while ( $get_each_row = mysqli_fetch_array( $connect_judge_query ) ) {
+						$id_of_judge = $get_each_row[ 'id' ];
+						$name_of_judge = $get_each_row[ 'name' ];
+						$img_of_judge = $get_each_row[ 'img' ];
+						$msg_of_judge = $get_each_row[ 'msg' ];
+						$date_judge = $get_each_row[ 'date' ];
 
-			?>
+						?>
 
-			
-			<h1 class="text-center" style="font-weight: bold; background: black; color: white; border-radius: 5px;"><?php echo $name_of_judge; ?></h1><br>
 
-			<div class="row">
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<img class="resizeWithIndividualView" src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judges">
+				<h1 class="text-center" style="font-weight: bold; background: black; color: white; border-radius: 5px;">
+					<?php echo $name_of_judge; ?>
+				</h1><br>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="thumbnail">
+							<img class="resizeWithIndividualView" src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judges">
+						</div>
 					</div>
-				</div>	
 
-				<div class="col-md-6">
-					<p style="float: right; font-weight: bold;">Date: <?php echo $date_judge; ?></p><br><br>
-					<p style="color: black; text-align: justify;"><strong><?php echo $msg_of_judge; ?></strong></p>
-				</div>	
+					<div class="col-md-6">
+						<p style="float: right; font-weight: bold;">Date:
+							<?php echo $date_judge; ?>
+						</p><br><br>
+						<p style="color: black; text-align: justify;">
+							<strong>
+								<?php echo $msg_of_judge; ?>
+							</strong>
+						</p>
+					</div>
 
+					<?php
+					}
+					}
+					?>
 
+				</div>
 
-				
-
-			<?php
-				}
-			}
-			?>
-	
-
-
-				
+				<!--Ending Judge Container-->
 			</div>
-
-			<!--Ending Judge Container-->
-		</div>
 		</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	
+
 		<!--Ending Body Content-->
 	</div>
-	
-	
-	
-	
+
 	<!-- Footer template-->
 	<?php
 	include 'templates/footer_template.php';
