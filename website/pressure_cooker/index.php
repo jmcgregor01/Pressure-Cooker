@@ -116,7 +116,7 @@ require __DIR__ . '/admin/config/db.php';
 						?>
 					<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
 						<a href="viewJudge.php?judge=<?php echo $id_of_judge; ?>">
-						<img class="resizeJudgeMainPage myimageshake"  src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judge">
+						<img class="resizeJudgeMainPage"  src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judge">
 						<p><strong><?php echo $name_of_judge; ?></strong></p>
 						<p><?php echo substr($msg_of_judge, 0, 25); ?>.....</p>
 					</a>
@@ -165,7 +165,7 @@ require __DIR__ . '/admin/config/db.php';
 					<div class="col-lg-3 col-md-6 col-sm-6 noteamdecoration zoomit">
 						<a href="viewTeam.php?team=<?php echo $id_of_team; ?>">
 							<div class="thumbnail">
-								<img class="resizeTeamMainPage myimageshake" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
+								<img class="resizeTeamMainPage" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
 								<p>
 									<strong>
 										<?php echo $name_of_team; ?>
@@ -216,7 +216,7 @@ require __DIR__ . '/admin/config/db.php';
 				<a href="recipeDetails.php?recipe_id=<?php echo $id_of_recipe; ?>">
 				<div class="col-lg-6 col-md-6 col-sm-6">
 					
-						<img class="img-thumbnail img-responsive myimageshake" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
+						<img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
 						<h2><strong><?php echo $name_of_recipe; ?></strong></h2>
 				</div>
 				</a>
@@ -323,7 +323,7 @@ require __DIR__ . '/admin/config/db.php';
 
 					<div class="col-sm-6 col-md-4 col-lg-4 nojudgedecoration zoomit">
 						<a href="viewGallery.php?gallery=<?php echo $id_of_gallery; ?>">
-						<img class="resizeWithThumbnail myimageshake" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery">
+						<img class="resizeWithThumbnail" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery">
 						<h2 style="font-size: 18px"><?php echo $name_of_gallery; ?></h2>
 					</a>
 						<br><br><br><br>
@@ -373,7 +373,7 @@ require __DIR__ . '/admin/config/db.php';
 
 					<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
 						<a href="viewBehindScenes.php?behindScenes=<?php echo $id_of_behindscenes; ?>">
-						<img class="resizeWithBehind myimageshake" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindscenes">
+						<img class="resizeWithBehind" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindscenes">
 						<h2 style="font-size: 18px"><?php echo $name_of_behindscenes; ?></h2>
 					</a>
 						<br><br><br><br>
@@ -394,7 +394,7 @@ require __DIR__ . '/admin/config/db.php';
 		<?php
 		$sponsor_query = "SELECT * FROM sponsor
 								ORDER BY id DESC
-								LIMIT 0,12";
+								LIMIT 0,8";
 		$connect_sponsor_query = mysqli_query( $conn, $sponsor_query );
 		$count_rows = mysqli_num_rows( $connect_sponsor_query );
 		$show_or_not_sponsor = 'hidden';
@@ -421,9 +421,9 @@ require __DIR__ . '/admin/config/db.php';
 						$msg_of_sponsor = $get_each_row[ 'msg' ];
 						?>
 
-					<div class="col-sm-6 col-md-4 col-lg-2 nojudgedecoration zoomit">
+					<div class="col-sm-6 col-md-4 col-lg-3 nojudgedecoration zoomit">
 						<a href="viewSponsor.php?sponsor=<?php echo $id_of_sponsor; ?>">
-						<img class="resizeWithThumbnail myimageshake" src="admin\dynamicImages\sponsors\<?php echo $img_of_sponsor; ?>" alt="sponsor">
+						<img class="resizeWithThumbnail" src="admin\dynamicImages\sponsors\<?php echo $img_of_sponsor; ?>" alt="sponsor">
 						<h2 style="font-size: 18px"><?php echo $name_of_sponsor; ?></h2>
 					</a>
 						<br><br><br><br>
