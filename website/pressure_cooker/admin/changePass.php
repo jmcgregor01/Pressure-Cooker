@@ -35,13 +35,13 @@
 				<hr>
 				
 				<form action="changePass.php" method="post">
-					<label for="name11">Write Your Old Password</label>
+					<label for="name11">Old Password:</label>
 					<input required type="password" name="name1" id="name1Id" class="form-control"><br>
 					
-					<label for="name2">Write Your New Password</label>
+					<label for="name2">New Password:</label>
 					<input required type="password" name="name2" id="name2Id" class="form-control"><br>
 					
-					<label for="name3">Again Write Your New Password</label>
+					<label for="name3">Confirm New Password:</label>
 					<input required type="password" name="name3" id="name3Id" class="form-control"><br>
 					<button name="submit" class="btn btn-success" style="float: right">Update</button>
 				</form>
@@ -67,7 +67,7 @@
 										echo "<center><h6>Password not changed</h6></center>";
 									}
 								}else{
-									echo "<center><h6>Passwords don't match</h6></center>";
+									echo "<center><h6>New passwords don't match</h6></center>";
 								}
 							}else{
 								echo "<center><h6>Your Old Password is Wrong</h6></center>";
