@@ -359,7 +359,7 @@ require __DIR__ . '/admin/config/db.php';
   			</a>
 			
 				<h2><strong>Behind The Scenes</strong></h2><br>
-				<h4>Our Working Teams</h4>
+				<h4>Our Hard Work</h4>
 				<div class="row slideanim">
 
 					<?php
@@ -371,9 +371,9 @@ require __DIR__ . '/admin/config/db.php';
 						$msg_of_behindscenes = $get_each_row[ 'msg' ];
 						?>
 
-					<div class="col-sm-6 col-md-4 col-lg-3 nojudgedecoration zoomit">
+					<div class="col-sm-6 col-md-6 col-lg-6 nojudgedecoration zoomit">
 						<a href="viewBehindScenes.php?behindScenes=<?php echo $id_of_behindscenes; ?>">
-						<img class="resizeWithThumbnail myimageshake" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindscenes">
+						<img class="resizeWithBehind myimageshake" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindscenes">
 						<h2 style="font-size: 18px"><?php echo $name_of_behindscenes; ?></h2>
 					</a>
 						<br><br><br><br>
