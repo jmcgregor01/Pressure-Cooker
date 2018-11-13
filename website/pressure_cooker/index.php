@@ -245,17 +245,7 @@
 			<br><a href="teamsLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Get More</a><br>
 		<!--Ending Team Container-->
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-			<?php
+		<?php
 			$recipe_query = "SELECT * FROM recipes
 								ORDER BY id DESC
 								LIMIT 0,1";
@@ -271,7 +261,7 @@
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
 		
-			<h2>Latest Recipe</h2><br>
+			<h2>Recipes</h2><br>
 			<?php
 			while($get_each_row = mysqli_fetch_array($connect_recipe_query)){
 				        $id_of_recipe = $get_each_row['id'];
@@ -293,24 +283,27 @@
 					
 				</div>
 			</div>-->
+			<br></br>
+			<div class="row" style="padding-left:0px;">
+			<div class="col-lg-8 col-md-8 col-sm-8">
+			<h2 style="padding-left: 0px; color: #f4511e;"><strong><?php echo $name_of_recipe; ?></strong></h2>
+			</div>
+			</div>
 			<div class="row" style="padding: 50px;">
-				<div class="col-lg-6 col-md-6 col-sm-6">
-				<br>
-					    <h2><strong><?php echo $name_of_recipe; ?></strong></h2>
-					    <br>
-                        <img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe ; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
-						<h3 class="example1" style="text-align: justify;"><strong>METHOD</strong></h3>
+			
+				<div class="col-lg-8 col-md-6 col-sm-6">
+				        <img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe ; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-6">
+				    
+				</div>
+				</div>
+				<div class="row" style="padding: 20px;">
+				<div class="col-lg-8 col-md-6 col-sm-6">
 						
-						<p class="example3" style="text-align: justify;"><?php echo $method_of_recipe; ?></p>
 				</div>
 				
-				<div class="col-lg-6 col-md-6 col-sm-6">
-				    <br>
-				    <h3 class="example1" style="text-align: justify;"><strong>INGREDIENTS</strong></h3>
-				    <p class="example3" style="text-align: justify;"><?php echo $ingredients_of_recipe; ?></p>
-					
-				</div>
-				</div>    
+			    </div>    
 			<?php
 				}
 			}

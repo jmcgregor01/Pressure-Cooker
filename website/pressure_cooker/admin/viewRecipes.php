@@ -55,10 +55,10 @@
 			</div>
 			<div class="container" style="background: #FFF;">
 			<?php
-			$judge_query = "SELECT * FROM recipes
+			$recipe_query = "SELECT * FROM recipes
 									ORDER BY id DESC";
-			$connect_judge_query = mysqli_query($conn, $judge_query);
-			$count_rows = mysqli_num_rows($connect_judge_query);
+			$connect_recipe_query = mysqli_query($conn, $recipe_query);
+			$count_rows = mysqli_num_rows($connect_recipe_query);
 			$number_of_items = 1;
 			?>
 				<h2>View Recipes</h2>
@@ -75,17 +75,18 @@
 						</tr>
 			<?php
 			if($count_rows > 0){
-				while($get_each_row = mysqli_fetch_array($connect_judge_query)){
-					$id_of_judge = $get_each_row['id'];
-					$name_of_judge = $get_each_row['name'];
-					$img_of_judge = $get_each_row['img'];
-					$msg_of_judge = $get_each_row['msg'];
-					$date_judge = $get_each_row['date'];
+				while($get_each_row = mysqli_fetch_array($connect_recipe_query)){
+					$id_of_recipe = $get_each_row['id'];
+						$name_of_recipe = $get_each_row['name'];
+						$img_of_recipe = $get_each_row['img'];
+						$ingredients_of_recipe = $get_each_row['ingredients'];
+						$method_of_recipe = $get_each_row['method'];
+						$date_recipe = $get_each_row['date'];
 			?>	
 						<tr>
 							<th><?php echo $number_of_items++; ?></th>
-							<th><?php echo $name_of_judge; ?></th>
-							<th><?php echo $date_judge; ?></th>
+							<th><?php echo $name_of_recipe; ?></th>
+							<th><?php echo $date_recipe; ?></th>
 							<th>&nbsp;<a href="deleteRecipe.php?id=<?php echo $id_of_judge; ?>" class="btn btn-danger">Delete</a></th>
 						</tr>
 			<?php

@@ -114,17 +114,6 @@ body{
 .titleBoarder{
 	border: 2px solid #FF0004;
 }
-
-
-
-
-
-
-
-
-
-
-
 /*Image Settings*/
 .resizeJudgeMainPage{
 	height: -webkit-fill-available;
@@ -146,9 +135,9 @@ body{
 
 .resizeWithThumbnail{
 	height: -webkit-fill-available;
-    max-height: 290px;
+    max-height: 300px;
 	max-width: 100%;
-	object-fit: contain;
+	object-fit: cover;
     object-position: center;
 	display: inline-block;
     padding: 4px;

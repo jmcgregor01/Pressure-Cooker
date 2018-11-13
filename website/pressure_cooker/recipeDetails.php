@@ -17,7 +17,7 @@
 </head>
 
 <body id="topOfPage">
-    <div class="container-fluid">
+    <div class="container-fluid bg-2">
 	<!--Body Content-->
 	<!--Header template-->
 		<?php
@@ -37,26 +37,35 @@
 						$method_of_recipe = $get_each_row['method'];
 						$date_recipe = $get_each_row['date'];
 				?>
-				
-				
-                <div class="row" style="padding: 50px;">
-				<div class="col-lg-6 col-md-6 col-sm-6">
-				<br>
-					    <h2><strong><?php echo $name_of_recipe; ?></strong></h2>
-					    <br>
-                        <img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe ; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
-						<h3 class="example1" style="text-align: justify;"><strong>METHOD</strong></h3>
+			<div class="row" style="padding-left:0px;">
+			<br></br>
+			<div class="col-lg-8 col-md-8 col-sm-8">
+			<h2 style="padding-left: 50px; color: #f4511e;"><strong><?php echo $name_of_recipe; ?></strong></h2>
+			</div>
+			</div>
+			<div class="row" style="padding: 50px;">
+			
+				<div class="col-lg-8 col-md-6 col-sm-6">
+				        <img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe ; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-6">
+				    <h3 class="example1" style="text-align: justify;color: #f4511e;padding-top: 0px;"><strong>INGREDIENTS</strong></h3>
+				    <br>
+				    <p class="example3" style="text-align: justify;"><?php echo $ingredients_of_recipe; ?></p>
+				</div>
+				</div>
+				<div class="row" style="padding: 20px;">
+				<div class="col-lg-8 col-md-6 col-sm-6">
+						<h3 class="example1" style="text-align: justify;color: #f4511e;padding-top: 0px;"><strong>METHOD</strong></h3>
 						<br>
 						<p class="example3" style="text-align: justify;"><?php echo $method_of_recipe; ?></p>
 				</div>
 				
-				<div class="col-lg-6 col-md-6 col-sm-6">
-				    <br>
-				    <h3 class="example1" style="text-align: justify;"><strong>INGREDIENTS</strong></h3>
-				    <p class="example3" style="text-align: justify;"><?php echo $ingredients_of_recipe; ?></p>
-					
-				</div>
-				</div>    
+			    </div>    
+	    <div class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-2 text-center goTopAnim" style="padding: 50px;">
+			<br><a href="recipesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px;">Back to Recipes</a><br>
+		<!--Ending Recipes Container-->
+		</div>			   
     <!---------ending recipe00Section--------!>
     <?php
 	include 'templates/footer_template.php';
