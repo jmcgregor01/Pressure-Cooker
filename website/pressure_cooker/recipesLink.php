@@ -58,10 +58,10 @@
 						$msg_of_recipe = $get_each_row['method'];
 						$date_recipe = $get_each_row['date'];
 				?>
-				<div class="col-sm-6 col-md-4 col-lg-3 nojudgedecoration zoomit">
+				<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
 					<a href="recipeDetails.php?recipe_id=<?php echo $id_of_recipe; ?>">
 						<img class="resizeWithThumbnail myimageshake" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="team image">
-						<h2><strong><?php echo substr($name_of_recipe, 0, 20); ?>...</strong></h2>
+						<h2><strong><?php echo substr($name_of_recipe, 0, 15); ?>...</strong></h2>
 						<p class="recipesMessageLimit" style="color: #1364D1;"><strong><?php echo substr($msg_of_recipe, 0, 30); ?>...</strong></p>
 					</a>
 				</div>
