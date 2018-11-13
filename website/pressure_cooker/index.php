@@ -21,61 +21,11 @@
 	<!--Body Content-->
 	<div class="container-fluid">
 
-		
 		<!--Top Navigation Bar-->
 		<?php
 		include "templates/navigationbar_template_main.php";
 		?>
 		<!--Ending Top Navigation Bar-->
-		
-	
-
-		
-		
-		
-		
-		
-		
-		
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 			<?php
 			$carousel_query = "SELECT * FROM carousel
 								ORDER BY id DESC";
@@ -132,38 +82,6 @@
 			<!--Ending of Carousel-->
 			</div>
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 			<?php
 			$judge_query = "SELECT * FROM judges
 								ORDER BY id DESC
@@ -211,26 +129,7 @@
 			<br><a href="judgesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Judges</a><br>
 			<!--Ending Judge Container-->	
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 			<?php
 			$team_query = "SELECT * FROM teams
 								ORDER BY id DESC
@@ -277,26 +176,7 @@
 			<br><a href="teamsLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Teams</a><br>
 		<!--Ending Team Container-->	
 		</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 			<?php
 			$recipe_query = "SELECT * FROM recipes
 								ORDER BY id DESC
@@ -351,26 +231,7 @@
 			<br><a href="recipesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Recipes</a><br>
 		<!--Ending Recipes Container-->
 		</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 			<?php
 			$media_query = "SELECT * FROM media
 								ORDER BY id DESC
@@ -422,27 +283,7 @@
 			<br><a href="mediaLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Episodes</a><br>
 		<!--Ending Media Container-->
 		</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 			<?php
 			$gallery_query = "SELECT * FROM gallery
 								ORDER BY id DESC
@@ -490,18 +331,7 @@
 			<br><a href="galleryLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Pictures</a><br>
 		<!--Ending Gallery Container-->
 		</div>
-	
-	
-	
-	
-	
-	
-	
-		
-		
-		
-		
-		
+
 			<?php
 			$behindscenes_query = "SELECT * FROM behindscenes
 								ORDER BY id DESC
@@ -549,24 +379,6 @@
 			<br><a href="behindScenes.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More BehindScenes</a><br>
 		<!--Ending Behindscenes Container-->
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
-	
-	
-	
-	
 
 			<?php
 			$sponsor_query = "SELECT * FROM sponsor
@@ -615,29 +427,7 @@
 			<br><a href="sponsorLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Sponsors</a><br>
 		<!--Ending Sponsors Container-->
 		</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 		<!--Contact Us Container-->
 		<div class="myView bg-0">
 		<div id="citContacts" class="container-fluid myContainer bg-0 text-center goTopAnim">
