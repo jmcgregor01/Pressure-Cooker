@@ -193,10 +193,12 @@
 					$msg_of_judge = $get_each_row['msg'];
 					$date_judge = $get_each_row['date'];
 			?>
-				<div class="col-sm-6 col-md-6 col-lg-4">
-						<img class="resizeJudgeMainPage"  src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judge">
+				<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
+					<a href="viewJudge.php?judge=<?php echo $id_of_judge; ?>">
+						<img class="resizeJudgeMainPage myimageshake"  src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judge">
 						<p><strong><?php echo $name_of_judge; ?></strong></p>
-						<p><?php echo $msg_of_judge; ?></p>
+						<p><?php echo substr($msg_of_judge, 0, 25); ?>.....</p>
+					</a>
 				</div>
 			<?php
 				}
@@ -206,7 +208,7 @@
 		</div>
 		</div>
 		<div class="<?php echo $show_or_not_judges; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="judgesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
+			<br><a href="judgesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Judges</a><br>
 			<!--Ending Judge Container-->
 			
 			
@@ -251,11 +253,13 @@
 				$msg_of_team = $get_each_row['msg'];
 				$date_team = $get_each_row['date'];
 			?>
-				<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="col-lg-3 col-md-6 col-sm-6 noteamdecoration zoomit">
+					<a href="viewTeam.php?team=<?php echo $id_of_team; ?>">
 					<div class="thumbnail">
-						<img class="resizeTeamMainPage" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
-						<p style="color: #1364D1;"><strong><?php echo $name_of_team; ?></strong></p>
+						<img class="resizeTeamMainPage myimageshake" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
+						<p><strong><?php echo $name_of_team; ?></strong></p>
 					</div>
+					</a>
 				</div>
 			<?php
 				}
@@ -265,7 +269,7 @@
 		</div>
 		</div>
 		<div class="<?php echo $show_or_not_team; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="teamsLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
+			<br><a href="teamsLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Teams</a><br>
 		<!--Ending Team Container-->	
 		</div>
 	
@@ -339,7 +343,7 @@
 		</div>
 		</div>
 		<div class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="recipesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
+			<br><a href="recipesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Recipes</a><br>
 		<!--Ending Recipes Container-->
 		</div>
 	
@@ -409,7 +413,7 @@
 		</div>
 		</div>
 		<div class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-5 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="mediaLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
+			<br><a href="mediaLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Episodes</a><br>
 		<!--Ending Media Container-->
 		</div>
 	
@@ -474,7 +478,7 @@
 		</div>
 		</div>
 		<div class="<?php echo $show_or_not_gallery; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="galleryLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
+			<br><a href="galleryLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Pictures</a><br>
 		<!--Ending Gallery Container-->
 		</div>
 	
@@ -530,7 +534,7 @@
 		</div>
 		</div>
 		<div class="<?php echo $show_or_not_behindscenes; ?> container-fluid myContainer bg-8 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="behindScenes.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
+			<br><a href="behindScenes.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More BehindScenes</a><br>
 		<!--Ending Behindscenes Container-->
 		</div>
 		
@@ -593,7 +597,7 @@
 		</div>
 		</div>
 		<div class="<?php echo $show_or_not_sponsor; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="sponsorLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</a><br>
+			<br><a href="sponsorLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Sponsors</a><br>
 		<!--Ending Sponsors Container-->
 		</div>
 	

@@ -140,23 +140,11 @@ body{
     object-position: center;
 }
 
-
-.resizeWithThumbnail {
-    height: 330px;
-    height: -webkit-fill-available;
-    max-height: 330px;
-	width: 490px;
-    max-width: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: inline-block;
-    padding: 4px;
-    line-height: 1.42857143;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    transition: all .2s ease-in-out;
+div.zoomit img:hover{
+	opacity: 0.7;
+    filter: alpha(opacity=70);
 }
+
 
 .resizeWithIndividualView {
     height: 330px;
@@ -228,6 +216,11 @@ body{
   }
 }
 
+.nojudgedecoration >a:hover{
+	color: red;
+	text-decoration: none;
+}
+
 /*Best way to handle small Screens Example2*/
 .example2 {}
 
@@ -258,7 +251,22 @@ body{
 	padding: 500px;
   }
 }
-
+.resizeWithThumbnail {
+    height: 330px;
+    height: -webkit-fill-available;
+    max-height: 330px;
+	width: 490px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: inline-block;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+}
 @media screen and (max-width: 1000px) {
   .mediaLinkContainer {
 	padding: 0px;
@@ -270,6 +278,13 @@ body{
 
 
 
+
+div.zoomit p{
+/*
+	opacity: 0.5;
+    filter: alpha(opacity=50);
+*/
+}
 
 
 
@@ -301,6 +316,10 @@ body{
 
 
 
+
+.nojudgedecoration >a{
+	color: black;
+}
 
 
 
@@ -396,6 +415,10 @@ p.recipesMessageLimit {
 	color: #BCBCBC;
 	float: right;
 }
+.noteamdecoration >a{
+	color: #1364D1;
+}
+
 
 .footerStyleRight >a:hover {
 	text-decoration: none;
@@ -436,6 +459,10 @@ p.recipesMessageLimit {
 }
 
 
+div.zoomit p:hover{
+	opacity: 0.9;
+    filter: alpha(opacity=90);
+}
 
 
 
@@ -517,7 +544,10 @@ p.recipesMessageLimit {
 	padding: 0px;
   }
 }
-
+.noteamdecoration >a:hover{
+	color: red;
+	text-decoration: none;
+}
 @media screen and (max-width: 901) {
   .container-fluid {
 	padding: 10px;
