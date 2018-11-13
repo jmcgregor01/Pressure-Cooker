@@ -47,9 +47,9 @@
 				</form>
 				<?php
 					if(isset($_POST['submit'])){
-						$old = $_POST['name1'];
-						$new = $_POST['name2'];
-						$again = $_POST['name3'];
+						$old = hash('sha256', $_POST['name1']);
+						$new = hash('sha256', $_POST['name2']);
+						$again = hash('sha256', $_POST['name3']);
 						
 						$select = "SELECT * FROM admin";
 						$run = mysqli_query($conn, $select);
@@ -62,12 +62,12 @@
 												SET pass='$again'";
 									$runUpdate = mysqli_query($conn, $update);
 									if($runUpdate){
-										echo "<center><h6>Your New Password is Update</h6></center>";
+										echo "<center><h6>Password changed</h6></center>";
 									}else{
-										echo "<center><h6>Your New Password is not Update</h6></center>";
+										echo "<center><h6>Password not changed</h6></center>";
 									}
 								}else{
-									echo "<center><h6>Your New Password is not matching</h6></center>";
+									echo "<center><h6>Passwords don't match</h6></center>";
 								}
 							}else{
 								echo "<center><h6>Your Old Password is Wrong</h6></center>";
