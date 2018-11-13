@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2018 at 04:02 AM
+-- Generation Time: Nov 13, 2018 at 11:59 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`user`, `pass`) VALUES
-('admin', 'd8e2fd82de480de7354b58f1e6c2e58fe6e3800bbbbad0c9a95be997157586d9');
+('admin', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918');
 
 -- --------------------------------------------------------
 
