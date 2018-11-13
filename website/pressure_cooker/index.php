@@ -209,23 +209,28 @@
 		</div>
 		<div class="<?php echo $show_or_not_judges; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="judgesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Judges</a><br>
-			<!--Ending Judge Container-->
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			<!--Ending Judge Container-->	
 		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 			<?php
 			$team_query = "SELECT * FROM teams
 								ORDER BY id DESC
@@ -383,7 +388,8 @@
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
 			
-			<h2><strong>Latest Episode</strong></h2>
+			<h2><strong>Latest Episode</strong></h2><br>
+			<h4>Watch Our Show Anytime</h4>
 			<?php
 			while($get_each_row = mysqli_fetch_array($connect_media_query)){
 				$id_of_media = $get_each_row['id'];
@@ -453,7 +459,8 @@
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
-			<h2><strong>Gallery</strong></h2>
+			<h2><strong>Gallery</strong></h2><br>
+			<h4>Our Best Photos</h4>
 			<div class="row slideanim">
 				
 			<?php
@@ -465,9 +472,11 @@
 				$msg_of_gallery = $get_each_row['msg'];
 			?>	
 
-				<div class="col-sm-6 col-md-4 col-lg-4">
-					<img class="resizeWithThumbnail" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery">
-					<h2 style="font-size: 18px"><?php echo $name_of_gallery; ?></h2><br><br><br><br>
+				<div class="col-sm-6 col-md-4 col-lg-4 nojudgedecoration zoomit">
+					<a href="viewGallery.php?gallery=<?php echo $id_of_gallery; ?>">
+						<img class="resizeWithThumbnail myimageshake" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery">
+						<h2 style="font-size: 18px"><?php echo $name_of_gallery; ?></h2>
+					</a><br><br><br><br>
 				</div>
 			<?php
 				}
@@ -493,10 +502,10 @@
 		
 		
 		
-					<?php
+			<?php
 			$behindscenes_query = "SELECT * FROM behindscenes
 								ORDER BY id DESC
-								LIMIT 0,6";
+								LIMIT 0,8";
 			$connect_behindscenes_query = mysqli_query($conn, $behindscenes_query);
 			$count_rows = mysqli_num_rows($connect_behindscenes_query);
 			$show_or_not_behindscenes = 'hidden';
@@ -509,7 +518,8 @@
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
-			<h2><strong>Behind The Scenes</strong></h2>
+			<h2><strong>Behind The Scenes</strong></h2><br>
+			<h4>Our Working Teams</h4>
 			<div class="row slideanim">
 				
 			<?php
@@ -521,9 +531,11 @@
 				$msg_of_behindscenes = $get_each_row['msg'];
 			?>	
 
-				<div class="col-sm-6 col-md-4 col-lg-4">
-					<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindscenes">
-					<h2 style="font-size: 18px"><?php echo $name_of_behindscenes; ?></h2><br><br><br><br>
+				<div class="col-sm-6 col-md-4 col-lg-3 nojudgedecoration zoomit">
+					<a href="viewBehindScenes.php?behindScenes=<?php echo $id_of_behindscenes; ?>">
+						<img class="resizeWithThumbnail myimageshake" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindscenes">
+						<h2 style="font-size: 18px"><?php echo $name_of_behindscenes; ?></h2>
+					</a><br><br><br><br>
 				</div>
 			<?php
 				}
@@ -559,7 +571,7 @@
 			<?php
 			$sponsor_query = "SELECT * FROM sponsor
 								ORDER BY id DESC
-								LIMIT 0,6";
+								LIMIT 0,12";
 			$connect_sponsor_query = mysqli_query($conn, $sponsor_query);
 			$count_rows = mysqli_num_rows($connect_sponsor_query);
 			$show_or_not_sponsor = 'hidden';
@@ -572,7 +584,8 @@
 			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
-			<h2><strong>Sponsors</strong></h2>
+			<h2><strong>Sponsors</strong></h2><br>
+			<h4>Our Supporters</h4>
 			<div class="row slideanim">
 				
 			<?php
@@ -584,9 +597,11 @@
 				$msg_of_sponsor = $get_each_row['msg'];
 			?>	
 
-				<div class="col-sm-6 col-md-4 col-lg-4">
-					<img class="resizeWithThumbnail" src="admin\dynamicImages\sponsors\<?php echo $img_of_sponsor; ?>" alt="sponsor">
-					<h2 style="font-size: 18px"><?php echo $name_of_sponsor; ?></h2><br><br><br><br>
+				<div class="col-sm-6 col-md-4 col-lg-2 nojudgedecoration zoomit">
+					<a href="viewSponsor.php?sponsor=<?php echo $id_of_sponsor; ?>">
+						<img class="resizeWithThumbnail myimageshake" src="admin\dynamicImages\sponsors\<?php echo $img_of_sponsor; ?>" alt="sponsor">
+						<h2 style="font-size: 18px"><?php echo $name_of_sponsor; ?></h2>
+					</a><br><br><br><br>
 				</div>
 			<?php
 				}
