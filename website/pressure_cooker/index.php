@@ -127,7 +127,7 @@ require __DIR__ . '/admin/config/db.php';
 					}
 					?>
 				</div>
-			</div>
+			</div><br><br><br><br><br>
 		</div>
 		<div class="<?php echo $show_or_not_judges; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="judgesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Judges</a><br>
@@ -179,67 +179,58 @@ require __DIR__ . '/admin/config/db.php';
 					}
 					?>
 				</div>
-			</div>
+			</div><br><br><br><br><br>
 		</div>
 		<div class="<?php echo $show_or_not_team; ?> container-fluid myContainer bg-1 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="teamsLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Teams</a><br>
 			<!--Ending Team Container-->
 		</div>
 
-		<?php
-		$recipe_query = "SELECT * FROM recipes
+			<?php
+			$recipe_query = "SELECT * FROM recipes
 								ORDER BY id DESC
 								LIMIT 0,1";
-		$connect_recipe_query = mysqli_query( $conn, $recipe_query );
-		$count_rows = mysqli_num_rows( $connect_recipe_query );
-		$show_or_not_recipe = 'hidden';
-		if ( $count_rows > 0 ) {
-			$show_or_not_recipe = '';
+			$connect_recipe_query = mysqli_query($conn, $recipe_query);
+			$count_rows = mysqli_num_rows($connect_recipe_query);
+			$show_or_not_recipe = 'hidden';
+			if($count_rows > 0){
+				$show_or_not_recipe = '';
 			?>
 		<!--Recipes Container-->
 		<div class="myView bg-3">
-			<div id="recipesSection" class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-3 text-center goTopAnim">
-				<a href="#topOfPage" title="To Top">
+		<div id="recipesSection" class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-3 text-center goTopAnim">
+			<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
-			
-				<h2><strong>Latest Recipe</strong></h2><br>
-				<?php
-				while ( $get_each_row = mysqli_fetch_array( $connect_recipe_query ) ) {
-					$id_of_recipe = $get_each_row[ 'id' ];
-					$name_of_recipe = $get_each_row[ 'name' ];
-					$img_of_recipe = $get_each_row[ 'img' ];
-					$ingredients_of_recipe = $get_each_row[ 'ingredients' ];
-					$method_of_recipe = $get_each_row[ 'method' ];
-					$date_recipe = $get_each_row[ 'date' ];
-					?>
-				<div class="row">
-					<div class="col-lg-6 col-md-6 col-sm-6">
-						<br>
+		
+			<h2><strong>Latest Recipe</strong></h2><br>
+			<h4>Please, Try Youself!</h4>
+			<?php
+			while($get_each_row = mysqli_fetch_array($connect_recipe_query)){
+				$id_of_recipe = $get_each_row['id'];
+				$name_of_recipe = $get_each_row['name'];
+				$img_of_recipe = $get_each_row['img'];
+				$date_recipe = $get_each_row['date'];
+			?>
+			<div class="row slideanim nojudgedecoration zoomitMainRecipes">
+				<a href="recipeDetails.php?recipe_id=<?php echo $id_of_recipe; ?>">
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					
+						<img class="img-thumbnail img-responsive myimageshake" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
 						<h2><strong><?php echo $name_of_recipe; ?></strong></h2>
-						<br>
-						<img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe ; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
-						<h3 class="example1" style="text-align: justify;"><strong>METHOD</strong></h3>
-
-						<p class="example3" style="text-align: justify;">
-							<?php echo $method_of_recipe; ?>
-						</p>
-					</div>
-
-					<div class="col-lg-6 col-md-6 col-sm-6">
-						<br>
-						<h3 class="example1" style="text-align: justify;"><strong>INGREDIENTS</strong></h3>
-						<p class="example3" style="text-align: justify;">
-							<?php echo $ingredients_of_recipe; ?>
-						</p>
-
-					</div>
 				</div>
-				<?php
-				}
-				}
-				?>
+				</a>
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					<strong><p class="example1" style="text-align: justify;">CIT's Pressure Cooker Team has their best cooking recipes to share with everybody, who love to cook and test something new to eat. Our team is Helping you make meal time easy with a range of dinner ideas and recipe inspiration.</p></strong>
+					
+				</div>
+					
 			</div>
+			<?php
+				}
+			}
+			?>
+		</div>
 		</div>
 		<div class="<?php echo $show_or_not_recipe; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="recipesLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Recipes</a><br>
@@ -293,7 +284,7 @@ require __DIR__ . '/admin/config/db.php';
 				}
 				}
 				?>
-			</div>
+			</div><br><br><br>
 		</div>
 		<div class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-5 text-center goTopAnim" style="padding: 50px;">
 			<br><a href="mediaLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Episodes</a><br>

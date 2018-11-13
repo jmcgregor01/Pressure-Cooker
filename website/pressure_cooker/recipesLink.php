@@ -35,97 +35,47 @@
 	
 		include "templates/navigationbar_template.php";
 		?>	
-        <!--recipe Container-->
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+		
+			<!--Judge Container-->
+		<div class="myView bg-3">
+		<div class="container-fluid myContainer bg-3 text-center goTopAnim">
 
-			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px;">RECIPES</h1><br>
+			<h1 style="font-weight: bold; background: black; color: white; border-radius: 5px;">RECIPES</h1><br>
 
-				<div class="row" style="padding: 50px;">
+				<div class="row">
 
 				<?php
 				$recipe_query = "SELECT * FROM recipes
-									ORDER BY date DESC";
+									ORDER BY date DESC
+									LIMIT 0,12";
 				$connect_recipe_query = mysqli_query($conn, $recipe_query);
 				$count_rows = mysqli_num_rows($connect_recipe_query);
-				$cap = 4;
-					if (empty($_POST["Show"]))
-					{
-						$displayed = 0;
-						$max_display = $cap;
-			            $min_display = 0;
-						setcookie('display', $displayed);
-					}
-					else if($_POST["Show"] == '+')
-					{
-						$displayed = $_COOKIE['display'] + $cap;
-						setcookie('display', $displayed);
-						$max_display = $displayed + $cap;
-						$min_display = $displayed;
-						$displayed = 0;
-					}
-					else if($_POST["Show"] == "-")
-					{
-						$displayed = $_COOKIE['display'] - $cap;
-						setcookie('display', $displayed);
-						$max_display = $displayed + $cap;
-						$min_display = $displayed;
-						$displayed = 0;
-					}
 				if($count_rows > 0){
 					while($get_each_row = mysqli_fetch_array($connect_recipe_query)){
 						$id_of_recipe = $get_each_row['id'];
 						$name_of_recipe = $get_each_row['name'];
 						$img_of_recipe = $get_each_row['img'];
-						$ingredients_of_recipe = $get_each_row['ingredients'];
-						$method_of_recipe = $get_each_row['method'];
+						$msg_of_recipe = $get_each_row['method'];
 						$date_recipe = $get_each_row['date'];
-
 				?>
-				    
-				    <div class="col-sm-6 col-md-4 col-lg-3">
-				    <form action="recipeDetails.php" method="GET">
-				    <input type="hidden" name="recipe_id" value="<?php echo $id_of_recipe;?>">
-				    
-				    <div class="thumbnail">
-				        <input type="image" img class = "resizeWithThumbnail" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="recipe image">
-						<h4><strong><?php echo $name_of_recipe; ?></strong></h4>
-					    
-                        <!---<p class="recipesMessageLimit" style="color: #1364D1;"><strong><?php echo $ingredients_of_recipe; ?></strong></p>--->
-					</div>
-					</form> 
-					
+				<div class="col-sm-6 col-md-4 col-lg-3 nojudgedecoration zoomit">
+					<a href="recipeDetails.php?recipe_id=<?php echo $id_of_recipe; ?>">
+						<img class="resizeWithThumbnail myimageshake" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="team image">
+						<h2><strong><?php echo substr($name_of_recipe, 0, 20); ?>...</strong></h2>
+						<p class="recipesMessageLimit" style="color: #1364D1;"><strong><?php echo substr($msg_of_recipe, 0, 30); ?>...</strong></p>
+					</a>
 				</div>
 				<?php
-
 					}
 				}
 				?>
 				</div>
-
-			<!--Ending Recipe Container-->
-<?php
-			if ($count_rows > $max_display)
-			{
-				?>
-				<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-
-					<form action="recipesLink.php" method="POST">
-						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '+' style="float: right; margin-right: 20px;">Next</button><br>
-					</form>
-				</div>
-		<?php
-		}
-		else if ($count_rows > $min_display && $min_display != 0)
-		{
-			?>
-			<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-					<form action="recipesLink.php" method="POST">
-						<button class="btn btn-info btn-lg"; type = "submit" name = "Show" value = '-' style="float: right; margin-right: 20px;">Back</button><br>
-					</form>
-				</div>
-				<?php
-		}
-		?>
+			<!--Ending Judge Container-->
+		</div>
+		</div>
+		
+		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+			<button class="btn btn-danger btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
 		</div>
 		</div>
 	<!-- Footer template-->
