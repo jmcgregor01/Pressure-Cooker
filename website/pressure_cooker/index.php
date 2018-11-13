@@ -344,7 +344,7 @@ require __DIR__ . '/admin/config/db.php';
 		<?php
 		$behindscenes_query = "SELECT * FROM behindscenes
 								ORDER BY id DESC
-								LIMIT 0,8";
+								LIMIT 0,6";
 		$connect_behindscenes_query = mysqli_query( $conn, $behindscenes_query );
 		$count_rows = mysqli_num_rows( $connect_behindscenes_query );
 		$show_or_not_behindscenes = 'hidden';
@@ -371,7 +371,7 @@ require __DIR__ . '/admin/config/db.php';
 						$msg_of_behindscenes = $get_each_row[ 'msg' ];
 						?>
 
-					<div class="col-sm-6 col-md-6 col-lg-6 nojudgedecoration zoomit">
+					<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
 						<a href="viewBehindScenes.php?behindScenes=<?php echo $id_of_behindscenes; ?>">
 						<img class="resizeWithBehind myimageshake" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindscenes">
 						<h2 style="font-size: 18px"><?php echo $name_of_behindscenes; ?></h2>
