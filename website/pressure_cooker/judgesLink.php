@@ -34,85 +34,85 @@ require __DIR__ . '/admin/config/db.php';
 
 	include "templates/navigationbar_template.php";
 	?>
-	<!--Judge Container-->
-	<div id="startAgain" class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+		<!--Judge Container-->
+		<div class="myView bg-3">
+		<div id="startAgain" class="container-fluid myContainer bg-3 text-center goTopAnim">
 
-		<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px;">JUDGES & HOST</h1><br>
+			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px;">JUDGES & HOST</h1><br>
 
-		<div class="row" style="padding: 50px;">
-
-
+			<div class="row">
+					
+				
 			<?php
 			$judge_query = "SELECT * FROM judges
 									ORDER BY date DESC
 										LIMIT 0,9";
-			$connect_judge_query = mysqli_query( $conn, $judge_query );
-			$count_rows = mysqli_num_rows( $connect_judge_query );
-			$max_display = 3;
-			$displayed = 0;
-
-			if ( empty( $_GET[ "All" ] ) ) {
-				$show_all = true;
-			} else {
-				$show_all = $_GET[ "All" ];
-			}
-
-			if ( $count_rows > 0 ) {
-				while ( $get_each_row = mysqli_fetch_array( $connect_judge_query ) ) {
-					$id_of_judge = $get_each_row[ 'id' ];
-					$name_of_judge = $get_each_row[ 'name' ];
-					$img_of_judge = $get_each_row[ 'img' ];
-					$msg_of_judge = $get_each_row[ 'msg' ];
-					$date_judge = $get_each_row[ 'date' ];
-					$displayed++;
-					if ( $displayed <= $max_display ) {
-						?>
-			<div class="col-sm-6 col-md-4 col-lg-4">
-				<div class="thumbnail">
-					<img class="resizeWithThumbnail" src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judges">
-					<h2><strong><?php echo $name_of_judge; ?></strong></h2>
-					<p style="color: #1364D1;">
-						<strong>
-							<?php echo $msg_of_judge; ?>
-						</strong>
-					</p>
-				</div>
-			</div>
-			<?php
-			} elseif ( $show_all == true ) {
-					?>
-			<div class="col-sm-6 col-md-4 col-lg-4">
-				<div class="thumbnail">
-					<img class="resizeWithThumbnail" src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judges">
-					<h2><strong><?php echo $name_of_judge; ?></strong></h2>
-					<p style="color: #1364D1;">
-						<strong>
-							<?php echo $msg_of_judge; ?>
-						</strong>
-					</p>
-				</div>
-			</div>
-
-			<?php
-			}
-			}
-			}
+			$connect_judge_query = mysqli_query($conn, $judge_query);
+			$count_rows = mysqli_num_rows($connect_judge_query);
+			if($count_rows > 0){
+				while($get_each_row = mysqli_fetch_array($connect_judge_query)){
+					$id_of_judge = $get_each_row['id'];
+					$name_of_judge = $get_each_row['name'];
+					$img_of_judge = $get_each_row['img'];
+					$msg_of_judge = $get_each_row['msg'];
+					$date_judge = $get_each_row['date'];
 			?>
+
+				<div class="col-sm-6 col-md-4 col-lg-4 nojudgedecoration zoomit">
+					<a href="viewJudge.php?judge=<?php echo $id_of_judge; ?>">
+					<div class="thumbnail">
+						<img class="resizeWithThumbnail" src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judges">
+						<h2><strong><?php echo $name_of_judge; ?></strong></h2>
+						<p><strong><?php echo substr($msg_of_judge, 0, 25); ?>.....</strong></p>
+					</div>
+					</a>
+				</div>	
+
+			<?php
+				}
+			}
+		
+			?>
+	
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+
+			<!--Ending Judge Container-->
 		</div>
-		<!--Ending Judge Container-->
-		<?php
-		if ( $show_all != true ) {
-			?>
+		</div>
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-			<form action="/pressure_cooker/judgesLink.php" method="get">
-				<button class="btn btn-info btn-lg" ; type="submit" name="All" value="true" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Get More</button><br>
-			</form>
+				<button class="btn btn-danger btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
 		</div>
-		<?php
-		}
-		?>
-		<!--Ending Body Content-->
-	</div>
 	<!-- Footer template-->
 	<?php
 	include 'templates/footer_template.php';
