@@ -157,18 +157,13 @@
 					</div>
 					
 					<div style="margin-bottom: 10px" class="col-md-3">
-						<?php
-							$pc = "SELECT * FROM contactus";
-							$run_p = mysqli_query($conn, $pc);
-							$countcontactus = mysqli_num_rows($run_p);
-						?>
 						<div class="cc">
 							<center>
 								<div class="icon" style="background: green">
-									<i class="fa fa-phone"; style="font-size: 60px; color: white;"></i>
+									<i class="fa fa-key"; style="font-size: 60px; color: white;"><a href=changePass.php></i>
 								</div><br>
-								<h4>Contact US</h4>
-								<span class="badge" style="font-size: 20px"><?php echo $countcontactus; ?></span>
+								<h4>Change Password</h4>
+								<span class="badge" style="font-size: 20px"><br></span>
 							</center>
 						</div>
 					</div>

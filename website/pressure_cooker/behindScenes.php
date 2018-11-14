@@ -35,93 +35,56 @@ include "templates/navigationbar_template.php";
 ?>
 
 
-<!--Behind Scenes-->
-<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+		<div class="myView bg-3">
+		<div class="container-fluid myContainer bg-3 text-center goTopAnim">
 
 	<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px; object-fit: none;">BEHIND THE SCENES</h1><br>
 
-	<div class="row" style="padding: 50px;">
-
-
-
-
-		<?php
-		$behindscenes_query = "SELECT * FROM behindscenes
+			<div class="row">
+				
+				
+				
+				
+			<?php
+			$behindscense_query = "SELECT * FROM behindscenes
 								ORDER BY id DESC
 								LIMIT 0,12";
+			$connect_behindscense_query = mysqli_query($conn, $behindscense_query);
+			$count_rows = mysqli_num_rows($connect_behindscense_query);
+			if($count_rows > 0){
+			while($get_each_row = mysqli_fetch_array($connect_behindscense_query)){
+				$id_of_behindscense = $get_each_row['id'];
+				$name_of_behindscense = $get_each_row['name'];
+				$img_of_behindscense = $get_each_row['img'];
+				$date_behindscense = $get_each_row['date'];
+				$msg_of_behindscense = $get_each_row['msg'];
+			?>			
+				<div class="col-sm-6 col-md-4 col-lg-3 noteamdecoration zoomit">
+					<a href="viewBehindScenes.php?behindScenes=<?php echo $id_of_behindscense; ?>">
+						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscense; ?>" alt="behindScenes">
+						<h2><strong><?php echo substr($name_of_behindscense, 0, 15); ?>.....</strong></h2>
+					</a>
+					<div class="myP"></div>
+					<a href="behindScenesDetails.php?behindScenes=<?php echo $id_of_behindscense; ?>">
+						<p><strong><?php echo substr($msg_of_behindscense, 0, 25); ?>.....</strong></p>
+					</a><br><br><br><br>
+				</div>
+				
+			<?php
+				}
+			}
+			?>
+			</div>
 
-		$connect_behindscenes_query = mysqli_query( $conn, $behindscenes_query );
-		$count_rows = mysqli_num_rows( $connect_behindscenes_query );
-		$cap = 4;
-		if ( empty( $_POST[ "Show" ] ) ) {
-			$displayed = 0;
-			$max_display = $cap;
-			$min_display = 0;
-			setcookie( 'display', $displayed );
-		} else if ( $_POST[ "Show" ] == '+' ) {
-			$displayed = $_COOKIE[ 'display' ] + $cap;
-			setcookie( 'display', $displayed );
-			$max_display = $displayed + $cap;
-			$min_display = $displayed;
-			$displayed = 0;
-		} else if ( $_POST[ "Show" ] == "-" ) {
-			$displayed = $_COOKIE[ 'display' ] - $cap;
-			setcookie( 'display', $displayed );
-			$max_display = $displayed + $cap;
-			$min_display = $displayed;
-			$displayed = 0;
-		}
-		if ( $count_rows > 0 ) {
-			while ( $get_each_row = mysqli_fetch_array( $connect_behindscenes_query ) ) {
-				$id_of_behindscenes = $get_each_row[ 'id' ];
-				$name_of_behindscenes = $get_each_row[ 'name' ];
-				$img_of_behindscenes = $get_each_row[ 'img' ];
-				$date_behindscenes = $get_each_row[ 'date' ];
-				$msg_of_behindscenes = $get_each_row[ 'msg' ];
-				$displayed++;
-				if ( $min_display < $displayed && $displayed <= $max_display ) {
-					?>
-
-		<div class="col-sm-6 col-md-4 col-lg-3">
-			<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindScenes">
-			<h2><strong><?php echo $name_of_behindscenes; ?></strong></h2>
-			<p style="color: #1364D1;">
-				<strong>
-					<?php echo $msg_of_behindscenes; ?>
-				</strong>
-			</p><br><br><br><br>
+			<!--Ending Behind Scenes Container-->
 		</div>
-		<?php
-		}
-		}
-		}
-		?>
-	</div>
-	<?php
-	if ( $count_rows > $max_display ) {
-		?>
-
-	<!--Ending Behind Scenes Container-->
-	<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-		<form action="behindScenes.php" method="post">
-			<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='+' style="float: right; margin-right: 20px;">Next</button><br>
-		</form>
-	</div>
-	<?php
-	} else if ( $count_rows > $min_display && $min_display != 0 ) {
-		?>
-	<div>
-		<form action="behindScenes.php" method="post">
-			<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='-' style="float: right; margin-right: 20px;">Back</button><br>
-
-		</form>
-	</div>
-	<?php
-	}
-	?>
+		</div>
+		
+		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+			<button class="btn btn-danger btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
+		</div>
 	<!--Ending Body Content-->
-</div>
-
+	</div>
 
 <!-- Footer template-->
 <?php

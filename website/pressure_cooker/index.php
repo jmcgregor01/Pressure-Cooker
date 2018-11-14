@@ -449,51 +449,15 @@ require __DIR__ . '/admin/config/db.php';
   			</a>
 			
 
-				<h2 class="text-center"><strong>CONTACT</strong></h2>
+				<h2 class="text-center"><strong>CONTACT</strong></h2><br>
 
-				<div class="row">
-					<div class="col-sm-2 col-lg-3 col-lg-offset-2">
+				<div class="row text-center">
+
 						<p>Contact us and we'll get back to you within 24 hours.</p>
 						<p><span class="glyphicon glyphicon-map-marker"></span> GPO Box 826 Canberra, ACT 2601</p>
 						<p><span class="glyphicon glyphicon-phone"></span> +61 2 6207 3188</p>
 						<p><span class="glyphicon glyphicon-envelope"></span> infoline@cit.edu.au</p>
-					</div>
 
-					<div class="col-sm-10 slideanim col-lg-5">
-						<form action="index.php" method="post" enctype="multipart/form-data">
-							<div class="row">
-								<div class="col-sm-6 form-group">
-									<input class="form-control" id="nameId" name="name" placeholder="Name" type="text" required>
-								</div>
-								<div class="col-sm-6 form-group">
-									<input class="form-control" id="emailId" name="email" placeholder="Email" type="email" required>
-								</div>
-							</div>
-
-							<textarea class="form-control" id="commentsId" name="comments" placeholder="Comment" rows="5"></textarea><br>
-
-							<div class="row">
-								<div class="col-sm-12 form-group">
-									<button name="submit" class="btn btn-default pull-right" type="submit">Send</button>
-								</div>
-							</div>
-						</form>
-						<?php
-						if ( isset( $_POST[ 'submit' ] ) ) {
-							$name = $_POST[ 'name' ];
-							$email = $_POST[ 'email' ];
-							$comments = $_POST[ 'comments' ];
-							$insert = "INSERT INTO contactus(name, email, msg)
-										VALUE('$name', '$email', '$comments')";
-							$run = mysqli_query( $conn, $insert );
-							if ( $run ) {
-								echo "<script>alert('Your News Insert Successfully')</script>";
-							} else {
-								echo "<script>alert('Your News Insert Unsuccessfully')</script>";
-							}
-						}
-						?>
-					</div>
 				</div>
 				<hr>
 				<div class="embed-responsive embed-responsive-16by9" style="border-radius: 5px;">

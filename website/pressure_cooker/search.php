@@ -168,7 +168,7 @@
 			<?php
 				}
 				if(!$found){
-					echo "No matches found!";
+					echo "<div style ='padding-bottom:40%'><p>No matches found!</p></div>";
 				}
 			?>			
 			</div>
