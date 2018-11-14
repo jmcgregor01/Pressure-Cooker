@@ -37,11 +37,35 @@ include "templates/navigationbar_template.php";
 <div class="container-fluid myContainer bg-3 text-center goTopAnim mediaLinkContainer">
 
 
-	<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;">EPISODES</h1><br>
+	
 	<?php
-	$media_query = "SELECT * FROM media
+	if (!empty($_GET['type']))
+	{
+		$type = $_GET['type'];
+		$media_query = "SELECT * FROM media WHERE type = '$type'
 										ORDER BY id DESC
 										LIMIT 0,4";
+	}
+	else if (empty($_GET['type']))
+	{
+		$media_query = "SELECT * FROM media 
+											ORDER BY id DESC
+											LIMIT 0,4";
+	}
+	if (!empty($type))
+	{
+		if ($type == 'e')
+			echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;'>Episodes</h1><br>";
+		else if ($type == 'j')
+			echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;'>Judges and Host Profiles</h1><br>";
+		else if ($type == 'c')
+			echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;'>Contestant Profiles</h1><br>";
+		else if ($type == 'b')
+			echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;'>Behind the Scenes</h1><br>";
+	}
+	else if (empty($type))
+		echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;'>Videos</h1><br>";
+	
 	$connect_media_query = mysqli_query( $conn, $media_query );
 	$count_rows = mysqli_num_rows( $connect_media_query );
 	$max_display = 1;

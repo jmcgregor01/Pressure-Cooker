@@ -47,6 +47,15 @@
 					
 					<label for="msgId">About Episode</label>
 					<textarea required class="form-control" id="msgId" name="msg" style="height: 150px"></textarea><br>
+					
+					<label for="typeId">Video Type</label><br>
+					<select name="type">
+						<option value="e">Episodes</option>
+						<option value="j">Judges and Hosts</option>
+						<option value="c">Contestants</option>
+						<option value="b">Behind the Scenes</option>
+					</select>
+  
 					<button name="submit" class="btn btn-success" style="float: right">Add</button>
 				</form>
 
@@ -59,15 +68,16 @@
 						$video_split = explode('=', $video);
 						$video = $video_split[1];
 						$msg = $_POST['msg'];
+						$type = $_POST['type'];
 						
-						$insert = "INSERT INTO media(name, video, msg)
-									VALUE('$name', '$video', '$msg')";
+						$insert = "INSERT INTO media(name, video, msg, type)
+									VALUE('$name', '$video', '$msg', '$type')";
 						$run = mysqli_query($conn, $insert);
 						if($run){
 							
-							echo "<script>alert('Your News Insert Successfully')</script>";
+							echo "<script>alert('Your video was added to the website.')</script>";
 						}else{
-							echo "<script>alert('Your News Insert Unsuccessfully')</script>";
+							echo "<script>alert('Your video was not added.')</script>";
 						}
 					}
 				?>

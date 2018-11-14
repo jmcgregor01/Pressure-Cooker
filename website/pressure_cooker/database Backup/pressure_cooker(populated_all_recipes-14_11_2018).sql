@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 14, 2018 at 03:16 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Host: 127.0.0.1
+-- Generation Time: Nov 14, 2018 at 05:02 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -190,17 +190,23 @@ CREATE TABLE `media` (
   `video` text NOT NULL,
   `msg` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `etc` text NOT NULL
+  `type` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `media`
 --
 
-INSERT INTO `media` (`id`, `name`, `video`, `msg`, `date`, `etc`) VALUES
+INSERT INTO `media` (`id`, `name`, `video`, `msg`, `date`, `type`) VALUES
 (3, 'Cook Saag', 'SBZj-BAz-Ec', 'sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas', '2018-10-10 13:01:44', ''),
 (4, 'Cook Saag', 'HgnXfevdoXY', 'sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fassdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas sdf sdfl sds sdfk k sdf lk adfj fas', '2018-10-10 13:01:44', ''),
-(5, 'Keyboard Cat', 'J---aiyznGQ', 'Keyboard cat playing the keyboard.', '2018-11-12 01:05:54', '');
+(5, 'Keyboard Cat', 'J---aiyznGQ', 'Keyboard cat playing the keyboard.', '2018-11-12 01:05:54', ''),
+(6, 'fd', '', 'fd', '2018-11-14 03:18:14', 'e'),
+(7, 'Test', 'UgsDt_y8CC0', 'Testing episode', '2018-11-14 03:19:26', 'e'),
+(8, 'John', 'Ph54wQG8ynk', 'Second test', '2018-11-14 03:46:17', 'j'),
+(9, 'John', 'Ph54wQG8ynk', 'Second test', '2018-11-14 03:46:50', 'j'),
+(10, 'test', 'Ph54wQG8ynk', 'ds', '2018-11-14 03:47:26', 'c'),
+(11, 'dsa', 'Ph54wQG8ynk', 'dsa', '2018-11-14 03:47:54', 'b');
 
 -- --------------------------------------------------------
 
@@ -425,67 +431,56 @@ ALTER TABLE `votes`
 --
 ALTER TABLE `behindscenes`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
 --
 -- AUTO_INCREMENT for table `carousel`
 --
 ALTER TABLE `carousel`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `contactus`
 --
 ALTER TABLE `contactus`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
 --
 -- AUTO_INCREMENT for table `judges`
 --
 ALTER TABLE `judges`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
-
 --
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
 --
 -- AUTO_INCREMENT for table `sponsor`
 --
 ALTER TABLE `sponsor`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
 --
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
 --
 -- AUTO_INCREMENT for table `voters`
 --
 ALTER TABLE `voters`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- AUTO_INCREMENT for table `votes`
 --
 ALTER TABLE `votes`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
