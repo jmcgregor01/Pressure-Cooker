@@ -1,5 +1,53 @@
 <?php
 require __DIR__ . '/admin/config/db.php';
+			$gallery_query = "SELECT * FROM gallery
+							ORDER BY id DESC
+							LIMIT 0,12";
+			$connect_gallery_query = mysqli_query( $conn, $gallery_query );
+			$count_rows = mysqli_num_rows( $connect_gallery_query );
+			$cap = 4;
+			$abs_max_display = $count_rows;
+			$abs_min_display = 0;
+			if ( empty( $_POST[ "Show" ] ) ) {
+				$displayed = 0;
+				$max_display = $cap;
+				$min_display = 0;
+				setcookie( 'display', $displayed );
+			} 
+			else if ( $_POST[ "Show" ] == '+' ) {
+				if ($_COOKIE[ 'display' ] + $cap < $abs_max_display)
+				{
+					$displayed = $_COOKIE[ 'display' ] + $cap;
+					setcookie( 'display', $displayed );
+					$max_display = $displayed + $cap;
+					$min_display = $displayed;
+					$displayed = 0;
+				}
+				else
+				{
+					$displayed = $_COOKIE[ 'display' ];
+					$max_display = $displayed + $cap;
+					$min_display = $displayed;
+					$displayed = 0;
+				}
+					
+			} else if ( $_POST[ "Show" ] == "-" ) {
+				if ($_COOKIE[ 'display' ] > $abs_min_display)
+				{
+					$displayed = $_COOKIE[ 'display' ] - $cap;
+					setcookie( 'display', $displayed );
+					$max_display = $displayed + $cap;
+					$min_display = $displayed;
+					$displayed = 0;
+				}
+				else
+				{
+					$displayed = $_COOKIE[ 'display' ];
+					$max_display = $displayed + $cap;
+					$min_display = $displayed;
+					$displayed = 0;
+				}
+			}
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,30 +90,6 @@ require __DIR__ . '/admin/config/db.php';
 
 		<div class="row" style="padding: 50px;">
 			<?php
-			$gallery_query = "SELECT * FROM gallery
-								ORDER BY id DESC
-								LIMIT 0,12";
-			$connect_gallery_query = mysqli_query( $conn, $gallery_query );
-			$count_rows = mysqli_num_rows( $connect_gallery_query );
-			$cap = 4;
-			if ( empty( $_POST[ "Show" ] ) ) {
-				$displayed = 0;
-				$max_display = $cap;
-				$min_display = 0;
-				setcookie( 'display', $displayed );
-			} else if ( $_POST[ "Show" ] == '+' ) {
-				$displayed = $_COOKIE[ 'display' ] + $cap;
-				setcookie( 'display', $displayed );
-				$max_display = $displayed + $cap;
-				$min_display = $displayed;
-				$displayed = 0;
-			} else if ( $_POST[ "Show" ] == "-" ) {
-				$displayed = $_COOKIE[ 'display' ] - $cap;
-				setcookie( 'display', $displayed );
-				$max_display = $displayed + $cap;
-				$min_display = $displayed;
-				$displayed = 0;
-			}
 			if ( $count_rows > 0 ) {
 				while ( $get_each_row = mysqli_fetch_array( $connect_gallery_query ) ) {
 					$id_of_gallery = $get_each_row[ 'id' ];
