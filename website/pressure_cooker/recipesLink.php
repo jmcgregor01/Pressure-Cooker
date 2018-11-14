@@ -62,8 +62,8 @@
 					<a href="recipeDetails.php?recipe_id=<?php echo $id_of_recipe; ?>">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="team image">
 						<h2><strong><?php echo substr($name_of_recipe, 0, 22); ?>...</strong></h2>
-						<p class="recipesMessageLimit" style="color: #1364D1;"><strong><?php echo substr($msg_of_recipe, 0, 30); ?>...</strong></p>
-					</a>
+						<p class="recipesMessageLimit" style="color: #1364D1;"><center><strong><?php echo substr($msg_of_recipe, 0, 60); ?>...</strong></center></p>
+					</a><br><br>
 				</div>
 				<?php
 					}
