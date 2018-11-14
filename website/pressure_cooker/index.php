@@ -151,8 +151,8 @@ require __DIR__ . '/admin/config/db.php';
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
 			
-				<h2><strong>Our Teams</strong></h2><br>
-				<h4>We are here to Serve</h4>
+				<h2><strong>Contestants</strong></h2><br>
+				<h4>Ready to Cook</h4>
 				<div class="row  slideanim">
 					<?php
 					while ( $get_each_row = mysqli_fetch_array( $connect_team_query ) ) {
