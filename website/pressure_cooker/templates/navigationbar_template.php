@@ -11,10 +11,10 @@
 					<div class="navbar-header mouseOnlogo">
 						<div class="navbar-header mouseOnlogo">
 						<a href="index.php">
-							<img class="myimage myimageshake" src="staticImages\Pressure-Cooker-logo.png" alt="PC Logo" style="width:80px; height:80px; padding:3px">
+							<img src="staticImages\Pressure-Cooker-logo.png" alt="PC Logo" style="width:80px; height:80px; padding:3px">
 						</a>
 						<a href="https://cit.edu.au/">
-							<img class="myimageshake" src="staticImages\CIT_logo_stacked_white_RTO.png" alt="CIT Logo" style="width:80px; height:80px; padding:3px">
+							<img src="staticImages\CIT_logo_stacked_white_RTO.png" alt="CIT Logo" style="width:80px; height:80px; padding:3px">
 						</a>
 						</div>
 					</div>
