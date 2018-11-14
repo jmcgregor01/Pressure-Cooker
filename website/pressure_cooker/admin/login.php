@@ -30,15 +30,31 @@
 		<label for="ba">Password</label>
 		<input name="pass" type="password" class="form-control" id="ba" style="width: 400px; box-shadow: 3px 4px 2px #efa6a6;"><br>
 		
+		
 		<button name="sub" class="btn btn-default">Login</button>
 		</form>
 		<br><br><br><br><br><br><br><br><br><br><br><br>
-		<a href="../index.php"><img src="homepage-icon.png" alt="Homepage" style="width:70px;height:42px;border:0;"></a>
+		<a href="../index.php"><img src="homepage-icon.png" alt="Homepage" style="width:70px;height:42px;border:0;"><br><br><br></a>
 		
 		
 		
 		<?php
 			if(isset($_POST['sub'])){
+			if (isset($_SESSION['time_length']) && (time() - $_SESSION['time_length'] > 300)) {
+			// last request was more than 5 minutes ago
+			session_unset();     // unset $_SESSION variable for the run-time 
+			session_destroy();   // destroy session data in storage
+			}
+			
+			
+			if (!empty($_SESSION['time_length']))
+				echo "Too many password attempts. Please wait five  minutes.";
+			else{
+			if (empty($_SESSION['attempts']))
+				$attempts = 0;
+			if (!empty($_SESSION['attempts']))
+				$attempts = $_SESSION['attempts'] + 1;
+			
 			$user = $_POST['user'];
 			$pass = $_POST['pass'];
 			//$stmt = mysqli_stmt_init($conn);
@@ -58,8 +74,16 @@
 			else
 			{
 				echo "<h5>Your Username Or Password is Incorrect</h5>";
+				if ($attempts >= 5)
+					$_SESSION['time_length'] = time();
+				else
+				{
+					$attempts += 1;
+					$_SESSION['attempts'] = $attempts;
+				}
 			}
 		}
+			}
 		?>
 	</center>
 	
