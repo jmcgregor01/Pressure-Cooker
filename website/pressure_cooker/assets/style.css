@@ -279,15 +279,14 @@ div.zoomit img:hover{
 
 
 
-div.zoomit p{
-/*
-	opacity: 0.5;
-    filter: alpha(opacity=50);
-*/
+div.myP p{
+	color: #1364D1;
 }
 
 
-
+div.myP p:hover{
+color: red;
+}
 
 
 
