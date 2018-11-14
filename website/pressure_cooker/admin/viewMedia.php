@@ -38,7 +38,7 @@
 			$count_rows = mysqli_num_rows($connect_judge_query);
 			$number_of_items = 1;
 			?>
-				<h2>View Media</h2>
+				<h2>View Videos</h2>
 				<h6 style="font-weight: bold">Total Videos: <span class="badge"><?php echo $count_rows; ?></span></h6>
 				<hr>
 				<center><h3><?php echo $get; ?></h3></center>

@@ -39,16 +39,16 @@
 				
 				
 				<form action="insertMedia.php" method="post" enctype="multipart/form-data">
-					<label for="nameId">Name of Episode</label>
+					<label for="nameId">Name of Video:</label>
 					<input required type="text" name="name" id="nameId" class="form-control"><br>
 					
-					<label for="videoId">Link of Episode</label>
+					<label for="videoId">YouTube Link of Video:</label>
 					<input required type="text" name="video" id="videoId" class="form-control"><br>
 					
-					<label for="msgId">About Episode</label>
+					<label for="msgId">About Video:</label>
 					<textarea required class="form-control" id="msgId" name="msg" style="height: 150px"></textarea><br>
 					
-					<label for="typeId">Video Type</label><br>
+					<label for="typeId">Video Type:</label><br>
 					<select name="type">
 						<option value="e">Episodes</option>
 						<option value="j">Judges and Hosts</option>
