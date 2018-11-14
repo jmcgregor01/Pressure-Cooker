@@ -76,7 +76,7 @@ include "templates/navigationbar_template.php";
 			<h6 style="float:right">Date:<?php echo $date_media; ?></h6>
 			<br><br>
 			<p style="text-align: justify;">
-				<?php echo $msg_of_media; ?>
+				<?php echo substr($msg_of_media, 0, 500); ?>.....
 			</p>
 		</div>
 	</div>

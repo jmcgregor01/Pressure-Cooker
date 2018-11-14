@@ -117,7 +117,7 @@ require __DIR__ . '/admin/config/db.php';
 					<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
 						<a href="viewJudge.php?judge=<?php echo $id_of_judge; ?>">
 						<img class="resizeJudgeMainPage"  src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judge">
-						<p><strong><?php echo $name_of_judge; ?></strong></p>
+						<p><strong><?php echo substr($name_of_judge, 0, 22); ?>..</strong></p>
 						<p><?php echo substr($msg_of_judge, 0, 25); ?>.....</p>
 					</a>
 					
@@ -168,7 +168,7 @@ require __DIR__ . '/admin/config/db.php';
 								<img class="resizeTeamMainPage" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
 								<p>
 									<strong>
-										<?php echo $name_of_team; ?>
+										<?php echo substr($name_of_team, 0, 22); ?>..
 									</strong>
 								</p>
 							</div>
@@ -324,7 +324,7 @@ require __DIR__ . '/admin/config/db.php';
 					<div class="col-sm-6 col-md-4 col-lg-4 nojudgedecoration zoomit">
 						<a href="viewGallery.php?gallery=<?php echo $id_of_gallery; ?>">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery">
-						<h2 style="font-size: 18px"><?php echo $name_of_gallery; ?></h2>
+						<h2 style="font-size: 18px"><?php echo substr($name_of_gallery, 0, 22); ?>..</h2>
 					</a>
 						<br><br><br><br>
 					</div>
@@ -374,7 +374,7 @@ require __DIR__ . '/admin/config/db.php';
 					<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
 						<a href="viewBehindScenes.php?behindScenes=<?php echo $id_of_behindscenes; ?>">
 						<img class="resizeWithBehind" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindscenes">
-						<h2 style="font-size: 18px"><?php echo $name_of_behindscenes; ?></h2>
+						<h2 style="font-size: 18px"><?php echo substr($name_of_behindscenes, 0, 22); ?>..</h2>
 					</a>
 						<br><br><br><br>
 					</div>
@@ -424,7 +424,7 @@ require __DIR__ . '/admin/config/db.php';
 					<div class="col-sm-6 col-md-4 col-lg-3 nojudgedecoration zoomit">
 						<a href="viewSponsor.php?sponsor=<?php echo $id_of_sponsor; ?>">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\sponsors\<?php echo $img_of_sponsor; ?>" alt="sponsor">
-						<h2 style="font-size: 18px"><?php echo $name_of_sponsor; ?></h2>
+						<h2 style="font-size: 18px"><?php echo substr($name_of_sponsor, 0, 22); ?>..</h2>
 					</a>
 						<br><br><br><br>
 					</div>
