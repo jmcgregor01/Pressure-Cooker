@@ -38,7 +38,7 @@ require __DIR__ . '/admin/config/db.php';
 		<div class="myView bg-3">
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim">
 
-			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px;">TEAMS</h1><br>
+			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px;">CONTESTANTS</h1><br>
 
 				<div class="row">
 	
