@@ -4,9 +4,9 @@
 	$delete = "DELETE FROM behindscenes WHERE id ='$get'";
 	$run = mysqli_query($conn, $delete);
 	if($run){
-		echo "<script>window.open('viewBehindScenses.php?msg=Delete Successfull')</script>";
+		echo "<script>window.open('viewBehindScenes.php?msg=Delete Successfull')</script>";
 	}else{
-		echo "<script>window.open('viewBehindScenses.php?msg=Delete Unsuccessfull')</script>";
+		echo "<script>window.open('viewBehindScenes.php?msg=Delete Unsuccessfull')</script>";
 	}
 
 ?>
