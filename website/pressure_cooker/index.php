@@ -117,7 +117,7 @@ require __DIR__ . '/admin/config/db.php';
 					<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
 						<a href="viewJudge.php?judge=<?php echo $id_of_judge; ?>">
 						<img class="resizeJudgeMainPage"  src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judge">
-						<p><strong><?php echo $name_of_judge; ?></strong></p>
+						<p><strong><?php echo substr($name_of_judge, 0, 22); ?>..</strong></p>
 						<p><?php echo substr($msg_of_judge, 0, 25); ?>.....</p>
 					</a>
 					
@@ -151,8 +151,8 @@ require __DIR__ . '/admin/config/db.php';
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
 			
-				<h2><strong>Our Teams</strong></h2><br>
-				<h4>We are here to Serve</h4>
+				<h2><strong>Contestants</strong></h2><br>
+				<h4>Ready to Cook</h4>
 				<div class="row  slideanim">
 					<?php
 					while ( $get_each_row = mysqli_fetch_array( $connect_team_query ) ) {
@@ -168,7 +168,7 @@ require __DIR__ . '/admin/config/db.php';
 								<img class="resizeTeamMainPage" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
 								<p>
 									<strong>
-										<?php echo $name_of_team; ?>
+										<?php echo substr($name_of_team, 0, 22); ?>..
 									</strong>
 								</p>
 							</div>
@@ -238,11 +238,12 @@ require __DIR__ . '/admin/config/db.php';
 		</div>
 
 		<?php
-		$media_query = "SELECT * FROM media
+		$media_query = "SELECT * FROM media WHERE type = 'e'
 								ORDER BY id DESC
 								LIMIT 0,1";
 		$connect_media_query = mysqli_query( $conn, $media_query );
 		$count_rows = mysqli_num_rows( $connect_media_query );
+
 		$show_or_not_media = 'hidden';
 		if ( $count_rows > 0 ) {
 			$show_or_not_media = '';
@@ -253,8 +254,6 @@ require __DIR__ . '/admin/config/db.php';
 				<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
-			
-
 				<h2><strong>Latest Episode</strong></h2><br>
 				<h4>Watch Our Show Anytime</h4>
 				<?php
@@ -287,7 +286,7 @@ require __DIR__ . '/admin/config/db.php';
 			</div><br><br><br>
 		</div>
 		<div class="<?php echo $show_or_not_media; ?> container-fluid myContainer bg-5 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="mediaLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Episodes</a><br>
+			<br><a href="mediaLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Videos</a><br>
 			<!--Ending Media Container-->
 		</div>
 
@@ -324,7 +323,7 @@ require __DIR__ . '/admin/config/db.php';
 					<div class="col-sm-6 col-md-4 col-lg-4 nojudgedecoration zoomit">
 						<a href="viewGallery.php?gallery=<?php echo $id_of_gallery; ?>">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery">
-						<h2 style="font-size: 18px"><?php echo $name_of_gallery; ?></h2>
+						<h2 style="font-size: 18px"><?php echo substr($name_of_gallery, 0, 22); ?>..</h2>
 					</a>
 						<br><br><br><br>
 					</div>
@@ -337,7 +336,7 @@ require __DIR__ . '/admin/config/db.php';
 			</div>
 		</div>
 		<div class="<?php echo $show_or_not_gallery; ?> container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="galleryLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Pictures</a><br>
+			<br><a href="galleryLink.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Gallery Images</a><br>
 			<!--Ending Gallery Container-->
 		</div>
 
@@ -374,7 +373,7 @@ require __DIR__ . '/admin/config/db.php';
 					<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
 						<a href="viewBehindScenes.php?behindScenes=<?php echo $id_of_behindscenes; ?>">
 						<img class="resizeWithBehind" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscenes; ?>" alt="behindscenes">
-						<h2 style="font-size: 18px"><?php echo $name_of_behindscenes; ?></h2>
+						<h2 style="font-size: 18px"><?php echo substr($name_of_behindscenes, 0, 22); ?>..</h2>
 					</a>
 						<br><br><br><br>
 					</div>
@@ -387,7 +386,7 @@ require __DIR__ . '/admin/config/db.php';
 			</div>
 		</div>
 		<div class="<?php echo $show_or_not_behindscenes; ?> container-fluid myContainer bg-8 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="behindScenes.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More BehindScenes</a><br>
+			<br><a href="behindScenes.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Behind the Scenes Images</a><br>
 			<!--Ending Behindscenes Container-->
 		</div>
 
@@ -424,7 +423,7 @@ require __DIR__ . '/admin/config/db.php';
 					<div class="col-sm-6 col-md-4 col-lg-3 nojudgedecoration zoomit">
 						<a href="viewSponsor.php?sponsor=<?php echo $id_of_sponsor; ?>">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\sponsors\<?php echo $img_of_sponsor; ?>" alt="sponsor">
-						<h2 style="font-size: 18px"><?php echo $name_of_sponsor; ?></h2>
+						<h2 style="font-size: 18px"><?php echo substr($name_of_sponsor, 0, 22); ?>..</h2>
 					</a>
 						<br><br><br><br>
 					</div>
@@ -453,7 +452,6 @@ require __DIR__ . '/admin/config/db.php';
 
 				<div class="row text-center">
 
-						<p>Contact us and we'll get back to you within 24 hours.</p>
 						<p><span class="glyphicon glyphicon-map-marker"></span> GPO Box 826 Canberra, ACT 2601</p>
 						<p><span class="glyphicon glyphicon-phone"></span> +61 2 6207 3188</p>
 						<p><span class="glyphicon glyphicon-envelope"></span> infoline@cit.edu.au</p>

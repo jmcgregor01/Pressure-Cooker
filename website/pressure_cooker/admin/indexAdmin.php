@@ -43,10 +43,10 @@
 						?>
 						<div class="cc">
 							<center>
-								<div class="icon" style="background: #004997">
+								<a href=viewJudges.php><div class="icon" style="background: #004997">
 									<i class="fas fa-gavel"; style="font-size: 60px; color: white;"></i>
 								</div><br>
-								<h4>Judges Post</h4>
+								<a href=viewJudges.php><h4>Judges and Host Post</h4>
 								<span class="badge" style="font-size: 20px"><?php echo $countjudges; ?></span>
 							</center>
 						</div>
@@ -61,10 +61,10 @@
 						?>
 						<div class="cc">
 							<center>
-								<div class="icon" style="background: black">
+								<a href=viewTeam.php><div class="icon" style="background: black">
 									<i class="fab fa-slideshare"; style="font-size: 60px; color: white;"></i>
 								</div><br>
-								<h4>Teams Post</h4>
+								<a href=viewTeam.php><h4>Teams Post</h4>
 								<span class="badge" style="font-size: 20px"><?php echo $countteams; ?></span>
 							</center>
 						</div>
@@ -79,10 +79,10 @@
 						?>
 						<div class="cc">
 							<center>
-								<div class="icon" style="background: #FA7C92;">
+								<a href=viewRecipes.php><div class="icon" style="background: #FA7C92;">
 									<i class="fas fa-cocktail"; style="font-size: 60px; color: white;"></i>
 								</div><br>
-								<h4>Recipes Post</h4>
+								<a href=viewRecipes.php><h4>Recipes Post</h4>
 								<span class="badge" style="font-size: 20px"><?php echo $countrecipes; ?></span>
 							</center>
 						</div>
@@ -96,10 +96,10 @@
 						?>
 						<div class="cc">
 							<center>
-								<div class="icon" style="background: red;">
+								<a href=viewMedia.php><div class="icon" style="background: red;">
 									<i class="fas fa-video"; style="font-size: 60px; color: white;"></i>
 								</div><br>
-								<h4>Episodes Post</h4>
+								<a href=viewMedia.php><h4>Videos Post</h4>
 								<span class="badge" style="font-size: 20px"><?php echo $countmedia; ?></span>
 							</center>
 						</div>
@@ -113,10 +113,10 @@
 						?>
 						<div class="cc">
 							<center>
-								<div class="icon" style="background: #85C036">
+								<a href=viewGallery.php><div class="icon" style="background: #85C036">
 									<i class="fas fa-images"; style="font-size: 60px; color: white;"></i>
 								</div><br>
-								<h4>Gallery Post</h4>
+								<a href=viewGallery.php><h4>Gallery Post</h4>
 								<span class="badge" style="font-size: 20px"><?php echo $countgallery; ?></span>
 							</center>
 						</div>
@@ -130,10 +130,10 @@
 						?>
 						<div class="cc">
 							<center>
-								<div class="icon" style="background: rgb(0, 208, 248)">
+								<a href=viewSponsors.php><div class="icon" style="background: rgb(0, 208, 248)">
 									<i class="fas fa-dollar-sign"; style="font-size: 60px; color: white;"></i>
 								</div><br>
-								<h4>Sponsors Post</h4>
+								<a href=viewSponsors.php><h4>Sponsors Post</h4>
 								<span class="badge" style="font-size: 20px"><?php echo $countsponsors; ?></span>
 							</center>
 						</div>
@@ -147,10 +147,10 @@
 						?>
 						<div class="cc">
 							<center>
-								<div class="icon" style="background: #FD7E00">
+								<a href=viewBehindScenes.php><div class="icon" style="background: #FD7E00">
 									<i class="fas fa-theater-masks"; style="font-size: 60px; color: white;"></i>
 								</div><br>
-								<h4>Behind the Scenes</h4>
+								<a href=viewBehindScenes.php><h4>Behind the Scenes</h4>
 								<span class="badge" style="font-size: 20px"><?php echo $countbehindscenes; ?></span>
 							</center>
 						</div>
@@ -159,11 +159,11 @@
 					<div style="margin-bottom: 10px" class="col-md-3">
 						<div class="cc">
 							<center>
-								<div class="icon" style="background: green">
-									<i class="fa fa-key"; style="font-size: 60px; color: white;"><a href=changePass.php></i>
+								<a href=changePass.php><div class="icon" style="background: green">
+									<i class="fa fa-key"; style="font-size: 60px; color: white;"></i>
 								</div><br>
-								<h4>Change Password</h4>
-								<span class="badge" style="font-size: 20px"><br></span>
+								<a href=changePass.php><h4>Change Password</h4>
+								<span style="font-size: 20px"><br></span>
 							</center>
 						</div>
 					</div>

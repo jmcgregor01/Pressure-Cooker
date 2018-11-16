@@ -38,11 +38,11 @@
 			$count_rows = mysqli_num_rows($connect_judge_query);
 			$number_of_items = 1;
 			?>
-				<h2>View Media</h2>
-				<h6 style="font-weight: bold">Total Media : <span class="badge"><?php echo $count_rows; ?></span></h6>
+				<h2>View Videos</h2>
+				<h6 style="font-weight: bold">Total Videos: <span class="badge"><?php echo $count_rows; ?></span></h6>
 				<hr>
 				<center><h3><?php echo $get; ?></h3></center>
-				<a href="insertMedia.php" class="btn btn-info" style="float:right">Insert Media</a>
+				<a href="insertMedia.php" class="btn btn-info" style="float:right">Insert Video</a>
 					<table class="table table-hover table-striped table-bordered">
 						<tr>
 							<th>S.No</th>
@@ -55,6 +55,7 @@
 				while($get_each_row = mysqli_fetch_array($connect_judge_query)){
 					$id_of_judge = $get_each_row['id'];
 					$name_of_judge = $get_each_row['name'];
+					$date_judge = $get_each_row['date'];
 					$date_judge = $get_each_row['date'];
 			?>	
 						<tr>

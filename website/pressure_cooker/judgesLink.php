@@ -62,7 +62,7 @@ require __DIR__ . '/admin/config/db.php';
 					<a href="viewJudge.php?judge=<?php echo $id_of_judge; ?>">
 					<div class="thumbnail">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judges">
-						<h2><strong><?php echo $name_of_judge; ?></strong></h2>
+						<h2><strong><?php echo substr($name_of_judge, 0, 22); ?>..</strong></h2>
 						<p><strong><?php echo substr($msg_of_judge, 0, 25); ?>.....</strong></p>
 					</div>
 					</a>
@@ -109,9 +109,6 @@ require __DIR__ . '/admin/config/db.php';
 
 			<!--Ending Judge Container-->
 		</div>
-		</div>
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-				<button class="btn btn-danger btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
 		</div>
 	<!-- Footer template-->
 	<?php

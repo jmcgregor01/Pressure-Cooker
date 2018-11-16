@@ -11,10 +11,10 @@
 					<div class="navbar-header mouseOnlogo">
 						<div class="navbar-header mouseOnlogo">
 						<a href="index.php">
-							<img class="myimage myimageshake" src="staticImages\Pressure-Cooker-logo.png" alt="PC Logo" style="width:80px; height:80px; padding:3px">
+							<img src="staticImages\Pressure-Cooker-logo.png" alt="PC Logo" style="width:80px; height:80px; padding:3px">
 						</a>
 						<a href="https://cit.edu.au/">
-							<img class="myimageshake" src="staticImages\CIT_logo_stacked_white_RTO.png" alt="CIT Logo" style="width:80px; height:80px; padding:3px">
+							<img src="staticImages\CIT_logo_stacked_white_RTO.png" alt="CIT Logo" style="width:80px; height:80px; padding:3px">
 						</a>
 						</div>
 					</div>
@@ -30,7 +30,13 @@
 						</li>
 						<li class="<?php echo $recipe_select; ?>"><a href="recipesLink.php"><span style="font-weight: bold; font-size: 15px;">RECIPES</span></a>
 						</li>
-						<li class="<?php echo $media_select; ?>"><a href="mediaLink.php"><span style="font-weight: bold; font-size: 15px;">WATCH NOW</span></a>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span style="font-weight: bold; font-size: 15px;">WATCH NOW</span><span class="caret" ></span></a>
+							<ul class="dropdown-menu">
+          						<li class="<?php echo $behind_select; ?>"><a href="mediaLink.php?type=e"><center>EPISODES</center></a></li>
+          						<li class="<?php echo $sponsor_select; ?>"><a href="mediaLink.php?type=j"><center>JUDGES AND HOSTS</center></a></li>
+								<li class="<?php echo $android_select; ?>"><a href="mediaLink.php?type=c"><center>CONTESTANTS</center></a></li>
+          						<li class="<?php echo $about_select; ?>"><a href="mediaLink.php?type=b"><center>BEHIND THE SCENES</center></a></li>
+        					</ul>
 						</li>
 						<li class="<?php echo $gallery_select; ?>"><a href="galleryLink.php"><span style="font-weight: bold; font-size: 15px;">GALLERY</span></a>
 						</li>

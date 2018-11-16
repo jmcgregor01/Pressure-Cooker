@@ -1,11 +1,10 @@
 <?php
 require __DIR__ . '/admin/config/db.php';
-			$gallery_query = "SELECT * FROM gallery
-							ORDER BY id DESC
-							LIMIT 0,12";
+						$gallery_query = "SELECT * FROM gallery
+							ORDER BY id DESC";
 			$connect_gallery_query = mysqli_query( $conn, $gallery_query );
 			$count_rows = mysqli_num_rows( $connect_gallery_query );
-			$cap = 4;
+			$cap = 8;
 			$abs_max_display = $count_rows;
 			$abs_min_display = 0;
 			if ( empty( $_POST[ "Show" ] ) ) {
@@ -50,6 +49,7 @@ require __DIR__ . '/admin/config/db.php';
 			}
 ?>
 <!DOCTYPE html>
+
 <html>
 <head>
 	<!--Head of the Index Page-->
@@ -83,8 +83,8 @@ require __DIR__ . '/admin/config/db.php';
 
 	include "templates/navigationbar_template.php";
 	?>
-
-	<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+	<div class="myView bg-3">
+	<div class="container-fluid myContainer bg-3 text-center goTopAnim"">
 
 		<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px; object-fit: none;">GALLERY</h1><br>
 
@@ -98,7 +98,8 @@ require __DIR__ . '/admin/config/db.php';
 					$date_gallery = $get_each_row[ 'date' ];
 					$msg_of_gallery = $get_each_row[ 'msg' ];
 					$displayed++;
-					if ( $min_display < $displayed && $displayed <= $max_display ) {
+					if ( $min_display < $displayed && $displayed <= $max_display && $displayed <= $abs_max_display) {
+						
 						?>
 			<div class="col-sm-6 col-md-4 col-lg-3">
 				<img class="resizeWithThumbnail" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery">
@@ -110,37 +111,34 @@ require __DIR__ . '/admin/config/db.php';
 				</p><br><br><br><br>
 			</div>
 			<?php
-			}
-			}
+					}
+				}
 			}
 			?>
-		</div>
+			</div>
+
 
 		<?php
 		if ( $count_rows > $max_display ) {
 			?>
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-
 			<form action="<?php echo " galleryLink.php ";?>" method="post">
-				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='+' style="float: right; margin-right: 20px;">Next</button><br>
+				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='+' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;"">Next</button><br>
 			</form>
-		</div>
 		<?php
 		}
 		if ( $count_rows > $min_display && $min_display != 0 ) {
 			?>
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 			<form action="<?php echo " galleryLink.php ";?>" method="post">
-				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='-' style="float: right; margin-right: 20px;">Back</button><br>
+				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='-' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Back</button><br>
 			</form>
-		</div>
 		<?php
 		}
 		?>
 
 		<!--Ending Body Content-->
+		
 	</div>
-
+</div>
 
 	<!-- Footer template-->
 	<?php

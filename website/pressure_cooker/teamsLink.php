@@ -38,7 +38,7 @@ require __DIR__ . '/admin/config/db.php';
 		<div class="myView bg-3">
 		<div class="container-fluid myContainer bg-3 text-center goTopAnim">
 
-			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px;">TEAMS</h1><br>
+			<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px;">CONTESTANTS</h1><br>
 
 				<div class="row">
 	
@@ -61,7 +61,7 @@ require __DIR__ . '/admin/config/db.php';
 					<a href="viewTeam.php?team=<?php echo $id_of_team; ?>">
 					<div class="thumbnail">
 						<img class="resizeTeamMainPage" src="admin\dynamicImages\teams\<?php echo $img_of_team; ?>" alt="team image">
-						<h5><strong><?php echo $name_of_team; ?></strong></h5>
+						<h5><strong><?php echo substr($name_of_team, 0, 18); ?>..</strong></h5>
 					</div>
 					</a>
 				</div>

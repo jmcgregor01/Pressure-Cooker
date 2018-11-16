@@ -60,8 +60,8 @@ require __DIR__ . '/admin/config/db.php';
 				<div class="col-sm-6 col-md-4 col-lg-3 noteamdecoration zoomit">
 					<a href="viewSponsor.php?sponsor=<?php echo $id_of_sponsor; ?>">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\sponsors\<?php echo $img_of_sponsor; ?>" alt="sponsors">
-						<h2><strong><?php echo $name_of_sponsor; ?></strong></h2>
-						<p style="color: #1364D1;"><strong><?php echo $msg_of_sponsor; ?></strong></p>
+						<h2><strong><?php echo substr($name_of_sponsor, 0, 25); ?>..</strong></h2>
+						<p style="color: #1364D1;"><strong><?php echo substr($msg_of_sponsor, 0, 25); ?>.....</strong></p>
 						</a><br><br><br><br>
 				</div>
 			<?php

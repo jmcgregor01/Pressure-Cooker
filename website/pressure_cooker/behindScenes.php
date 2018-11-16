@@ -5,7 +5,7 @@ require __DIR__ . '/admin/config/db.php';
 								LIMIT 0,12";
 			$connect_behindscense_query = mysqli_query($conn, $behindscense_query);
 			$count_rows = mysqli_num_rows($connect_behindscense_query);
-			$cap = 4;
+			$cap = 8;
 			$abs_max_display = $count_rows;
 			$abs_min_display = 0;
 			if ( empty( $_POST[ "Show" ] ) ) {
@@ -13,6 +13,7 @@ require __DIR__ . '/admin/config/db.php';
 				$max_display = $cap;
 				$min_display = 0;
 				setcookie( 'display', $displayed );
+				
 			} 
 			else if ( $_POST[ "Show" ] == '+' ) {
 				if ($_COOKIE[ 'display' ] + $cap < $abs_max_display)
@@ -31,8 +32,7 @@ require __DIR__ . '/admin/config/db.php';
 					$displayed = 0;
 				}
 					
-			} 
-			else if ( $_POST[ "Show" ] == "-" ) {
+			} else if ( $_POST[ "Show" ] == "-" ) {
 				if ($_COOKIE[ 'display' ] > $abs_min_display)
 				{
 					$displayed = $_COOKIE[ 'display' ] - $cap;
@@ -90,66 +90,60 @@ include "templates/navigationbar_template.php";
 	<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px; object-fit: none;">BEHIND THE SCENES</h1><br>
 
 			<div class="row">
-				
-				
-				
-				
 			<?php
-			if($count_rows > 0){
-				while($get_each_row = mysqli_fetch_array($connect_behindscense_query)){
-					$id_of_behindscense = $get_each_row['id'];
-					$name_of_behindscense = $get_each_row['name'];
-					$img_of_behindscense = $get_each_row['img'];
-					$date_behindscense = $get_each_row['date'];
-					$msg_of_behindscense = $get_each_row['msg'];
-					$displayed++;
-					if ( $min_display < $displayed && $displayed <= $max_display )
-					{
 
-			?>			
-					<div class="col-sm-6 col-md-4 col-lg-3 noteamdecoration zoomit">
+		if($count_rows > 0){
+			while($get_each_row = mysqli_fetch_array($connect_behindscense_query)){
+				$id_of_behindscense = $get_each_row['id'];
+				$name_of_behindscense = $get_each_row['name'];
+				$img_of_behindscense = $get_each_row['img'];
+				$date_behindscense = $get_each_row['date'];
+				$msg_of_behindscense = $get_each_row['msg'];
+				$displayed++;
+				if ( $min_display < $displayed && $displayed <= $max_display && $displayed <= $abs_max_display) {
+			?>	
+				
+				<div class="col-sm-6 col-md-4 col-lg-3 noteamdecoration zoomit">
 					<a href="viewBehindScenes.php?behindScenes=<?php echo $id_of_behindscense; ?>">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscense; ?>" alt="behindScenes">
-						<h2><strong><?php echo substr($name_of_behindscense, 0, 15); ?>.....</strong></h2>
+						<h2><strong><?php echo substr($name_of_behindscense, 0, 22); ?>..</strong></h2>
 					</a>
 					<div class="myP"></div>
 					<a href="behindScenesDetails.php?behindScenes=<?php echo $id_of_behindscense; ?>">
 						<p><strong><?php echo substr($msg_of_behindscense, 0, 25); ?>.....</strong></p>
 					</a><br><br><br><br>
-
 				</div>
 				
 			<?php
+				}
 			}
-			}
-			}
+		}
 			?>
-			</div>
+					</div>
+
 
 			<!--Ending Behind Scenes Container-->
-		</div>
-		</div>
-		<?php
-		if ( $count_rows > $max_display ) {
-		?>
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
+			
 
+		<?php
+		if ( $count_rows > $max_display  ) {
+			?>
 			<form action="<?php echo " behindScenes.php ";?>" method="post">
-				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='+' style="float: right; margin-right: 20px;">Next</button><br>
+				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='+' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Next</button><br>
 			</form>
-		</div>
 		<?php
 		}
 		if ( $count_rows > $min_display && $min_display != 0 ) {
 			?>
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 			<form action="<?php echo " behindScenes.php ";?>" method="post">
-				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='-' style="float: right; margin-right: 20px;">Back</button><br>
+				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='-' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Back</button><br>
 			</form>
-		</div>
 		<?php
 		}
 		?>
+
+		</div>
+		</div>
 	<!--Ending Body Content-->
 	</div>
 

@@ -1,11 +1,11 @@
 <?php
 	require __DIR__.'/admin/config/db.php';
-					$recipe_query = "SELECT * FROM recipes
+				$recipe_query = "SELECT * FROM recipes
 									ORDER BY date DESC
 									LIMIT 0,12";
 				$connect_recipe_query = mysqli_query($conn, $recipe_query);
 				$count_rows = mysqli_num_rows($connect_recipe_query);
-	$cap = 4;
+			$cap = 6;
 			$abs_max_display = $count_rows;
 			$abs_min_display = 0;
 			if ( empty( $_POST[ "Show" ] ) ) {
@@ -93,53 +93,54 @@
 				<div class="row">
 
 				<?php
-				if($count_rows > 0){
-					while($get_each_row = mysqli_fetch_array($connect_recipe_query)){
+
+			if($count_rows > 0){
+				while($get_each_row = mysqli_fetch_array($connect_recipe_query)){
 						$id_of_recipe = $get_each_row['id'];
 						$name_of_recipe = $get_each_row['name'];
 						$img_of_recipe = $get_each_row['img'];
 						$msg_of_recipe = $get_each_row['method'];
 						$date_recipe = $get_each_row['date'];
 						$displayed++;
-					if ( $min_display < $displayed && $displayed <= $max_display ) {
+					if ( $min_display < $displayed && $displayed <= $max_display && $displayed <= $abs_max_display ) {
+						echo "$min_display < $displayed && $displayed <= $max_display && $displayed <= $abs_max_display";
 				?>
 				<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
 					<a href="recipeDetails.php?recipe_id=<?php echo $id_of_recipe; ?>">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="team image">
-						<h2><strong><?php echo substr($name_of_recipe, 0, 15); ?>...</strong></h2>
-						<p class="recipesMessageLimit" style="color: #1364D1;"><strong><?php echo substr($msg_of_recipe, 0, 30); ?>...</strong></p>
-					</a>
+						<h2><strong><?php echo substr($name_of_recipe, 0, 22); ?>...</strong></h2>
+						<p class="recipesMessageLimit" style="color: #1364D1;"><center><strong><?php echo substr($msg_of_recipe, 0, 60); ?>...</strong></center></p>
+					</a><br><br>
 				</div>
 				<?php
 					}
-					}
 				}
+			}
 				?>
+				
 				</div>
 			<!--Ending Judge Container-->
-		</div>
-		</div>
-		<?php
+<?php
+		
 		if ( $count_rows > $max_display ) {
-		?>
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-
+			?>
 			<form action="<?php echo " recipesLink.php ";?>" method="post">
-				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='+' style="float: right; margin-right: 20px;">Next</button><br>
+				<button class="btn btn-info btn-lg" type="submit" name="Show" value='+' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Next</button><br>
 			</form>
-		</div>
 		<?php
 		}
 		if ( $count_rows > $min_display && $min_display != 0 ) {
 			?>
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
 			<form action="<?php echo " recipesLink.php ";?>" method="post">
-				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='-' style="float: right; margin-right: 20px;">Back</button><br>
+				<button class="btn btn-info btn-lg" type="submit" name="Show" value='-' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Back</button><br>
 			</form>
-		</div>
 		<?php
 		}
 		?>
+		
+		</div>
+		</div>
+		</div>
 	<!-- Footer template-->
 	<?php
 	include 'templates/footer_template.php';
