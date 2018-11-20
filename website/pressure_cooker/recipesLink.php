@@ -1,5 +1,53 @@
 <?php
 	require __DIR__.'/admin/config/db.php';
+				$recipe_query = "SELECT * FROM recipes
+									ORDER BY date DESC
+									LIMIT 0,12";
+				$connect_recipe_query = mysqli_query($conn, $recipe_query);
+				$count_rows = mysqli_num_rows($connect_recipe_query);
+			$cap = 6;
+			$abs_max_display = $count_rows;
+			$abs_min_display = 0;
+			if ( empty( $_POST[ "Show" ] ) ) {
+				$displayed = 0;
+				$max_display = $cap;
+				$min_display = 0;
+				setcookie( 'display', $displayed );
+			} 
+			else if ( $_POST[ "Show" ] == '+' ) {
+				if ($_COOKIE[ 'display' ] + $cap < $abs_max_display)
+				{
+					$displayed = $_COOKIE[ 'display' ] + $cap;
+					setcookie( 'display', $displayed );
+					$max_display = $displayed + $cap;
+					$min_display = $displayed;
+					$displayed = 0;
+				}
+				else
+				{
+					$displayed = $_COOKIE[ 'display' ];
+					$max_display = $displayed + $cap;
+					$min_display = $displayed;
+					$displayed = 0;
+				}
+					
+			} else if ( $_POST[ "Show" ] == "-" ) {
+				if ($_COOKIE[ 'display' ] > $abs_min_display)
+				{
+					$displayed = $_COOKIE[ 'display' ] - $cap;
+					setcookie( 'display', $displayed );
+					$max_display = $displayed + $cap;
+					$min_display = $displayed;
+					$displayed = 0;
+				}
+				else
+				{
+					$displayed = $_COOKIE[ 'display' ];
+					$max_display = $displayed + $cap;
+					$min_display = $displayed;
+					$displayed = 0;
+				}
+			}
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,18 +93,17 @@
 				<div class="row">
 
 				<?php
-				$recipe_query = "SELECT * FROM recipes
-									ORDER BY date DESC
-									LIMIT 0,12";
-				$connect_recipe_query = mysqli_query($conn, $recipe_query);
-				$count_rows = mysqli_num_rows($connect_recipe_query);
-				if($count_rows > 0){
-					while($get_each_row = mysqli_fetch_array($connect_recipe_query)){
+
+			if($count_rows > 0){
+				while($get_each_row = mysqli_fetch_array($connect_recipe_query)){
 						$id_of_recipe = $get_each_row['id'];
 						$name_of_recipe = $get_each_row['name'];
 						$img_of_recipe = $get_each_row['img'];
 						$msg_of_recipe = $get_each_row['method'];
 						$date_recipe = $get_each_row['date'];
+						$displayed++;
+					if ( $min_display < $displayed && $displayed <= $max_display && $displayed <= $abs_max_display ) {
+						echo "$min_display < $displayed && $displayed <= $max_display && $displayed <= $abs_max_display";
 				?>
 				<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
 					<a href="recipeDetails.php?recipe_id=<?php echo $id_of_recipe; ?>">
@@ -68,14 +115,30 @@
 				<?php
 					}
 				}
+			}
 				?>
+				
 				</div>
 			<!--Ending Judge Container-->
-		</div>
-		</div>
+<?php
 		
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-			<button class="btn btn-danger btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
+		if ( $count_rows > $max_display ) {
+			?>
+			<form action="<?php echo " recipesLink.php ";?>" method="post">
+				<button class="btn btn-info btn-lg" type="submit" name="Show" value='+' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Next</button><br>
+			</form>
+		<?php
+		}
+		if ( $count_rows > $min_display && $min_display != 0 ) {
+			?>
+			<form action="<?php echo " recipesLink.php ";?>" method="post">
+				<button class="btn btn-info btn-lg" type="submit" name="Show" value='-' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Back</button><br>
+			</form>
+		<?php
+		}
+		?>
+		
+		</div>
 		</div>
 		</div>
 	<!-- Footer template-->

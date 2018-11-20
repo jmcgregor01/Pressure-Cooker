@@ -256,7 +256,7 @@ div.zoomit img:hover{
     height: -webkit-fill-available;
     max-height: 330px;
 	width: 490px;
-    max-width: 100%;
+	max-width: 100%;
     object-fit: cover;
     object-position: center;
     display: inline-block;
@@ -666,6 +666,7 @@ transform: translateY(70%);
 .btn-lg {
 	width: 100%;
 	margin-bottom: 35px;
+	
 }
 }
 @media screen and (max-width: 480px) {

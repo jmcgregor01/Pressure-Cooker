@@ -1,5 +1,54 @@
 <?php
 require __DIR__ . '/admin/config/db.php';
+			$behindscense_query = "SELECT * FROM behindscenes
+								ORDER BY id DESC
+								LIMIT 0,12";
+			$connect_behindscense_query = mysqli_query($conn, $behindscense_query);
+			$count_rows = mysqli_num_rows($connect_behindscense_query);
+			$cap = 8;
+			$abs_max_display = $count_rows;
+			$abs_min_display = 0;
+			if ( empty( $_POST[ "Show" ] ) ) {
+				$displayed = 0;
+				$max_display = $cap;
+				$min_display = 0;
+				setcookie( 'display', $displayed );
+				
+			} 
+			else if ( $_POST[ "Show" ] == '+' ) {
+				if ($_COOKIE[ 'display' ] + $cap < $abs_max_display)
+				{
+					$displayed = $_COOKIE[ 'display' ] + $cap;
+					setcookie( 'display', $displayed );
+					$max_display = $displayed + $cap;
+					$min_display = $displayed;
+					$displayed = 0;
+				}
+				else
+				{
+					$displayed = $_COOKIE[ 'display' ];
+					$max_display = $displayed + $cap;
+					$min_display = $displayed;
+					$displayed = 0;
+				}
+					
+			} else if ( $_POST[ "Show" ] == "-" ) {
+				if ($_COOKIE[ 'display' ] > $abs_min_display)
+				{
+					$displayed = $_COOKIE[ 'display' ] - $cap;
+					setcookie( 'display', $displayed );
+					$max_display = $displayed + $cap;
+					$min_display = $displayed;
+					$displayed = 0;
+				}
+				else
+				{
+					$displayed = $_COOKIE[ 'display' ];
+					$max_display = $displayed + $cap;
+					$min_display = $displayed;
+					$displayed = 0;
+				}
+			}
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,24 +90,19 @@ include "templates/navigationbar_template.php";
 	<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px; object-fit: none;">BEHIND THE SCENES</h1><br>
 
 			<div class="row">
-				
-				
-				
-				
 			<?php
-			$behindscense_query = "SELECT * FROM behindscenes
-								ORDER BY id DESC
-								LIMIT 0,12";
-			$connect_behindscense_query = mysqli_query($conn, $behindscense_query);
-			$count_rows = mysqli_num_rows($connect_behindscense_query);
-			if($count_rows > 0){
+
+		if($count_rows > 0){
 			while($get_each_row = mysqli_fetch_array($connect_behindscense_query)){
 				$id_of_behindscense = $get_each_row['id'];
 				$name_of_behindscense = $get_each_row['name'];
 				$img_of_behindscense = $get_each_row['img'];
 				$date_behindscense = $get_each_row['date'];
 				$msg_of_behindscense = $get_each_row['msg'];
-			?>			
+				$displayed++;
+				if ( $min_display < $displayed && $displayed <= $max_display && $displayed <= $abs_max_display) {
+			?>	
+				
 				<div class="col-sm-6 col-md-4 col-lg-3 noteamdecoration zoomit">
 					<a href="viewBehindScenes.php?behindScenes=<?php echo $id_of_behindscense; ?>">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscense; ?>" alt="behindScenes">
@@ -73,15 +117,32 @@ include "templates/navigationbar_template.php";
 			<?php
 				}
 			}
+		}
 			?>
-			</div>
+					</div>
+
 
 			<!--Ending Behind Scenes Container-->
+			
+
+		<?php
+		if ( $count_rows > $max_display  ) {
+			?>
+			<form action="<?php echo " behindScenes.php ";?>" method="post">
+				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='+' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Next</button><br>
+			</form>
+		<?php
+		}
+		if ( $count_rows > $min_display && $min_display != 0 ) {
+			?>
+			<form action="<?php echo " behindScenes.php ";?>" method="post">
+				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='-' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Back</button><br>
+			</form>
+		<?php
+		}
+		?>
+
 		</div>
-		</div>
-		
-		<div class="container-fluid myContainer bg-3 text-center goTopAnim" style="padding: 100px;">
-			<button class="btn btn-danger btn-lg" style="float: right; margin-right: 20px;">Get More</button><br>
 		</div>
 	<!--Ending Body Content-->
 	</div>

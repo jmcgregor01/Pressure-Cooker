@@ -243,6 +243,7 @@ require __DIR__ . '/admin/config/db.php';
 								LIMIT 0,1";
 		$connect_media_query = mysqli_query( $conn, $media_query );
 		$count_rows = mysqli_num_rows( $connect_media_query );
+
 		$show_or_not_media = 'hidden';
 		if ( $count_rows > 0 ) {
 			$show_or_not_media = '';
@@ -253,8 +254,6 @@ require __DIR__ . '/admin/config/db.php';
 				<a href="#topOfPage" title="To Top">
     		<span class="glyphicon glyphicon-chevron-up"></span>
   			</a>
-			
-
 				<h2><strong>Latest Episode</strong></h2><br>
 				<h4>Watch Our Show Anytime</h4>
 				<?php
