@@ -84,11 +84,11 @@ require __DIR__ . '/admin/config/db.php';
 	include "templates/navigationbar_template.php";
 	?>
 	<div class="myView bg-3">
-	<div class="container-fluid myContainer bg-3 text-center goTopAnim"">
+	<div class="container-fluid myContainer bg-3 text-center goTopAnim">
 
 		<h1 style="font-weight: bold; background: #009dc5; color: white; border-radius: 5px; object-fit: none;">GALLERY</h1><br>
 
-		<div class="row" style="padding: 50px;">
+		<div class="row">
 			<?php
 			if ( $count_rows > 0 ) {
 				while ( $get_each_row = mysqli_fetch_array( $connect_gallery_query ) ) {
@@ -120,26 +120,78 @@ require __DIR__ . '/admin/config/db.php';
 			</div>
 
 
-		<?php
-		if ( $count_rows > $max_display ) {
-			?>
-			<form action="<?php echo " galleryLink.php ";?>" method="post">
-				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='+' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;"">Next</button><br>
-			</form>
-		<?php
-		}
-		if ( $count_rows > $min_display && $min_display != 0 ) {
-			?>
-			<form action="<?php echo " galleryLink.php ";?>" method="post">
-				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='-' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Back</button><br>
-			</form>
-		<?php
-		}
-		?>
+
 
 		<!--Ending Body Content-->
 		
 	</div>
+		
+		
+		
+		<div class="row">
+		
+				<div class="col-lg-6">	
+			<?php
+		if ( $count_rows > $min_display && $min_display != 0 ) {
+			?>
+			<form action="<?php echo " galleryLink.php ";?>" method="post">
+				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='-' style="float: left; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Back</button><br>
+			</form>
+
+		<?php
+		}
+		?>	
+		
+			</div>	
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		<div class="col-lg-6">
+			<?php
+		if ( $count_rows > $max_display ) {
+			?>
+
+			<form action="<?php echo " galleryLink.php ";?>" method="post">
+				<button class="btn btn-info btn-lg" type="submit" name="Show" value='+' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Next</button><br>
+			</form>
+		</div>
+		
+		<?php
+		}
+			?>
+			
+			
+			
+			
+
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 </div>
 
 	<!-- Footer template-->

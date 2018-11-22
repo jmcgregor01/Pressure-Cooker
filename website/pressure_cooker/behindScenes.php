@@ -123,8 +123,21 @@ include "templates/navigationbar_template.php";
 
 
 			<!--Ending Behind Scenes Container-->
+			<div class="row">
+							<div class="col-lg-6">
 			
-
+			<?php
+		if ( $count_rows > $min_display && $min_display != 0 ) {
+			?>
+			<form action="<?php echo " behindScenes.php ";?>" method="post">
+				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='-' style="float: left; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Back</button><br>
+			</form>
+		<?php
+		}
+		?>
+				</div>
+				
+	<div class="col-lg-6"></div>
 		<?php
 		if ( $count_rows > $max_display  ) {
 			?>
@@ -133,15 +146,10 @@ include "templates/navigationbar_template.php";
 			</form>
 		<?php
 		}
-		if ( $count_rows > $min_display && $min_display != 0 ) {
 			?>
-			<form action="<?php echo " behindScenes.php ";?>" method="post">
-				<button class="btn btn-info btn-lg" ; type="submit" name="Show" value='-' style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">Back</button><br>
-			</form>
-		<?php
-		}
-		?>
+				</div>
 
+</div>
 		</div>
 		</div>
 	<!--Ending Body Content-->
