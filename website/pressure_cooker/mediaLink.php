@@ -54,20 +54,29 @@ include "templates/navigationbar_template.php";
 	}
 	if (!empty($type))
 	{
-		if ($type == 'e')
-			echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;'>Episodes</h1><br>";
-		else if ($type == 'j')
-			echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;'>Judges and Host Profiles</h1><br>";
-		else if ($type == 'c')
-			echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;'>Contestant Profiles</h1><br>";
-		else if ($type == 'b')
-			echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;'>Behind the Scenes</h1><br>";
+		if ($type == 'e'){
+		echo "<div class=\"mediaHeading\" >";
+		echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px;' object-fit: none;>Episodes</h1><br>";
+		echo "</div>";
+		}else if ($type == 'j'){
+		echo "<div class=\"mediaHeading\" >";
+		echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px;' object-fit: none;>Judges and Host Profiles</h1><br>";
+		echo "</div>";
+		}else if ($type == 'c'){
+		echo "<div class=\"mediaHeading\" >";
+		echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px;' object-fit: none;>Contestant Profiles</h1><br>";
+		echo "</div>";
+		}else if ($type == 'b'){
+		echo "<div class=\"mediaHeading\" >";
+		echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px;' object-fit: none;>Behind the Scenes</h1><br>";
+		echo "</div>";
 	}
-	else if (empty($type))
+	}
+	else if (empty($type)){
 		echo "<div class=\"mediaHeading\" >";
 		echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px;' object-fit: none;>Videos</h1><br>";
 		echo "</div>";
-	
+	}
 	$connect_media_query = mysqli_query( $conn, $media_query );
 	$count_rows = mysqli_num_rows( $connect_media_query );
 	$max_display = 1;
