@@ -16,7 +16,7 @@ require __DIR__ . '/admin/config/db.php';
 	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 	<!--Ending Head of the Index Page-->
 </head>
-
+<body id="topOfPage">
 <!--Header template-->
 <?php
 $home_select = "";
