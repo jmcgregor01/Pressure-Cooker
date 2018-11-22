@@ -104,11 +104,11 @@ require __DIR__ . '/admin/config/db.php';
 			<div class="col-sm-6 col-md-4 col-lg-3  nojudgedecoration zoomit">
 				<a href="viewGallery.php?gallery=<?php echo $id_of_gallery; ?>">
 				<img class="resizeWithThumbnail" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery">
-				<h2><strong><?php echo $name_of_gallery; ?></strong></h2>
+				<h2><strong><?php echo substr($name_of_gallery, 0, 18); ?>..</strong></h2>
 						</a>																									   
 				<p style="color: #1364D1;">
 					<strong>
-						<?php echo $msg_of_gallery; ?>
+						<?php echo substr($msg_of_gallery, 0, 25); ?>.....
 					</strong>
 				</p><br><br><br><br>
 			</div>

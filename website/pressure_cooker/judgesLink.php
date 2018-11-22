@@ -46,7 +46,7 @@ require __DIR__ . '/admin/config/db.php';
 			<?php
 			$judge_query = "SELECT * FROM judges
 									ORDER BY date DESC
-										LIMIT 0,9";
+										LIMIT 0,10";
 			$connect_judge_query = mysqli_query($conn, $judge_query);
 			$count_rows = mysqli_num_rows($connect_judge_query);
 			if($count_rows > 0){

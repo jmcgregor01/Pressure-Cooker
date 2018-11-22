@@ -44,7 +44,7 @@ require __DIR__ . '/admin/config/db.php';
 	
 			<?php
 			$team_query = "SELECT * FROM teams
-								LIMIT 0,8";
+								LIMIT 0,12";
 			$connect_team_query = mysqli_query($conn, $team_query);
 			$count_rows = mysqli_num_rows($connect_team_query);
 			$show_or_not_team = 'hidden';

@@ -44,7 +44,7 @@
 							<ul class="dropdown-menu">
           						<li><a href="#behindscenesSection"><center>BEHIND SCENES</center></a></li>
           						<li><a href="#sponsorSection"><center>SPONSORS</center></a></li>
-								<li><a href="workingOnIt.php"><center>ANDROID APP</center></a></li>
+								<li><a href="workingOnIt.php"><center>MOBILE APP</center></a></li>
           						<li><a href="#citContacts"><center>CONTACT US</center></a></li>
           						<li><a href="about.php"><center>ABOUT US</center></a></li>
 								<li><a href="admin/indexAdmin.php"><center>ADMIN</center></a></li>

@@ -44,7 +44,7 @@
 							<ul class="dropdown-menu">
           						<li class="<?php echo $behind_select; ?>"><a href="behindScenes.php"><center>BEHIND SCENES</center></a></li>
           						<li class="<?php echo $sponsor_select; ?>"><a href="sponsorLink.php"><center>SPONSORS</center></a></li>
-								<li class="<?php echo $android_select; ?>"><a href="workingOnIt.php"><center>ANDROID APP</center></a></li>
+								<li class="<?php echo $android_select; ?>"><a href="workingOnIt.php"><center>MOBILE APP</center></a></li>
           						<li class="<?php echo $about_select; ?>"><a href="about.php"><center>ABOUT US</center></a></li>
 								<li class="<?php echo $home_select; ?>"><a href="admin/indexAdmin.php"><center>ADMIN</center></a></li>
         					</ul>
