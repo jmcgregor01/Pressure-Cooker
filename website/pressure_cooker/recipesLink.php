@@ -103,7 +103,6 @@
 						$date_recipe = $get_each_row['date'];
 						$displayed++;
 					if ( $min_display < $displayed && $displayed <= $max_display && $displayed <= $abs_max_display ) {
-						echo "$min_display < $displayed && $displayed <= $max_display && $displayed <= $abs_max_display";
 				?>
 				<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
 					<a href="recipeDetails.php?recipe_id=<?php echo $id_of_recipe; ?>">
