@@ -10,7 +10,7 @@ body{
 }
 
 .thumbnail img {
-    width: inherit;
+/*    width: inherit;*/
     height: 300px;
     margin-bottom: 10px;
 }
@@ -149,12 +149,36 @@ body{
 
 
 .resizeTeamMainPage{
+	width: -webkit-fill-available;
+	width: -moz-fit-content;
+    height: 300px;
+    max-height: 300px;
+    /* max-width: 388px; */
+    object-fit: scale-down;
+    object-position: center;
+    background: black;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*
 	height: 300px;
     max-height: 300px;
     max-width: 100%;
 	object-fit: scale-down;
     object-position: center;
     background: black;
+*/
 }
 
 div.zoomit img:hover{
