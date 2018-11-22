@@ -376,6 +376,34 @@ color: red;
 }
 
 
+.recipeView {
+
+}
+
+/*Large Screen*/
+@media screen and (min-width: 1001px) {
+  .recipeView {
+	padding: 100px;
+  }
+}
+
+/*Mobile Screen*/
+@media screen and (max-width: 1000px) {
+  .recipeView {
+	padding: 0px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

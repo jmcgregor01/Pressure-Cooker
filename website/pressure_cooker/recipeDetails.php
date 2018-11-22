@@ -41,7 +41,7 @@
 				?>
 				
 				
-                <div class="row" style="padding: 50px;">
+                <div class="row recipeView">
 				<div class="col-lg-6 col-md-6 col-sm-6">
 				<br>
 					    <h2><strong><?php echo $name_of_recipe; ?></strong></h2>
