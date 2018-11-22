@@ -11,7 +11,7 @@ body{
 
 .thumbnail img {
     width: inherit;
-    height: 100%;
+    height: 300px;
     margin-bottom: 10px;
 }
 
