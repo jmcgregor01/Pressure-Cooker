@@ -64,7 +64,7 @@ require __DIR__ . '/admin/config/db.php';
 
 				<div class="row">
 					<div class="col-md-6">
-						<div class="thumbnail">
+						<div class="thumbnailForDetails">
 							<img class="resizeWithIndividualView" src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judges">
 						</div>
 					</div>
