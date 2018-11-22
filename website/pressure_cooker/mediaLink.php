@@ -64,7 +64,9 @@ include "templates/navigationbar_template.php";
 			echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;'>Behind the Scenes</h1><br>";
 	}
 	else if (empty($type))
-		echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px; margin: 100px;'>Videos</h1><br>";
+		echo "<div class=\"mediaHeading\" >";
+		echo "<h1 style='font-weight: bold; background: #009dc5; color: white; border-radius: 5px;' object-fit: none;>Videos</h1><br>";
+		echo "</div>";
 	
 	$connect_media_query = mysqli_query( $conn, $media_query );
 	$count_rows = mysqli_num_rows( $connect_media_query );
@@ -85,7 +87,8 @@ include "templates/navigationbar_template.php";
 			$displayed++;
 			if ( $displayed <= $max_display ) {
 				?>
-	<div class="row" style="padding-top: 10px; padding-bottom: 100px; padding-left: 100px; padding-right: 100px;">
+	<div class="mediaLinkContainer bg-3">
+	<div class="row">
 		<center>
 			<h3 style="font-weight: bold">
 				<?php echo $name_of_media; ?>
@@ -105,10 +108,12 @@ include "templates/navigationbar_template.php";
 		</div>
 	</div>
 	<hr>
+	</div>
 	<?php
 	} else if ( $show_all == true ) {
 		?>
-	<div class="row" style="padding-top: 10px; padding-bottom: 100px; padding-left: 100px; padding-right: 100px;">
+	<div class="mediaLinkContainer bg-3">
+	<div class="row">
 		<center>
 			<h3 style="font-weight: bold">
 				<?php echo $name_of_media; ?>
@@ -128,6 +133,7 @@ include "templates/navigationbar_template.php";
 		</div>
 	</div>
 	<hr>
+		</div>
 	<?php
 	}
 	}

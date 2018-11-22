@@ -176,8 +176,7 @@ body{
 	
 	
 	
-	
-	
+
 	
 	
 	
@@ -300,7 +299,7 @@ div.zoomit img:hover{
 
 @media screen and (min-width: 1001px) {
   .mediaLinkContainer {
-	padding: 500px;
+	padding: 50px 100px 50px 100px;
   }
 }
 .resizeWithThumbnail {
@@ -321,7 +320,7 @@ div.zoomit img:hover{
 }
 @media screen and (max-width: 1000px) {
   .mediaLinkContainer {
-	padding: 0px;
+	padding: 0px 0px 0px 0px;
   }
 }
 
@@ -341,7 +340,19 @@ color: red;
 }
 
 
+.mediaHeading {}
 
+@media screen and (min-width: 1001px) {
+  .mediaHeading {
+	margin: 100px 100px 0px 100px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .mediaHeading {
+	margin: 0px;
+  }
+}
 
 
 
