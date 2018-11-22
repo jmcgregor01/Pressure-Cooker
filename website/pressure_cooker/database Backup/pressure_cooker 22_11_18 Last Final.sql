@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2018 at 11:49 AM
+-- Generation Time: Nov 22, 2018 at 12:28 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -247,6 +247,16 @@ CREATE TABLE `sponsor` (
   `msg` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `sponsor`
+--
+
+INSERT INTO `sponsor` (`id`, `name`, `img`, `date`, `msg`) VALUES
+(15, 'No Sponsor', 'missing.png', '2018-11-22 11:21:49', 'No Sponsor'),
+(16, 'No Sponsor', 'missing.png', '2018-11-22 11:24:33', 'No Sponsor'),
+(17, 'No Sponsor', 'missing.png', '2018-11-22 11:24:41', 'No Sponsor'),
+(18, 'No Sponsor', 'missing.png', '2018-11-22 11:25:45', 'No Sponsor');
+
 -- --------------------------------------------------------
 
 --
@@ -373,7 +383,7 @@ ALTER TABLE `recipes`
 -- AUTO_INCREMENT for table `sponsor`
 --
 ALTER TABLE `sponsor`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `teams`
