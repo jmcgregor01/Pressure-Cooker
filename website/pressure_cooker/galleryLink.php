@@ -101,7 +101,7 @@ require __DIR__ . '/admin/config/db.php';
 					if ( $min_display < $displayed && $displayed <= $max_display && $displayed <= $abs_max_display) {
 						
 						?>
-			<div class="col-sm-6 col-md-4 col-lg-3  nojudgedecoration zoomit">
+			<div class="col-sm-6 col-md-6 col-lg-3  nojudgedecoration zoomit">
 				<a href="viewGallery.php?gallery=<?php echo $id_of_gallery; ?>">
 				<img class="resizeWithThumbnail" src="admin\dynamicImages\gallery\<?php echo $img_of_gallery; ?>" alt="gallery">
 				<h2><strong><?php echo substr($name_of_gallery, 0, 18); ?>..</strong></h2>

@@ -57,7 +57,7 @@ require __DIR__ . '/admin/config/db.php';
 				$date_sponsor = $get_each_row['date'];
 				$msg_of_sponsor = $get_each_row['msg'];
 			?>						
-				<div class="col-sm-6 col-md-4 col-lg-3 noteamdecoration zoomit">
+				<div class="col-sm-6 col-md-6 col-lg-3 noteamdecoration zoomit">
 					<a href="viewSponsor.php?sponsor=<?php echo $id_of_sponsor; ?>">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\sponsors\<?php echo $img_of_sponsor; ?>" alt="sponsors">
 						<h2><strong><?php echo substr($name_of_sponsor, 0, 25); ?>..</strong></h2>

@@ -308,16 +308,33 @@ div.zoomit img:hover{
     max-height: 330px;
 	width: 490px;
 	max-width: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
     object-position: center;
     display: inline-block;
     padding: 4px;
     line-height: 1.42857143;
-    background-color: #fff;
+    background-color: black;
     border: 1px solid #ddd;
     border-radius: 4px;
     transition: all .2s ease-in-out;
 }
+
+.resizeWithThumbnail {
+    height: -webkit-fill-available;
+    max-height: 330px;
+	width: -webkit-fill-available;
+	max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: inline-block;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: black;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+}
+
 @media screen and (max-width: 1000px) {
   .mediaLinkContainer {
 	padding: 0px 0px 0px 0px;

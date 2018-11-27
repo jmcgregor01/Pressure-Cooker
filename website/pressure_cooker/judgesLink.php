@@ -58,7 +58,7 @@ require __DIR__ . '/admin/config/db.php';
 					$date_judge = $get_each_row['date'];
 			?>
 
-				<div class="col-sm-6 col-md-4 col-lg-4 nojudgedecoration zoomit">
+				<div class="col-sm-6 col-md-6 col-lg-4 nojudgedecoration zoomit">
 					<a href="viewJudge.php?judge=<?php echo $id_of_judge; ?>">
 					<div class="thumbnail">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\judges\<?php echo $img_of_judge; ?>" alt="judges">
