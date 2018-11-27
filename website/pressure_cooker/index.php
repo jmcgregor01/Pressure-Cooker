@@ -386,7 +386,7 @@ require __DIR__ . '/admin/config/db.php';
 			</div>
 		</div>
 		<div class="<?php echo $show_or_not_behindscenes; ?> container-fluid myContainer bg-8 text-center goTopAnim" style="padding: 50px;">
-			<br><a href="behindScenes.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Behind the Scenes Images</a><br>
+			<br><a href="behindScenes.php" class="btn btn-info btn-lg" style="float: right; margin-right: 20px; background-color: #007f48; border-color: #007f48;">More Behind Scenes</a><br>
 			<!--Ending Behindscenes Container-->
 		</div>
 

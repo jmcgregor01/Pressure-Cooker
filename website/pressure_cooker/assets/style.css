@@ -147,15 +147,7 @@ body{
     object-position: center;
     background: black;
     width: -webkit-fill-available;
-	
-	
-/*
-	height: -webkit-fill-available;
-    max-height: 290px;
-	max-width: 100%;
-	object-fit: contain;
-    object-position: center;
-*/
+	width: -moz-available;
 }
 
 
