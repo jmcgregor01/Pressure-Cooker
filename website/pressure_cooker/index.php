@@ -214,7 +214,7 @@ require __DIR__ . '/admin/config/db.php';
 			?>
 			<div class="row slideanim nojudgedecoration zoomitMainRecipes">
 				<a href="recipeDetails.php?recipe_id=<?php echo $id_of_recipe; ?>">
-				<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="col-lg-6 col-md-6 col-sm-6  noteamdecoration zoomit">
 					
 						<img class="img-thumbnail img-responsive" style="width: 100%; height: 100%" src="admin\dynamicImages\recipes\<?php echo $img_of_recipe; ?>" alt="recipe image" style="max-height: 215px; max-width: 400px;">
 						<h2><strong><?php echo $name_of_recipe; ?></strong></h2>
