@@ -106,7 +106,7 @@ include "templates/navigationbar_template.php";
 				<div class="col-sm-6 col-md-4 col-lg-3 noteamdecoration zoomit">
 					<a href="viewBehindScenes.php?behindScenes=<?php echo $id_of_behindscense; ?>">
 						<img class="resizeWithThumbnail" src="admin\dynamicImages\behindScenes\<?php echo $img_of_behindscense; ?>" alt="behindScenes">
-						<h2><strong><?php echo substr($name_of_behindscense, 0, 22); ?>..</strong></h2>
+						<h2><strong><?php echo substr($name_of_behindscense, 0, 10); ?>..</strong></h2>
 					</a>
 					<div class="myP"></div>
 					<a href="behindScenesDetails.php?behindScenes=<?php echo $id_of_behindscense; ?>">
